@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  get 'activities', 'activity#index', as: :activities_path
+  get 'activities' => 'activity#index', as: :activities_path
 
   resources :issues
   resources :announcements
