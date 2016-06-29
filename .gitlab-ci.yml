@@ -1,0 +1,39 @@
+image: "ruby:2.3"
+
+services:
+  - rethinkdb:latest
+
+stages:
+  - lint
+  - test
+  - post-test
+  - docs
+
+variables:
+  RAILS_ENV: test
+
+before_script:
+  - sh ./scripts/install-node.sh
+  - gem install bundler         # Bundler is not installed with the image
+  - gem install rubocop         # Install rubocop globally
+  - bundle install -j $(nproc)  # Install dependencies
+  - rake db:migrate
+  - rake db:seed
+
+after_script:
+  - rake db:drop
+
+rubocop:
+  stage: lint
+  script:
+  - rubocop
+  tags:
+  - docker
+
+rspec:
+  stage: test
+  script:
+
+  - bundle exec rspec
+  tags:
+  - docker
