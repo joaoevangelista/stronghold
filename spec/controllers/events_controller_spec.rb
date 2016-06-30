@@ -24,17 +24,25 @@ RSpec.describe EventsController, type: :controller do
   # Event. As you add validations to Event, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) do
-    skip('Add a hash of attributes valid for your model')
+    {title: 'Pool Party!',
+      description: 'There will be a pool party hosted at the condominium\'s pool',
+      time: Time.now,
+      user_id: 1
+    }
   end
 
   let(:invalid_attributes) do
-    skip('Add a hash of attributes invalid for your model')
+    # Missing user_id
+    {title: 'Pool Party!',
+      description: 'There will be a pool party hosted at the condominium\'s pool',
+      time: Time.now
+    }
   end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # EventsController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  let(:valid_session) { FactoryGirl.create(:user) }
 
   describe 'GET #index' do
     it 'assigns all events as @events' do
