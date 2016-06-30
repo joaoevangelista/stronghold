@@ -120,38 +120,20 @@ RSpec.describe AnnouncementsController, type: :controller do
               expect(response).to redirect_to(announcement)
             end
           end
+        end
 
-          context 'with invalid params' do
-            it 'assigns the announcement as @announcement' do
-              announcement = Announcement.create! valid_attributes
-              put :update, {
-                id: announcement.to_param, announcement: invalid_attributes
-                }, valid_session
-                expect(assigns(:announcement)).to eq(announcement)
-              end
-
-              it "re-renders the 'edit' template" do
-                announcement = Announcement.create! valid_attributes
-                put :update, {
-                  id: announcement.to_param, announcement: invalid_attributes
-                  }, valid_session
-                  expect(response).to render_template('edit')
-                end
-              end
-            end
-
-            describe 'DELETE #destroy' do
-              it 'destroys the requested announcement' do
-                announcement = Announcement.create! valid_attributes
-                expect do
-                  delete :destroy, { id: announcement.to_param }, valid_session
-                end.to change(Announcement, :count).by(-1)
-              end
-
-              it 'redirects to the announcements list' do
-                announcement = Announcement.create! valid_attributes
-                delete :destroy, { id: announcement.to_param }, valid_session
-                expect(response).to redirect_to(announcements_url)
-              end
-            end
+        describe 'DELETE #destroy' do
+          it 'destroys the requested announcement' do
+            announcement = Announcement.create! valid_attributes
+            expect do
+              delete :destroy, { id: announcement.to_param }, valid_session
+            end.to change(Announcement, :count).by(-1)
           end
+
+          it 'redirects to the announcements list' do
+            announcement = Announcement.create! valid_attributes
+            delete :destroy, { id: announcement.to_param }, valid_session
+            expect(response).to redirect_to(announcements_url)
+          end
+        end
+      end
