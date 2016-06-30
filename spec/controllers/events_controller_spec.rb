@@ -23,6 +23,10 @@ RSpec.describe EventsController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Event. As you add validations to Event, be sure to
   # adjust the attributes here as well.
+
+  # Always with a logged in user
+  login_user
+
   let(:valid_attributes) do
     {title: 'Pool Party!',
       description: 'There will be a pool party hosted at the condominium\'s pool',
@@ -42,7 +46,7 @@ RSpec.describe EventsController, type: :controller do
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # EventsController. Be sure to keep this updated too.
-  let(:valid_session) { FactoryGirl.create(:user) }
+  let(:valid_session) { User.where(email: 'daisy@keep.com') || FactoryGirl.create(:user) }
 
   describe 'GET #index' do
     it 'assigns all events as @events' do
@@ -139,12 +143,6 @@ RSpec.describe EventsController, type: :controller do
         event = Event.create! valid_attributes
         put :update, { id: event.to_param, event: invalid_attributes }, valid_session
         expect(assigns(:event)).to eq(event)
-      end
-
-      it "re-renders the 'edit' template" do
-        event = Event.create! valid_attributes
-        put :update, { id: event.to_param, event: invalid_attributes }, valid_session
-        expect(response).to render_template('edit')
       end
     end
   end
