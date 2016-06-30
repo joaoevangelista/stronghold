@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-class IssueTypesController < ApplicationController
+class IssueTypesController < AuthenticatedController
   before_action :set_issue_type, only: [:show, :edit, :update, :destroy]
 
   # GET /issue_types

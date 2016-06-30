@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-class EventsController < ApplicationController
+class EventsController < AuthenticatedController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   # GET /events

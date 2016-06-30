@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-class IssuesController < ApplicationController
+class IssuesController < AuthenticatedController
   before_action :set_issue, only: [:show, :edit, :update, :destroy]
 
   # GET /issues

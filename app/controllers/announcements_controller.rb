@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-class AnnouncementsController < ApplicationController
+class AnnouncementsController < AuthenticatedController
   before_action :set_announcement, only: [:show, :edit, :update, :destroy]
 
   # GET /announcements
