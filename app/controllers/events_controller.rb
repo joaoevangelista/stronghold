@@ -15,7 +15,7 @@ class EventsController < AuthenticatedController
 
   # GET /events/new
   def new
-    @event = Event.new
+    @event = Event.new(user_id: current_user.id)
   end
 
   # GET /events/1/edit
