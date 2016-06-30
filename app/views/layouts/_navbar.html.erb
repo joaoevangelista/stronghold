@@ -10,9 +10,14 @@
       <%= image_tag('fortress.svg', height: 40, class: 'header-logo')  %>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
 
+      <ul class="nav navbar-nav">
+        <li><%= link_to icon('heartbeat','Activity', class: 'fa-fw'), activities_path %></li>
+        <li><%= link_to icon('bullhorn', 'Announcements', class: 'fa-fw'), announcements_path %></li>
+        <li><%= link_to icon('calendar-check-o', 'Events', class: 'fa-fw'), events_path %></li>
+        <li><%= link_to icon('database','Issues', class: 'fa-fw'), issues_path %></li>
       </ul>
+      
     </li>
   </ul>
   <ul class="nav navbar-nav navbar-right">
