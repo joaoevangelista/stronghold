@@ -4,6 +4,7 @@ class IssueType < ActiveRecord::Base
   tracked
 
   validates :name, presence: true
+  validates :color, color: true
 
   has_many :issues
 end
