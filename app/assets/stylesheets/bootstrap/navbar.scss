@@ -6,6 +6,7 @@ $dropDown       : false;
 .navbar-default {
   background-color: $bgDefault;
   border-color: $bgHighlight;
+  border-bottom: 1px solid darken($bgHighlight, 5%);
   .navbar-brand {
     color: $colDefault;
     &:hover, &:focus {
@@ -65,4 +66,14 @@ $dropDown       : false;
       > a, > a:hover, > a:focus {
         color: $colHighlight;
         background-color: $bgHighlight; }}}
+}
+
+
+.header-logo {
+   position: absolute;
+   left: 50%;
+   margin-left: -18px;
+   top: 7px;
+   transition-duration: .3s;
+   z-index: 999;
 }
