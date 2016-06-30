@@ -4,7 +4,6 @@ class Issue < ActiveRecord::Base
   tracked
 
   validates :user, :title, :description, presence: true
-  validates :title, :description, allow_blank: false
 
   belongs_to :issue_type
   belongs_to :user
