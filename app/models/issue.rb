@@ -5,4 +5,5 @@ class Issue < ActiveRecord::Base
 
   validates :user, :title, :description, presence: true
 
+  belongs_to :issue_type
 end
