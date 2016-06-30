@@ -7,12 +7,12 @@ RSpec.describe 'events/index', type: :view do
              Event.create!(
                title: 'Title',
                description: 'Description',
-               user: nil
+               user: FactoryGirl.create(:user)
              ),
              Event.create!(
                title: 'Title',
                description: 'Description',
-               user: nil
+               user: FactoryGirl.create(:another_user)
              )
            ])
   end

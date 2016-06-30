@@ -5,7 +5,7 @@ RSpec.describe 'issue_types/show', type: :view do
   before(:each) do
     @issue_type = assign(:issue_type, IssueType.create!(
                                         name: 'Name',
-                                        color: 'Color'
+                                        color: '#ff5555'
     ))
   end
 

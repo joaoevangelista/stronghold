@@ -35,7 +35,10 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Devise::TestHelpers, type: :controller
   config.include Devise::TestHelpers, type: :view
-  config.extend ControllerMacros
+  config.include Devise::TestHelpers, type: :request
+  config.extend ControllerMacros, type: :controller
+  config.extend ControllerMacros, type: :view
+  config.extend ControllerMacros, type: :request
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false

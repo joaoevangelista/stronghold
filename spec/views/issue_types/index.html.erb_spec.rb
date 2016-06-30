@@ -6,11 +6,11 @@ RSpec.describe 'issue_types/index', type: :view do
     assign(:issue_types, [
              IssueType.create!(
                name: 'Name',
-               color: 'Color'
+               color: '#ff5555'
              ),
              IssueType.create!(
                name: 'Name',
-               color: 'Color'
+               color: '#ff5555'
              )
            ])
   end
@@ -18,6 +18,6 @@ RSpec.describe 'issue_types/index', type: :view do
   it 'renders a list of issue_types' do
     render
     assert_select 'tr>td', text: 'Name'.to_s, count: 2
-    assert_select 'tr>td', text: 'Color'.to_s, count: 2
+    assert_select 'tr>td', text: '#ff5555'.to_s, count: 2
   end
 end

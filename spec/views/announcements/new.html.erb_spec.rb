@@ -6,7 +6,7 @@ RSpec.describe 'announcements/new', type: :view do
     assign(:announcement, Announcement.new(
                             title: 'MyString',
                             description: 'MyString',
-                            user: nil,
+                            user: FactoryGirl.create(:user),
                             notify: false
     ))
   end

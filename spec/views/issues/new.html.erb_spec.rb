@@ -7,9 +7,9 @@ RSpec.describe 'issues/new', type: :view do
                      title: 'MyString',
                      description: 'MyString',
                      is_resolved: false,
-                     user: nil,
+                     user: FactoryGirl.create(:user),
                      assignee_id: 1,
-                     issue_type: nil
+                     issue_type: FactoryGirl.create(:issue_type)
     ))
   end
 

@@ -6,7 +6,7 @@ RSpec.describe 'events/edit', type: :view do
     @event = assign(:event, Event.create!(
                               title: 'MyString',
                               description: 'MyString',
-                              user: nil
+                              user: FactoryGirl.create(:user)
     ))
   end
 
