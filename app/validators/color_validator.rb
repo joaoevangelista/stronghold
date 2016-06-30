@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Validates the pattern of a color declaration
 # be it a hex, rgb or hsl
 class ColorValidator < ActiveModel::EachValidator
@@ -7,5 +8,4 @@ class ColorValidator < ActiveModel::EachValidator
     return true if value =~ PATTERN # <- guard clause
     record.errors.add(attribute, 'must be a valid color code')
   end
-
 end

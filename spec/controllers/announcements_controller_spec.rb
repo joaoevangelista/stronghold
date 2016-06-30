@@ -2,24 +2,23 @@
 require 'rails_helper'
 
 RSpec.describe AnnouncementsController, type: :controller do
-
   login_user
 
   let(:valid_attributes) do
-    {title: 'New rules', description: 'As discussed today...', user_id: 1}
+    { title: 'New rules', description: 'As discussed today...', user_id: 1 }
   end
 
   let(:invalid_attributes) do
     # Missing title and user
-    {description: 'As discussed today...'}
+    { description: 'As discussed today...' }
   end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # AnnouncementsController. Be sure to keep this updated too.
-  let(:valid_session) {
+  let(:valid_session) do
     User.where(email: 'daisy@keep.com') || FactoryGirl.create(:user)
-  }
+  end
 
   describe 'GET #index' do
     it 'assigns all announcements as @announcements' do
@@ -98,42 +97,42 @@ RSpec.describe AnnouncementsController, type: :controller do
         announcement = Announcement.create! valid_attributes
         put :update, {
           id: announcement.to_param, announcement: new_attributes
-          }, valid_session
-          announcement.reload
-          expect(announcement.title).to eq('New rules')
-          expect(announcement.description).to eq('As discussed today we are going to...')
-        end
-
-        it 'assigns the requested announcement as @announcement' do
-          announcement = Announcement.create! valid_attributes
-          put :update, {
-            id: announcement.to_param, announcement: valid_attributes
-            }, valid_session
-            expect(assigns(:announcement)).to eq(announcement)
-          end
-
-          it 'redirects to the announcement' do
-            announcement = Announcement.create! valid_attributes
-            put :update, {
-              id: announcement.to_param, announcement: valid_attributes
-              }, valid_session
-              expect(response).to redirect_to(announcement)
-            end
-          end
-        end
-
-        describe 'DELETE #destroy' do
-          it 'destroys the requested announcement' do
-            announcement = Announcement.create! valid_attributes
-            expect do
-              delete :destroy, { id: announcement.to_param }, valid_session
-            end.to change(Announcement, :count).by(-1)
-          end
-
-          it 'redirects to the announcements list' do
-            announcement = Announcement.create! valid_attributes
-            delete :destroy, { id: announcement.to_param }, valid_session
-            expect(response).to redirect_to(announcements_url)
-          end
-        end
+        }, valid_session
+        announcement.reload
+        expect(announcement.title).to eq('New rules')
+        expect(announcement.description).to eq('As discussed today we are going to...')
       end
+
+      it 'assigns the requested announcement as @announcement' do
+        announcement = Announcement.create! valid_attributes
+        put :update, {
+          id: announcement.to_param, announcement: valid_attributes
+        }, valid_session
+        expect(assigns(:announcement)).to eq(announcement)
+      end
+
+      it 'redirects to the announcement' do
+        announcement = Announcement.create! valid_attributes
+        put :update, {
+          id: announcement.to_param, announcement: valid_attributes
+        }, valid_session
+        expect(response).to redirect_to(announcement)
+      end
+    end
+  end
+
+  describe 'DELETE #destroy' do
+    it 'destroys the requested announcement' do
+      announcement = Announcement.create! valid_attributes
+      expect do
+        delete :destroy, { id: announcement.to_param }, valid_session
+      end.to change(Announcement, :count).by(-1)
+    end
+
+    it 'redirects to the announcements list' do
+      announcement = Announcement.create! valid_attributes
+      delete :destroy, { id: announcement.to_param }, valid_session
+      expect(response).to redirect_to(announcements_url)
+    end
+  end
+end

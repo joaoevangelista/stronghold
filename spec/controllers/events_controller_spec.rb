@@ -28,19 +28,17 @@ RSpec.describe EventsController, type: :controller do
   login_user
 
   let(:valid_attributes) do
-    {title: 'Pool Party!',
+    { title: 'Pool Party!',
       description: 'There will be a pool party hosted at the condominium\'s pool',
       time: Time.now,
-      user_id: 1
-    }
+      user_id: 1 }
   end
 
   let(:invalid_attributes) do
     # Missing user_id
-    {title: 'Pool Party!',
+    { title: 'Pool Party!',
       description: 'There will be a pool party hosted at the condominium\'s pool',
-      time: Time.now
-    }
+      time: Time.now }
   end
 
   # This should return the minimal set of values that should be in the session
