@@ -15,7 +15,7 @@ class AnnouncementsController < AuthenticatedController
 
   # GET /announcements/new
   def new
-    @announcement = Announcement.new
+    @announcement = Announcement.new(user_id: current_user.id)
   end
 
   # GET /announcements/1/edit

@@ -4,6 +4,6 @@ class Announcement < ActiveRecord::Base
   tracked
 
   validates :user, :title, :description, presence: true
-  
+
   belongs_to :user
 end
