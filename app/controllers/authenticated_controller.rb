@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Controller that wraps common authenticated
 # logic to be applied to all controllers
 #
@@ -6,5 +7,5 @@
 #
 class AuthenticatedController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :show,
-                                          :index, :destroy]
+                                            :index, :destroy]
 end

@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-
   get '/' => 'home#index', as: :root
 
   get 'activities' => 'activity#index', as: :activities
