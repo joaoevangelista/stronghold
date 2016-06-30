@@ -2,4 +2,7 @@
 class Issue < ActiveRecord::Base
   include PublicActivity::Model
   tracked
+
+  validates :user, :title, :description, presence: true
+
 end
