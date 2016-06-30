@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
 
-  get '/' => 'home#index', as: :root_url
+  get '/' => 'home#index', as: :root_path
 
   get 'activities' => 'activity#index', as: :activities_path
 
