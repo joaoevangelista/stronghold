@@ -13,7 +13,7 @@
         new_announcement_path,
         class: ['btn', 'btn-sm', 'btn-default'] %>
         <%= link_to icon('trash-o', 'Delete', class: 'fa-fw'), @announcement,
-         method: :delete, data: { confirm: 'Are you sure?' },
+         method: :delete, data: { confirm: 'This can\'t be undone', title: 'Are you sure ?', fade: true  },
          class: ['btn', 'btn-sm', 'btn-danger'] %>
       </div>
     </div>
@@ -21,7 +21,8 @@
     <div class="col-xs-12 visible-xs">
       <div class="pull-right">
         <div class="dropdown">
-          <button class="btn btn-sm btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <button class="btn btn-sm btn-info dropdown-toggle" type="button"
+          id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             <span><i class="fa fa-cog"></i></span>
             <span class="caret"></span>
           </button>
@@ -63,7 +64,11 @@
           <%= distance_of_time_in_words @announcement.created_at, Time.zone.now %> ago
         </div>
         <div class="col-xs-12 col-md-3">
-          <span class="<%= @announcement.notify ? 'text-success': 'text-muted' %>">
+          <span class="<%= @announcement.notify ? 'text-success': 'text-muted' %>"
+            data-toggle="tooltip" data-placement="right" title="<%=
+                                                  @announcement.notify ?
+                                                  'People will be notified' :
+                                                  'People not notified'  %>">
             <i class="fa fa-fw fa-bell-o"></i>
           </span>
         </div>

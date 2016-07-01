@@ -4,8 +4,8 @@
 //= require nprogress
 //= require nprogress-turbolinks
 //= require bootstrap-sprockets
+//= require twitter/bootstrap/rails/confirm
 //= require_tree .
-
 
 NProgress.configure({
   showSpinner: false,
