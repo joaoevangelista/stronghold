@@ -5,7 +5,7 @@ class EventsController < AuthenticatedController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Event.order(:created_at).page params[:page]
   end
 
   # GET /events/1
