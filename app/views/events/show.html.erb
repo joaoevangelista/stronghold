@@ -56,7 +56,6 @@
           <hr>
           <div class="row">
             <div class="col-xs-12 col-md-3">
-              <span class="text-muted"><i class="fa fa-user fa-fw"></i></span>&nbsp;
               <%= image_tag gravatar(@event.user.email, 25), height: 25, class: 'img-circle' %>
               &nbsp;
               <%= mail_to  @event.user.email, @event.user.name %>
