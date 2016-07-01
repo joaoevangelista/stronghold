@@ -1,24 +1,79 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @announcement.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @announcement.description %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @announcement.user %>
-</p>
-
-<p>
-  <strong>Notify:</strong>
-  <%= @announcement.notify %>
-</p>
-
-<%= link_to 'Edit', edit_announcement_path(@announcement) %> |
-<%= link_to 'Back', announcements_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 hidden-xs">
+      <div class="pull-left">
+        <%= link_to icon('chevron-left', 'Back', class: 'fa-fw'), announcements_path,
+        class: ['btn', 'btn-sm', 'btn-default'] %>
+      </div>
+      <div class="pull-right">
+        <%= link_to icon('pencil', 'Edit', class: 'fa-fw'),
+        edit_announcement_path(@announcement),
+        class: ['btn', 'btn-sm', 'btn-default'] %>
+        <%= link_to icon('plus', 'New announcement', class: 'fa-fw'),
+        new_announcement_path,
+        class: ['btn', 'btn-sm', 'btn-default'] %>
+        <%= link_to icon('trash-o', 'Delete', class: 'fa-fw'), @announcement,
+         method: :delete, data: { confirm: 'Are you sure?' },
+         class: ['btn', 'btn-sm', 'btn-danger'] %>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div class="col-xs-12 visible-xs">
+      <div class="pull-right">
+        <div class="dropdown">
+          <button class="btn btn-sm btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <span><i class="fa fa-cog"></i></span>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+            <li><%= link_to 'Back', announcements_path%></li>
+            <li><%= link_to 'Edit', edit_announcement_path(@announcement)%></li>
+            <li><%= link_to 'New announcement', new_announcement_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Delete', @announcement, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- ./Mobile menu -->
+  </div>
+  <div class="row">
+    <div class="col-xs-12 spaced">
+      <h1 class="text-center">
+        <%= @announcement.title %>
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= render 'layouts/success_notice', notice: notice %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <hr>
+      <div class="row">
+        <div class="col-xs-12 col-md-3">
+          <%= image_tag gravatar(@announcement.user.email, 25), height: 25, class: 'img-circle' %>
+          &nbsp;
+          <%= mail_to @announcement.user.email, @announcement.user.name %>
+        </div>
+        <div class="col-xs-12 col-md-3">
+          <span class="text-muted"><i class="fa fa-fw fa-clock-o"></i></span>
+          <%= distance_of_time_in_words @announcement.created_at, Time.zone.now %> ago
+        </div>
+        <div class="col-xs-12 col-md-3">
+          <span class="<%= @announcement.notify ? 'text-success': 'text-muted' %>">
+            <i class="fa fa-fw fa-bell-o"></i>
+          </span>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+        <%= @announcement.description %>
+    </div>
+  </div>
+</div>
