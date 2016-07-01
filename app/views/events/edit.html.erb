@@ -2,10 +2,12 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="pull-left">
-        <%= link_to 'Back', events_path %>
+        <%= link_to icon('chevron-left', 'Back', class: 'fa-fw'), events_path,
+         class: ['btn', 'btn-sm', 'btn-default'] %>
       </div>
       <div class="pull-right">
-        <%= link_to 'Show', @event %>
+        <%= link_to icon('eye', 'Show', class: 'fa-fw'), @event,
+         class: ['btn', 'btn-sm', 'btn-default'] %>
       </div>
     </div>
   </div>
