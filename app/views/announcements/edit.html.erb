@@ -1,6 +1,26 @@
-<h1>Editing Announcement</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+        <div class="pull-left">
+          <%= link_to icon('chevron-left', 'Back', class: 'fa-fw'),
+          @announcement, class: ['btn','btn-sm','btn-default'] %>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center">Editing Announcement</h1>
+    </div>
+  </div>
+  <section class="form">
+    <%= render 'form' %>
+  </section>
+</div>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @announcement %> |
+
+
+
+
+|
 <%= link_to 'Back', announcements_path %>
