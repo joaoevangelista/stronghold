@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 hidden-xs">
-    <div class="pull-right">
-      <%= link_to icon('plus', 'Create Event', class: 'fa-fw'),
-       new_event_path, class: ['btn', 'btn-sm', 'btn-default'] %>
-    </div>
+      <div class="pull-right">
+        <%= link_to icon('plus', 'Create Event', class: 'fa-fw'),
+        new_event_path, class: ['btn', 'btn-sm', 'btn-default'] %>
+      </div>
     </div>
     <div class="col-xs-12 visible-xs">
       <div class="pull-right">
@@ -32,6 +32,9 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <% if @events.empty? %>
+      <p class="lead text-center">No events yet.</p>
+      <% else %>
       <div class="table-responsive">
 
         <table class="table table-striped">
@@ -44,18 +47,19 @@
 
           <tbody>
             <% @events.each do |event| %>
-              <tr>
-                <td>
-                  <span><i class="fa fa-sun-o"></i></span>
-                  <%= link_to event.title, event %>
-                </td>
-                <td><%= date_time event.time %></td>
-              </tr>
+            <tr>
+              <td>
+                <span><i class="fa fa-sun-o"></i></span>
+                <%= link_to event.title, event %>
+              </td>
+              <td><%= date_time event.time %></td>
+            </tr>
             <% end %>
           </tbody>
         </table>
 
       </div>
+      <% end %>
     </div>
   </div>
   <div class="row">
