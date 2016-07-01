@@ -6,12 +6,12 @@ module ApplicationHelper
   end
 
   def date_time(str)
-    return '' if not str
+    return '' unless str
     str.strftime('%b %d, %Y - %H:%M')
   end
 
   def date(str)
-    return '' if not str
+    return '' unless str
     str.strftime('%b %d, %Y')
   end
 end
