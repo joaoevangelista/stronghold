@@ -17,14 +17,14 @@ module ApplicationHelper
 
   def delete_link(text, path, options)
     link_to text, path,
-    method: :delete,
-    data: {
-      confirm: 'This can\'t be undone',
-      confirm_title: 'Are you sure ?',
-      confirm_fade: true,
-      confirm_cancel: 'No, keep all as is',
-      confirm_proceed: 'Yes, I understand'
-    },
-    class: options[:class]
+            method: :delete,
+            data: {
+              confirm: 'This can\'t be undone',
+              confirm_title: 'Are you sure ?',
+              confirm_fade: true,
+              confirm_cancel: 'No, keep all as is',
+              confirm_proceed: 'Yes, I understand'
+            },
+            class: options[:class]
   end
 end
