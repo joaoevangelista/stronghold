@@ -15,6 +15,9 @@
             <%= link_to icon('plus', 'Create event', class: 'fa-fw'),
             new_event_path,
             class: ['btn', 'btn-sm', 'btn-default'] %>
+            <%= link_to icon('trash-o', 'Delete', class: 'fa-fw'), @event,
+             method: :delete, data: { confirm: 'Are you sure?' },
+             class: ['btn', 'btn-sm', 'btn-danger'] %>
           </div>
         </div>
         <!-- Mobile menu -->
@@ -29,6 +32,8 @@
                 <li><%= link_to 'Back', events_path%></li>
                 <li><%= link_to 'Edit', edit_event_path(@event)%></li>
                 <li><%= link_to 'Create event', new_event_path %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'Delete', @event, method: :delete, data: { confirm: 'Are you sure?' } %></li>
               </ul>
             </div>
           </div>
