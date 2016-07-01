@@ -2,12 +2,6 @@
     border: 2px solid $gray;
     color: $input-gray;
     font-family: "Lato", Helvetica, Arial, sans-serif;
-    font-size: 15px;
-    line-height: 1.467;
-    padding: 8px 12px;
-    height: 42px;
-    border-radius: 6px;
-    box-shadow: none;
     -webkit-transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
     transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
 }
@@ -16,4 +10,8 @@
     border-color: $light-blue;
     outline: 0;
     box-shadow: none;
+}
+
+.form {
+  padding-bottom: 4rem;
 }
