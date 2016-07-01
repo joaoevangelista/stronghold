@@ -12,8 +12,7 @@
         <%= link_to icon('plus', 'New announcement', class: 'fa-fw'),
         new_announcement_path,
         class: ['btn', 'btn-sm', 'btn-default'] %>
-        <%= link_to icon('trash-o', 'Delete', class: 'fa-fw'), @announcement,
-         method: :delete, data: { confirm: 'This can\'t be undone', title: 'Are you sure ?', fade: true  },
+        <%= delete_link icon('trash-o', 'Delete', class: 'fa-fw'), @announcement,
          class: ['btn', 'btn-sm', 'btn-danger'] %>
       </div>
     </div>
