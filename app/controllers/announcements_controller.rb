@@ -5,7 +5,7 @@ class AnnouncementsController < AuthenticatedController
   # GET /announcements
   # GET /announcements.json
   def index
-    @announcements = Announcement.all
+    @announcements = Announcement.order(:updated_at).page params[:page]
   end
 
   # GET /announcements/1

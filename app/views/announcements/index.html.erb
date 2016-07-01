@@ -1,33 +1,53 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="pull-right">
+        <%= link_to icon('plus', 'New Announcement', class: 'fa-fw'),
+        new_announcement_path, class: ['btn','btn-sm','btn-default'] %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center">Newest Announcements</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 spaced">
+      <%= render 'layouts/success_notice', notice: notice %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 spaced">
+      <% if @announcements.empty? %>
+      <p class="lead text-center">No announcements yet made.</p>
+      <% else %>
+      <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th class="text-center">About</th>
+              <th class="text-center hidden-xs">Made by</th>
+              <th colspan="1"></th>
+            </tr>
+          </thead>
 
-<h1>Listing Announcements</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>User</th>
-      <th>Notify</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @announcements.each do |announcement| %>
-      <tr>
-        <td><%= announcement.title %></td>
-        <td><%= announcement.description %></td>
-        <td><%= announcement.user %></td>
-        <td><%= announcement.notify %></td>
-        <td><%= link_to 'Show', announcement %></td>
-        <td><%= link_to 'Edit', edit_announcement_path(announcement) %></td>
-        <td><%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Announcement', new_announcement_path %>
+          <tbody>
+            <% @announcements.each do |announcement| %>
+            <tr>
+              <td>
+                <%= link_to icon('bullhorn',announcement.title, class: 'fa-fw'), announcement %></td>
+                <td class="hidden-xs"><%= announcement.user.name %></td>
+                <td class="hidden-xs"><%= distance_of_time_in_words announcement.created_at, Time.zone.now %> ago</td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12"></div>
+    </div>
+  </div>
