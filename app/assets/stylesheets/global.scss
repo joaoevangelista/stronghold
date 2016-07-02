@@ -7,3 +7,10 @@ body {
 .spaced {
   margin-top: 1.5rem;
 }
+
+
+@media(min-width:768px) {
+  .spaced-xs {
+    margin-top: 1rem;
+  }
+}
