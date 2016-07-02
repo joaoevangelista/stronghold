@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 class IssueType < ActiveRecord::Base
   include PublicActivity::Model
-  tracked
+  tracked owner: proc { |controller, _model| controller.current_user }
 
   validates :name, presence: true
   validates :color, color: true
