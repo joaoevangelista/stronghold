@@ -17,7 +17,7 @@ RSpec.describe AnnouncementsController, type: :controller do
   # in order to pass any filters (e.g. authentication) defined in
   # AnnouncementsController. Be sure to keep this updated too.
   let(:valid_session) do
-    User.where(email: 'daisy@keep.com') || FactoryGirl.create(:user)
+    User.where(email: 'daisy@stronghold.com') || FactoryGirl.create(:user)
   end
 
   describe 'GET #index' do

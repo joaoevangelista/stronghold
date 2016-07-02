@@ -17,7 +17,7 @@ RSpec.describe IssueTypesController, type: :controller do
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # IssueTypesController. Be sure to keep this updated too.
-  let(:valid_session) { User.where(email: 'daisy@keep.com') || FactoryGirl.create(:user) }
+  let(:valid_session) { User.where(email: 'daisy@stronghold.com') || FactoryGirl.create(:user) }
 
   describe 'GET #index' do
     it 'assigns all issue_types as @issue_types' do
