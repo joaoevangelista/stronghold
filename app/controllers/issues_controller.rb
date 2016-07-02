@@ -16,7 +16,7 @@ class IssuesController < AuthenticatedController
 
   # GET /issues/new
   def new
-    @issue = Issue.new
+    @issue = Issue.new(user_id: current_user.id)
   end
 
   # GET /issues/1/edit
