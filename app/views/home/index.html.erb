@@ -18,7 +18,7 @@
   <div class="row">
     <div class="col-xs-12 text-center">
       <% if user_signed_in? %>
-      <%= link_to icon('paper-plane-o', 'Announcements', class: 'fa-fw'), announcements_path, class: ['btn', 'btn-success'] %>
+      <%= link_to icon('bullhorn', 'Announcements', class: 'fa-fw'), announcements_path, class: ['btn', 'btn-success'] %>
       <% else %>
       <%= link_to icon('sign-in', 'Sign In', class: 'fa-fw'), new_user_session_path, class: ['btn', 'btn-info'] %>
       <% end %>
