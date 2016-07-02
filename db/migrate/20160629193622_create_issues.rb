@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# :nodoc:
 class CreateIssues < ActiveRecord::Migration
   def change
     create_table :issues do |t|

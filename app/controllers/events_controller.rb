@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# :nodoc:
 class EventsController < AuthenticatedController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 

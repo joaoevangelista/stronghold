@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# :nodoc:
 class AnnouncementsController < AuthenticatedController
   before_action :set_announcement, only: [:show, :edit, :update, :destroy]
 

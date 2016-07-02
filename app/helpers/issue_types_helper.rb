@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# :nodoc:
 module IssueTypesHelper
   # Render a span label for the given severity
   def type_label(type)

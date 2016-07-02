@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# :nodoc:
 class IssueTypesController < AuthenticatedController
   before_action :set_issue_type, only: [:show, :edit, :update, :destroy]
 

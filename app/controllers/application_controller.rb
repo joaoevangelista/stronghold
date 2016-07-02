@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# :nodoc:
 class ApplicationController < ActionController::Base
   # StoreController to customize owner of public activity
   include PublicActivity::StoreController

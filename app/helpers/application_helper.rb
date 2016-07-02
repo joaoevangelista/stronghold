@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# :nodoc:
 module ApplicationHelper
   def gravatar(email, size = 50)
     hash = Digest::MD5::hexdigest email

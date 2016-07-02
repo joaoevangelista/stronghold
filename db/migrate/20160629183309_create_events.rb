@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# :nodoc:
 class CreateEvents < ActiveRecord::Migration
   def change
     create_table :events do |t|
