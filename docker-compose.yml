@@ -1,0 +1,16 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+      - '80:3000'
+    environment:
+      - 'RAILS_ENV=production'
+    links:
+      - postgres
+    depends_on:
+      - postgres
+  postgres:
+    image: 'postgres:latest'
+    ports:
+      - '5432:5432'

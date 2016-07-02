@@ -6,8 +6,7 @@ services:
 stages:
   - lint
   - test
-  - post-test
-  - docs
+  - registry
 
 variables:
   RAILS_ENV: test
@@ -33,7 +32,20 @@ rubocop:
 rspec:
   stage: test
   script:
-
   - bundle exec rspec
   tags:
   - docker
+
+build:image:
+  image: docker:git
+  services:
+    - docker:dind
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+    - docker build -t registry.gitlab.com/joaoevangelista/stronghold .
+    - docker push registry.gitlab.com/joaoevangelista/stronghold:$CI_BUILD_TAG
+  tags:
+    - docker
+  only:
+    - tags
+  when: on_success
