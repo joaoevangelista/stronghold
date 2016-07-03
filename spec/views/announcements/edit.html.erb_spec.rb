@@ -17,7 +17,7 @@ RSpec.describe 'announcements/edit', type: :view do
     assert_select 'form[action=?][method=?]', announcement_path(@announcement), 'post' do
       assert_select 'input#announcement_title[name=?]', 'announcement[title]'
 
-      assert_select 'input#announcement_description[name=?]', 'announcement[description]'
+      assert_select 'textarea#announcement_description[name=?]', 'announcement[description]'
 
       assert_select 'input#announcement_user_id[name=?]', 'announcement[user_id]'
 
