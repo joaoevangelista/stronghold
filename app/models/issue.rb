@@ -6,6 +6,8 @@ class Issue < ActiveRecord::Base
 
   validates :user, :title, :description, presence: true
 
+  paginates_per 20
+
   belongs_to :issue_type
   belongs_to :user
 end

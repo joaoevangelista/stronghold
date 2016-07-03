@@ -3,6 +3,7 @@
 module IssueTypesHelper
   # Render a span label for the given severity
   def type_label(type)
+    return "<span class='label label-default'>Not set</span>".html_safe unless type
     text_color = text_color_for_bg(type.color)
     "<span class='label' style='background: #{type.color} ; color: #{text_color}'>
     #{type.name}</span>".html_safe

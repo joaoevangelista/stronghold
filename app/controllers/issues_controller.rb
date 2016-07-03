@@ -6,7 +6,7 @@ class IssuesController < AuthenticatedController
   # GET /issues
   # GET /issues.json
   def index
-    @issues = Issue.all
+    @issues = Issue.order(:updated_at).page params[:page]
   end
 
   # GET /issues/1
