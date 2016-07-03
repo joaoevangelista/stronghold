@@ -5,13 +5,13 @@
     <div class="row">
       <div class="col-xs-12">
         <p>
-          <span><i class="fa fa-2x fa-pencil-square-o"></i></span>
+          <span><i class="fa fa-2x fa-check-square-o"></i></span>
           &nbsp;&nbsp;
           <!--<%= image_tag gravatar(a.trackable.user.email, 40), height: 40, class: 'img-circle' %>-->
           <%= mail_to a.trackable.user.email, a.trackable.user.name %>
-          <span>updated</span>
+          <span>changed</span>
           <%= link_to a.trackable.title, issue_path(a.trackable) %>
-          <span>issue.</span>
+          <span> status to resolved</span>
         </p>
       </div>
     </div>

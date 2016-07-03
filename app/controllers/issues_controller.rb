@@ -1,22 +1,23 @@
 # frozen_string_literal: true
 # :nodoc:
 class IssuesController < AuthenticatedController
-  before_action :set_issue, only: [:show, :edit, :update, :destroy]
+  before_action :set_issue, only: [:show, :edit, :update, :destroy, :open, :close]
 
   # GET /issues
   # GET /issues.json
   def index
-    @issues = Issue.all
+    @issues = Issue.order(:updated_at).page params[:page]
   end
 
   # GET /issues/1
   # GET /issues/1.json
   def show
+    @assignee = User.find(@issue.assignee_id) if @issue.assignee_id
   end
 
   # GET /issues/new
   def new
-    @issue = Issue.new
+    @issue = Issue.new(user_id: current_user.id)
   end
 
   # GET /issues/1/edit
@@ -48,6 +49,35 @@ class IssuesController < AuthenticatedController
         format.json { render :show, status: :ok, location: @issue }
       else
         format.html { render :edit }
+        format.json { render json: @issue.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT /issues/1/open
+  def open
+    respond_to do |format|
+      if @issue.update(is_resolved: false)
+        @issue.create_activity :issue_opened
+        format.html { redirect_to @issue, notice: 'Issue is now open' }
+        format.json { render :show, status: :ok, location: @issue }
+      else
+        format.html { render :show }
+        format.json { render json: @issue.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /issues/1/close
+
+  def close
+    respond_to do |format|
+      if @issue.update(is_resolved: true)
+        @issue.create_activity :issue_closed
+        format.html { redirect_to @issue, notice: 'Issue is now open' }
+        format.json { render :show, status: :ok, location: @issue }
+      else
+        format.html { render :show }
         format.json { render json: @issue.errors, status: :unprocessable_entity }
       end
     end

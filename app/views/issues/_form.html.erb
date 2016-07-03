@@ -1,45 +1,93 @@
-<%= form_for(@issue) do |f| %>
-  <% if @issue.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@issue.errors.count, "error") %> prohibited this issue from being saved:</h2>
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <%= form_for(@issue) do |f| %>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group <%= @issue.errors[:title].empty? ? '' : 'has-error' %>">
+              <%= f.label :title, class: 'control-label' %>
+              <%= f.text_field :title, class: 'form-control' %>
+              <% if @issue.errors[:title].any? %>
+              <% @issue.errors[:title].each do |message| %>
+              <span class="help-block"><%= message.capitalize %></span>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group <%= @issue.errors[:description].empty? ? '' : 'has-error' %>">
+              <%= f.label :description, class: 'control-label' %>
+              <%= f.text_area :description, class: 'form-control', rows: 12 %>
+              <% if @issue.errors[:description].any? %>
+              <% @issue.errors[:description].each do |message| %>
+              <span class="help-block"><%= message.capitalize %></span>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group <%= @issue.errors[:is_resolved].empty? ? '' : 'has-error' %>">
+              <%= f.label :is_resolved, class: 'control-label' %>
+              <%= f.check_box :is_resolved %>
+              <% if @issue.errors[:is_resolved].any? %>
+              <% @issue.errors[:is_resolved].each do |message| %>
+              <span class="help-block"><%= message.capitalize %></span>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
 
-      <ul>
-      <% @issue.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group <%= @issue.errors[:due_date].empty? ? '' : 'has-error' %>">
+              <%= f.label :due_date, class: 'control-label' %>
+              <%= f.date_select :due_date,{ include_blank: true, default: nil}, class: 'form-control date' %>
+              <% if @issue.errors[:due_date].any? %>
+              <% @issue.errors[:due_date].each do |message| %>
+              <span class="help-block"><%= message.capitalize %></span>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group <%= @issue.errors[:assignee_id].empty? ? '' : 'has-error' %>">
+              <%= f.label :assignee_id, class: 'control-label' %>
+              <%= f.collection_select :assignee_id, User.all, :id, :name,  { prompt: 'No one'}, class: 'form-control' %>
+              <% if @issue.errors[:assignee_id].any? %>
+              <% @issue.errors[:assignee_id].each do |message| %>
+              <span class="help-block"><%= message.capitalize %></span>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group <%= @issue.errors[:issue_type_id].empty? ? '' : 'has-error' %>">
+              <%= f.label :issue_type_id, class: 'control-label' %>
+              <%= f.collection_select :issue_type_id, IssueType.all, :id, :name , { prompt: 'No one'}, class: 'form-control' %>
+              <% if @issue.errors[:issue_type_id].any? %>
+              <% @issue.errors[:issue_type_id].each do |message| %>
+              <span class="help-block"><%= message.capitalize %></span>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <%= f.hidden_field :user_id %>
+          <button type="submit" class="btn btn-success">
+            <span><i class="fa fa-fw fa-check"></i></span>
+             Save
+           </button>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :is_resolved %><br>
-    <%= f.check_box :is_resolved %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :due_date %><br>
-    <%= f.date_select :due_date %>
-  </div>
-  <div class="field">
-    <%= f.label :assignee_id %><br>
-    <%= f.number_field :assignee_id %>
-  </div>
-  <div class="field">
-    <%= f.label :issue_type_id %><br>
-    <%= f.text_field :issue_type_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>

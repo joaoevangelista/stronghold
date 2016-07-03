@@ -1,39 +1,115 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 hidden-xs">
+      <div class="pull-left">
+          <%= link_to icon('chevron-left', 'Back', class: 'fa-fw'), issues_path,
+           class: ['btn','btn-sm','btn-default']  %>
+      </div>
+      <div class="pull-right">
+        <%= link_to icon('pencil', 'Edit', class: 'fa-fw'), edit_issue_path(@issue),
+        class: ['btn','btn-sm','btn-default'] %>
+        <%= link_to icon('plus', 'New Issue', class: 'fa-fw'), new_issue_path,
+        class: ['btn','btn-sm','btn-default'] %>
+      </div>
+    </div>
+    <div class="col-xs-12 visible-xs">
+      <div class="pull-right">
+        <div class="dropdown">
+          <button class="btn btn-sm btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <span><i class="fa fa-cog"></i></span>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+            <li><%= link_to 'Back', issues_path%></li>
+            <li><%= link_to 'Edit', edit_issue_path(@issue)%></li>
+            <li><%= link_to 'New Issue', new_issue_path %></li>
+            <li class="divider"></li>
+            <li><%= delete_link 'Delete', @issue %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= render 'layouts/success_notice', notice: notice %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center"><%= @issue.title %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <hr>
+      <div class="row">
+        <div class="col-xs-12 col-md-8">
+          <% if @issue.is_resolved %>
+            <span class="label label-lg label-success">Resolved</span>
+            <% else %>
+            <span class="label label-lg label-warning">Open</span>
+            <% end %>
+            &nbsp;&nbsp;&nbsp;
+            Create by
+            &nbsp;
+             <%= image_tag gravatar(@issue.user.email, 35), height: 35,
+             class: 'img-circle' %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @issue.title %>
-</p>
+             <%= @issue.user.name %>,
+             <%= distance_of_time_in_words @issue.created_at, Time.zone.now %> ago
 
-<p>
-  <strong>Description:</strong>
-  <%= @issue.description %>
-</p>
-
-<p>
-  <strong>Is resolved:</strong>
-  <%= @issue.is_resolved %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @issue.user %>
-</p>
-
-<p>
-  <strong>Due date:</strong>
-  <%= @issue.due_date %>
-</p>
-
-<p>
-  <strong>Assignee:</strong>
-  <%= @issue.assignee_id %>
-</p>
-
-<p>
-  <strong>Issue type:</strong>
-  <%= @issue.issue_type %>
-</p>
-
-<%= link_to 'Edit', edit_issue_path(@issue) %> |
-<%= link_to 'Back', issues_path %>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <div class="pull-md-right">
+          <% if @issue.is_resolved %>
+          <%= link_to 'Reopen', open_issue_path(@issue), class: ['btn','btn-sm','btn-primary'], method: :put %>
+          <% else %>
+          <%= link_to 'Resolve', close_issue_path(@issue), class: ['btn','btn-sm','btn-default'], method: :delete %>
+          <% end %>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <%= simple_format @issue.description %>
+    </div>
+    <div class="col-xs-12 col-md-3">
+      <div class="row">
+        <div class="col-xs-12">
+          <p class="text-muted">Due date</p>
+          <span><%= @issue.due_date ? date(@issue.due_date) : 'Not Set' %></span>
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <p class="text-muted">Assignee</p>
+          <span>
+            <% if @assignee %>
+            <%= image_tag(gravatar(@assignee.email, 25), height: 25, class: 'img-circle') %>
+            <%= @assignee.name %>
+            <% else %>
+            Not set
+            <% end %>
+          </span>
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <p class="text-muted">Type</p>
+          <% if @issue.issue_type %>
+          <%= type_label @issue.issue_type %>
+          <% else %>
+          Not set
+          <% end %>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

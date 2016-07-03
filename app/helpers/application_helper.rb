@@ -16,7 +16,7 @@ module ApplicationHelper
     str.strftime('%b %d, %Y')
   end
 
-  def delete_link(text, path, options)
+  def delete_link(text, path, options = {})
     link_to text, path,
             method: :delete,
             data: {
