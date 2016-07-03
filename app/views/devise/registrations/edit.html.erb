@@ -1,4 +1,4 @@
-<div class="container spaced">
+<div class="container spaced form">
   <div class="col-md-6 col-md-offset-3">
     <div class="row">
       <div class="col-md-12">
@@ -17,9 +17,15 @@
           <%= devise_error_messages! %>
         </div>
         <% end %>
-
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-xs-12 text-center">
+            <%= image_tag gravatar(resource.email, 70), height: 70, class: 'img-circle' %>
+            <br>
+            <small>Image from <a href="https://gravatar.com">Gravatar</a></small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 spaced">
             <div class="form-group">
               <%= f.label :email, class: 'control-label' %>
               <%= f.email_field :email, autofocus: true, class: 'form-control' %>
