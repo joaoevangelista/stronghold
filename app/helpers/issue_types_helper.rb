@@ -5,8 +5,8 @@ module IssueTypesHelper
   def type_label(type, options = {})
     return "<span class='label label-default'>Not set</span>".html_safe unless type
     text_color = text_color_for_bg(type.color)
-    "<span class='label #{options[:class]}' style='background: #{type.color} ; color: #{text_color}'>
-    #{type.name}</span>".html_safe
+    "<span class='label #{options[:class]}' style='background: #{type.color};
+     color: #{text_color}'> #{type.name}</span>".html_safe
   end
 
   # Find a sutiable color based on the background color

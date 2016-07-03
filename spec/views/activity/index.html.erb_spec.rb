@@ -2,5 +2,7 @@
 require 'rails_helper'
 
 RSpec.describe 'activity/index.html.erb', type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'can render the view without missing partials' do
+    render
+  end
 end
