@@ -1,14 +1,52 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="pull-left">
+        <%= link_to icon('chevron-left', 'Back', class: 'fa-fw'), issue_types_path,
+        class: 'btn btn-sm btn-default' %>
+      </div>
+    </div>
+  </div>
+  <div class="row spaced">
+    <div class="col-xs-12 spaced">
+      <p><%= type_label @issue_type, class: 'label-lg' %></p>
+    </div>
+  </div>
+  <div class="row spaced">
+    <div class="col-xs-12 spaced">
+      <hr>
+      <% if @issue_type.issues.empty? %>
+      <p class="lead text-center">No issues with this type yet reported.</p>
+      <% else %>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Status</th>
+              <th class="hidden-xs">Reporter</th>
+            </tr>
+          </thead>
 
-<p>
-  <strong>Name:</strong>
-  <%= @issue_type.name %>
-</p>
+          <tbody>
+            <% @issue_type.issues.each do |issue| %>
+            <tr>
+              <td><%= link_to issue.title, issue %></td>
+              <td>
+                <% if issue.is_resolved %>
+                <span class="label label-success">Resolved</span>
+                <% else %>
+                <span class="label label-warning">Open</span>
+                <% end %>
+              </td>
+              <td class="hidden-xs"><%= issue.user.name %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
 
-<p>
-  <strong>Color:</strong>
-  <%= @issue_type.color %>
-</p>
-
-<%= link_to 'Edit', edit_issue_type_path(@issue_type) %> |
-<%= link_to 'Back', issue_types_path %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
