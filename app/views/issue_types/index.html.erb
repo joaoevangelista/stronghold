@@ -22,7 +22,7 @@
       <% if @issue_types.empty? %>
          <p class="lead text-center">No types yet created.</p>
       <% else %>
-        <div class="table-responsive">
+        <div class="">
           <table class="table">
             <thead>
               <tr>
@@ -37,13 +37,28 @@
                   <td>
                     <%= link_to_type issue_type %>
                   </td>
-                  <td class="table-option"><%= link_to icon('eye', 'Show', class: 'fa-fw'), issue_type %></td>
+                  <td class="hidden-xs table-option"><%= link_to icon('eye', 'Show', class: 'fa-fw'), issue_type %></td>
 
-                  <td class="table-option"><%= link_to icon('pencil', 'Edit', class: 'fa-fw'), edit_issue_type_path(issue_type) %></td>
-                  <td><%= delete_link icon('trash-o', 'Remove', class: 'fa-fw'), issue_type %></td>
+                  <td class="hidden-xs table-option"><%= link_to icon('pencil', 'Edit', class: 'fa-fw'), edit_issue_type_path(issue_type) %></td>
+                  <td class="hidden-xs table-option"><%= delete_link icon('trash-o', 'Remove', class: 'fa-fw'), issue_type %></td>
                   <td class="table-option">
                     <span><%= issue_type.issues.select{ |i| !i.is_resolved }.count %></span>
                     <span>opened issue(s)</span>
+                  </td>
+                  <td class="visible-xs">
+                    <div class="dropdown">
+                      <button class="btn btn-sm btn-link dropdown-toggle" type="button"
+                      id="issue_type_options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <span><i class="fa fa-cog"></i></span>
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                        <li><%= link_to 'Show', issue_type %></li>
+                        <li><%= link_to 'Edit', edit_issue_type_path(issue_type) %></li>
+                        <li class="divider"></li>
+                        <li><%= delete_link 'Remove', issue_type %></li>
+                      </ul>
+                    </div>
                   </td>
                 </tr>
               <% end %>
