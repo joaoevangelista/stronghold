@@ -12,10 +12,7 @@ class IssuesController < AuthenticatedController
   # GET /issues/1
   # GET /issues/1.json
   def show
-    if @issue.assignee_id
-      @assignee = User.find(@issue.assignee_id)
-    end
-
+    @assignee = User.find(@issue.assignee_id) if @issue.assignee_id
   end
 
   # GET /issues/new
@@ -61,7 +58,8 @@ class IssuesController < AuthenticatedController
   def open
     respond_to do |format|
       if @issue.update(is_resolved: false)
-        format.html { redirect_to @issue, notice: 'Issue is now open'}
+        @issue.create_activity :issue_opened
+        format.html { redirect_to @issue, notice: 'Issue is now open' }
         format.json { render :show, status: :ok, location: @issue }
       else
         format.html { render :show }
@@ -69,14 +67,14 @@ class IssuesController < AuthenticatedController
       end
     end
   end
-
 
   # DELETE /issues/1/close
 
   def close
     respond_to do |format|
       if @issue.update(is_resolved: true)
-        format.html { redirect_to @issue, notice: 'Issue is now open'}
+        @issue.create_activity :issue_closed
+        format.html { redirect_to @issue, notice: 'Issue is now open' }
         format.json { render :show, status: :ok, location: @issue }
       else
         format.html { render :show }
@@ -84,7 +82,6 @@ class IssuesController < AuthenticatedController
       end
     end
   end
-
 
   # DELETE /issues/1
   # DELETE /issues/1.json
@@ -106,6 +103,6 @@ class IssuesController < AuthenticatedController
   # Never trust parameters from the scary internet, only allow the white list through.
   def issue_params
     params.require(:issue).permit(:title, :description, :is_resolved,
-    :user_id, :due_date, :assignee_id, :issue_type_id)
+                                  :user_id, :due_date, :assignee_id, :issue_type_id)
   end
 end

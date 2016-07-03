@@ -64,7 +64,6 @@ group :development, :test do
   else
     gem 'sqlite3', platform: :ruby
   end
-
 end
 
 group :development do

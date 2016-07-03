@@ -1,0 +1,20 @@
+<% if a.trackable %>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>
+          <span><i class="fa fa-2x fa-square-o"></i></span>
+          &nbsp;&nbsp;
+          <!--<%= image_tag gravatar(a.trackable.user.email, 40), height: 40, class: 'img-circle' %>-->
+          <%= mail_to a.trackable.user.email, a.trackable.user.name %>
+          <span>changed</span>
+          <%= link_to a.trackable.title, issue_path(a.trackable) %>
+          <span> status to open</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
