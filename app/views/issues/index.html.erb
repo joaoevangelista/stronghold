@@ -47,7 +47,7 @@
                 <% end %>
               </td>
               <td class="hidden-xs"><%= issue.user.name %></td>
-              <td class="hidden-xs"><%= type_label issue.issue_type %></td>
+              <td class="hidden-xs"><%= link_to_type issue.issue_type %></td>
             </tr>
             <% end %>
           </tbody>

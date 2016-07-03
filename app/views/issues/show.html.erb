@@ -106,7 +106,7 @@
         <div class="col-xs-12">
           <p class="text-muted">Type</p>
           <% if @issue.issue_type %>
-          <%= type_label @issue.issue_type %>
+          <%=  link_to_type @issue.issue_type %>
           <% else %>
           Not set
           <% end %>

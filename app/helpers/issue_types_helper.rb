@@ -23,6 +23,11 @@ module IssueTypesHelper
       '#FFFFFF'
     end
   end
+
+  def link_to_type(type)
+    return '' unless type
+    link_to type_label(type), issue_type_path(type)
+  end
 end
 
 def decide_color(r, g, b)
