@@ -12,5 +12,5 @@ RUN apk --update add --virtual build-dependencies build-base ruby-dev openssl-de
     bundle install --without development test && \
     apk del build-dependencies
 EXPOSE 3000
-echo $PWD
-ENTRYPOINT ["./bin/bundle exec rails s "-p 3000 -b '0.0.0.0']
+
+ENTRYPOINT ["/bin/bundle exec rails s "-p 3000 -b '0.0.0.0']
