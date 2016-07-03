@@ -12,6 +12,5 @@ RSpec.describe 'issue_types/show', type: :view do
   it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/Name/)
-    expect(rendered).to match(/Color/)
   end
 end
