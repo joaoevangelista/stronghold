@@ -7,5 +7,5 @@ class IssueType < ActiveRecord::Base
   validates :name, presence: true
   validates :color, color: true
 
-  has_many :issues
+  has_many :issues, dependent: :nullify
 end

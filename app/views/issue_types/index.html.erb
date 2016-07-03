@@ -1,29 +1,56 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="pull-right">
+        <%= link_to 'New Issue type', new_issue_type_path %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center">Types</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= render 'layouts/success_notice', notice: notice %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <% if @issue_types.empty? %>
+         <p class="lead text-center">No types yet created.</p>
+      <% else %>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th colspan="4"></th>
+              </tr>
+            </thead>
 
-<h1>Listing Issue Types</h1>
+            <tbody>
+              <% @issue_types.each do |issue_type| %>
+                <tr>
+                  <td>
+                    <%= link_to_type issue_type %>
+                  </td>
+                  <td><%= link_to icon('eye', 'Show', class: 'fa-fw'), issue_type %></td>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Color</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+                  <td><%= link_to icon('pencil', 'Edit', class: 'fa-fw'), edit_issue_type_path(issue_type) %></td>
+                  <td><%= delete_link icon('trash-o', 'Remove', class: 'fa-fw'), issue_type %></td>
+                  <td>
+                    <span><%= issue_type.issues.select{ |i| !i.is_resolved }.count %></span>
+                    <span>opened issue(s)</span>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
 
-  <tbody>
-    <% @issue_types.each do |issue_type| %>
-      <tr>
-        <td><%= issue_type.name %></td>
-        <td><%= issue_type.color %></td>
-        <td><%= link_to 'Show', issue_type %></td>
-        <td><%= link_to 'Edit', edit_issue_type_path(issue_type) %></td>
-        <td><%= link_to 'Destroy', issue_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Issue type', new_issue_type_path %>
+        </div>
+       <% end %>
+    </div>
+  </div>
+</div>
