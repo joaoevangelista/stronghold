@@ -17,9 +17,7 @@ RSpec.describe 'issues/show', type: :view do
     render
     expect(rendered).to match(/Title/)
     expect(rendered).to match(/Description/)
-    expect(rendered).to match(/false/)
-    expect(rendered).to match(//)
-    expect(rendered).to match(/1/)
-    expect(rendered).to match(//)
+    expect(rendered).to match(/Daisy/)
+    expect(rendered).to match(/Problem/)
   end
 end

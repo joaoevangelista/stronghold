@@ -19,15 +19,15 @@ RSpec.describe 'issues/edit', type: :view do
     assert_select 'form[action=?][method=?]', issue_path(@issue), 'post' do
       assert_select 'input#issue_title[name=?]', 'issue[title]'
 
-      assert_select 'input#issue_description[name=?]', 'issue[description]'
+      assert_select 'textarea#issue_description[name=?]', 'issue[description]'
 
       assert_select 'input#issue_is_resolved[name=?]', 'issue[is_resolved]'
 
       assert_select 'input#issue_user_id[name=?]', 'issue[user_id]'
 
-      assert_select 'input#issue_assignee_id[name=?]', 'issue[assignee_id]'
+      assert_select 'select#issue_assignee_id[name=?]', 'issue[assignee_id]'
 
-      assert_select 'input#issue_issue_type_id[name=?]', 'issue[issue_type_id]'
+      assert_select 'select#issue_issue_type_id[name=?]', 'issue[issue_type_id]'
     end
   end
 end
