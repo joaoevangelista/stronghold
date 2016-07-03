@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 # :nodoc:
 class IssuesController < AuthenticatedController
-  before_action :set_issue, only: [:show, :edit, :update, :destroy]
+  before_action :set_issue, only: [:show, :edit, :update, :destroy, :open, :close]
 
   # GET /issues
   # GET /issues.json
@@ -13,7 +13,7 @@ class IssuesController < AuthenticatedController
   # GET /issues/1.json
   def show
     if @issue.assignee_id
-      @assignee = User.find(@issue.assignee_id)  
+      @assignee = User.find(@issue.assignee_id)
     end
 
   end
@@ -57,6 +57,35 @@ class IssuesController < AuthenticatedController
     end
   end
 
+  # PUT /issues/1/open
+  def open
+    respond_to do |format|
+      if @issue.update(is_resolved: false)
+        format.html { redirect_to @issue, notice: 'Issue is now open'}
+        format.json { render :show, status: :ok, location: @issue }
+      else
+        format.html { render :show }
+        format.json { render json: @issue.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
+  # DELETE /issues/1/close
+
+  def close
+    respond_to do |format|
+      if @issue.update(is_resolved: true)
+        format.html { redirect_to @issue, notice: 'Issue is now open'}
+        format.json { render :show, status: :ok, location: @issue }
+      else
+        format.html { render :show }
+        format.json { render json: @issue.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
   # DELETE /issues/1
   # DELETE /issues/1.json
   def destroy
@@ -77,6 +106,6 @@ class IssuesController < AuthenticatedController
   # Never trust parameters from the scary internet, only allow the white list through.
   def issue_params
     params.require(:issue).permit(:title, :description, :is_resolved,
-                                  :user_id, :due_date, :assignee_id, :issue_type_id)
+    :user_id, :due_date, :assignee_id, :issue_type_id)
   end
 end

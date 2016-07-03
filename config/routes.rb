@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   resources :announcements
   resources :events
   resources :events
-  resources :issues
+  resources :issues do
+    put :open, on: :member
+    delete :close, on: :member
+  end
   resources :issue_types
   devise_for :users, controllers: { registrations: 'registrations' }
   # The priority is based upon order of creation: first created -> highest priority.
