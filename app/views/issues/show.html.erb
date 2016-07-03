@@ -2,14 +2,16 @@
   <div class="row">
     <div class="col-md-12 hidden-xs">
       <div class="pull-left">
-          <%= link_to icon('chevron-left', 'Back', class: 'fa-fw'), issues_path,
-           class: ['btn','btn-sm','btn-default']  %>
+        <%= link_to icon('chevron-left', 'Back', class: 'fa-fw'), issues_path,
+        class: ['btn','btn-sm','btn-default']  %>
       </div>
       <div class="pull-right">
         <%= link_to icon('pencil', 'Edit', class: 'fa-fw'), edit_issue_path(@issue),
         class: ['btn','btn-sm','btn-default'] %>
         <%= link_to icon('plus', 'New Issue', class: 'fa-fw'), new_issue_path,
         class: ['btn','btn-sm','btn-default'] %>
+        <%= link_to icon('plus', 'New Type', class: 'fa-fw'), new_issue_type_path,
+        class: 'btn btn-sm btn-default' %>
       </div>
     </div>
     <div class="col-xs-12 visible-xs">
@@ -23,6 +25,7 @@
             <li><%= link_to 'Back', issues_path%></li>
             <li><%= link_to 'Edit', edit_issue_path(@issue)%></li>
             <li><%= link_to 'New Issue', new_issue_path %></li>
+            <li><%= link_to 'New Type', new_issue_type_path %></li>
             <li class="divider"></li>
             <li><%= delete_link 'Delete', @issue %></li>
           </ul>
@@ -46,27 +49,27 @@
       <div class="row">
         <div class="col-xs-12 col-md-8">
           <% if @issue.is_resolved %>
-            <span class="label label-lg label-success">Resolved</span>
-            <% else %>
-            <span class="label label-lg label-warning">Open</span>
-            <% end %>
-            &nbsp;&nbsp;&nbsp;
-            Create by
-            &nbsp;
-             <%= image_tag gravatar(@issue.user.email, 35), height: 35,
-             class: 'img-circle' %>
+          <span class="label label-lg label-success">Resolved</span>
+          <% else %>
+          <span class="label label-lg label-warning">Open</span>
+          <% end %>
+          &nbsp;&nbsp;&nbsp;
+          Create by
+          &nbsp;
+          <%= image_tag gravatar(@issue.user.email, 35), height: 35,
+          class: 'img-circle' %>
 
-             <%= @issue.user.name %>,
-             <%= distance_of_time_in_words @issue.created_at, Time.zone.now %> ago
+          <%= @issue.user.name %>,
+          <%= distance_of_time_in_words @issue.created_at, Time.zone.now %> ago
 
         </div>
         <div class="col-xs-12 col-md-4">
           <div class="pull-md-right">
-          <% if @issue.is_resolved %>
-          <%= link_to 'Reopen', open_issue_path(@issue), class: ['btn','btn-sm','btn-primary'], method: :put %>
-          <% else %>
-          <%= link_to 'Resolve', close_issue_path(@issue), class: ['btn','btn-sm','btn-default'], method: :delete %>
-          <% end %>
+            <% if @issue.is_resolved %>
+            <%= link_to 'Reopen', open_issue_path(@issue), class: ['btn','btn-sm','btn-primary'], method: :put %>
+            <% else %>
+            <%= link_to 'Resolve', close_issue_path(@issue), class: ['btn','btn-sm','btn-default'], method: :delete %>
+            <% end %>
           </div>
         </div>
       </div>

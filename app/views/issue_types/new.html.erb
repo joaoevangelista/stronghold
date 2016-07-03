@@ -1,5 +1,16 @@
-<h1>New Issue Type</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', issue_types_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <%= link_to icon('chevron-left', 'Back', class: 'fa-fw'), issue_types_path,
+      class: ['btn','btn-sm','btn-default'] %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 spaced">
+      <h1 class="text-center">New Issue Type</h1>
+    </div>
+  </div>
+  <section class="form">
+    <%= render 'form' %>
+  </section>
+</div>
