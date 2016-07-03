@@ -12,6 +12,10 @@ class IssuesController < AuthenticatedController
   # GET /issues/1
   # GET /issues/1.json
   def show
+    if @issue.assignee_id
+      @assignee = User.find(@issue.assignee_id)  
+    end
+
   end
 
   # GET /issues/new
