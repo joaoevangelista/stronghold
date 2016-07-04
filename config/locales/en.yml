@@ -72,8 +72,8 @@ en:
       new: "New Announcement"
     made_by_title: "Made by"
     new_title: "New Announcement"
-    plural: Announcements
-    singular: Announcement
+    plural: 'Announcements'
+    singular: 'Announcement'
     update_message: "Announcement was successfully updated."
   app:
     description: "Your tool fo a better community"

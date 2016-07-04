@@ -60,7 +60,7 @@ en:
       update:
         action: 'foi atualizado.'
         entity: 'Tipo'
-    updated: 'atualizado'
+    updated: 'atualizou'
   announcement:
     about_title: 'Sobre'
     create_message: 'Aúncio foi criado com sucesso.'
@@ -118,34 +118,34 @@ en:
     type: 'Tipo'
     update_message: 'Questão foi atualizada com sucesso.'
   issue_type:
-    create_message: "Type was successfully created."
-    destroy_message: "Type was successfully destroyed."
-    edit_title: "Editing Issue Type"
-    empty_array: "No types yet created."
-    empty_issue_array: "No issues with this type yet reported."
-    name: Name
-    new_title: "New Issue Type"
-    open: Open
-    opened_issues_count: "opened issue(s)"
-    plural: Types
-    reporter: Reporter
-    resolved: Resolved
-    singular: Type
-    status: Status
-    type: Title
-    update_message: "Type was successfully updated."
+    create_message: "Tipo foi criado com sucesso."
+    destroy_message: "Tipo foi removido com sucesso."
+    edit_title: 'Editando Tipo de questão'
+    empty_array: 'Nenhum tipo de questão criado ainda.'
+    empty_issue_array: 'Nenhuma questão com esse tipo ainda não foi reportada.'
+    name: 'Nome'
+    new_title: 'Novo Tipo de questão'
+    open: 'Abrir'
+    opened_issues_count: 'questões aberta(s)'
+    plural: 'Tipos'
+    reporter: 'Relator'
+    resolved: 'Resolvido'
+    singular: 'Tipo'
+    status: 'Estado'
+    type: 'Título'
+    update_message: 'Tipo foi atualizado com sucesso.'
   links:
-    back: Back
-    delete: Delete
-    edit: Edit
-    remove: Remove
-    show: Show
+    back: 'Voltar'
+    delete: 'Deletar'
+    edit: 'Editar'
+    remove: 'Remover'
+    show: 'Ver'
   time:
-    past_word: ago
+    past_word: 'atrás'
   user:
-    edit_account: "Edit Account"
-    sign_in: "Sign In"
-    sign_out: "Sign Out"
+    edit_account: 'Editar conta'
+    sign_in: 'Entrar'
+    sign_out: 'Sair'
   views:
     pagination:
       first: "&laquo; First"
