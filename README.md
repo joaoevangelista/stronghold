@@ -2,6 +2,8 @@
 
 We want to help you to build a better community for living. By contributing on every aspect of your's. Discuss ideas, follow things as they happen and get notified about important announcements.
 
+[![build status](https://gitlab.com/joaoevangelista/stronghold/badges/master/build.svg)](https://gitlab.com/joaoevangelista/stronghold/commits/master)
+
 Development
 ---
 
@@ -25,3 +27,9 @@ Tbd
 Deployment
 
 * Docker: TBD
+
+
+Acknowledgments
+---
+
+Icons made by [Freepik](http://www.freepik.com) from [Flaticon](http://www.flaticon.com) and is licensed by [Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0/)
