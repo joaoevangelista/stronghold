@@ -9,7 +9,7 @@
           &nbsp;&nbsp;
           <!--<%= image_tag gravatar(a.trackable.user.email, 40), height: 40, class: 'img-circle' %>-->
           <%= mail_to a.trackable.user.email, a.trackable.user.name %>
-          <span>created an issue</span>
+          <span><%= t('activity.issue.create.action') %></span>
           <%= link_to a.trackable.title, issue_path(a.trackable) %>
         </p>
       </div>

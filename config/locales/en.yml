@@ -18,13 +18,36 @@ en:
   activity:
     singular: 'Activity'
     plural: 'Activities'
+    updated: 'updated'
+    changed: 'changed'
     announcement:
       create:
         action: 'created announcement'
       destroy: 'Announcement was deleted.'
       update:
-        updated: 'updated'
         entity: 'announcement.'
+    event:
+      create:
+        action: 'created event'
+      destroy: 'Event was deleted.'
+      update:
+        entity: 'event.'
+    issue:
+      create:
+        action: 'created an issue'
+      destroy: 'Issue was deleted.'
+      closed: 'status to resolved'
+      opened: 'status to open'
+      update:
+        entity: 'issue.'
+    type:
+      create:
+        entity: 'Type'
+        action: 'was created.'
+      destroy: 'Type was deleted.'
+      update:
+        entity: 'Type'
+        action: 'was updated.'
   announcement:
     plural: 'Announcements'
     singular: 'Announcement'

@@ -9,9 +9,9 @@
           &nbsp;&nbsp;
           <!--<%= image_tag gravatar(a.trackable.user.email, 40), height: 40, class: 'img-circle' %>-->
           <%= mail_to a.trackable.user.email, a.trackable.user.name %>
-          <span>changed</span>
+          <span><%= t('activity.changed') %></span>
           <%= link_to a.trackable.title, issue_path(a.trackable) %>
-          <span> status to open</span>
+          <span><%= t('activity.issue.opened') %></span>
         </p>
       </div>
     </div>

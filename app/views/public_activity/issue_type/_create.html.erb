@@ -7,9 +7,9 @@
         <p>
           <span><i class="fa fa-2x fa-tag"></i></span>
           &nbsp;&nbsp;
-          <span>Type</span>
+          <span><%= t('activity.type.create.entity') %></span>
           <%= link_to a.trackable.name, issue_type_path(a.trackable) %>
-          <span>was created.</span>
+          <span><%= t('activity.type.create.action') %></span>
 
         </p>
       </div>
