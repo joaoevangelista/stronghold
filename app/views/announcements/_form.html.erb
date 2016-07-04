@@ -18,7 +18,7 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="form-group <%= @announcement.errors[:description].empty? ? '' : 'has-error' %>">
-          <%= f.label :description, 'Body', class: 'control-label' %>
+          <%= f.label :description, t('announcement.description_label'), class: 'control-label' %>
           <%= f.text_area :description, class: 'form-control', placeholder: 'Body of announcement', rows: 12 %>
           <% if @announcement.errors[:description].any? %>
           <% @announcement.errors[:description].each do |message| %>
@@ -32,7 +32,7 @@
       <div class="col-xs-12">
         <div class="form-group">
           <%= f.check_box :notify %>
-          <%= f.label :notify, 'Notify people about this ?', class: 'control-label' %>
+          <%= f.label :notify, t('announcement.notify_label'), class: 'control-label' %>
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@
         <div class="actions">
           <button type="submit" class="btn btn-success">
             <span><i class="fa fa-fw fa-check"></i></span>
-            Save
+            <%= t('form.save') %>
           </button>
         </div>
       </div>

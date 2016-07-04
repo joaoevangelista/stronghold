@@ -63,6 +63,8 @@ en:
     updated: updated
   announcement:
     about_title: About
+    notify_label: 'Notify people about this ?'
+    description_label: 'Body'
     create_message: "Announcement was successfully created."
     destroy_message: "Announcement was successfully destroyed."
     edit_title: "Editing Announcement"

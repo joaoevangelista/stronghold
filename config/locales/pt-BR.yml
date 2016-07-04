@@ -63,6 +63,8 @@ en:
     updated: 'atualizou'
   announcement:
     about_title: 'Sobre'
+    notify_label: 'Notificar todos sobre este anúncio ?'
+    description_label: 'Corpo'
     create_message: 'Aúncio foi criado com sucesso.'
     destroy_message: "Aúncio foi removido com sucesso."
     edit_title: 'Editando anúncio'
