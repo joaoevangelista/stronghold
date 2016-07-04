@@ -31,7 +31,7 @@ class AnnouncementsController < AuthenticatedController
     respond_to do |format|
       if @announcement.save
         format.html do
-          redirect_to @announcement, notice: 'Announcement was successfully created.'
+          redirect_to @announcement, notice: I18n.t('announcement.create_message')
         end
         format.json { render :show, status: :created, location: @announcement }
       else
@@ -47,7 +47,7 @@ class AnnouncementsController < AuthenticatedController
     respond_to do |format|
       if @announcement.update(announcement_params)
         format.html do
-          redirect_to @announcement, notice: 'Announcement was successfully updated.'
+          redirect_to @announcement, notice: I18n.t('announcement.update_message')
         end
         format.json { render :show, status: :ok, location: @announcement }
       else
@@ -63,7 +63,7 @@ class AnnouncementsController < AuthenticatedController
     @announcement.destroy
     respond_to do |format|
       format.html do
-        redirect_to announcements_url, notice: 'Announcement was successfully destroyed.'
+        redirect_to announcements_url, notice: I18n.t('announcement.destroy_message')
       end
       format.json { head :no_content }
     end
