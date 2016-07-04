@@ -80,29 +80,31 @@ class AnnouncementsController < AuthenticatedController
         format_save read
       end
     else
-      format_already_marked read
+      format_already_marked
     end
   end
 
   private
 
   def format_save(read)
-    if read.save
-      format.html do
-        redirect_to @announcement, notice: I18n.t('announcement.marked_as_read')
+    respond_to do |format|
+      if read.save
+        format.html do
+            redirect_to @announcement, notice: I18n.t('announcement.marked_as_read')
+        end
+        format.json { head :ok }
+      else
+        format.html { render :new }
+        format.json { render json: @announcement.errors, status: :unprocessable_entity }
       end
-      format.json { head :ok }
-    else
-      format.html { render :new }
-      format.json { render json: @announcement.errors, status: :unprocessable_entity }
     end
   end
 
-  def format_already_marked(_read)
+  def format_already_marked
     respond_to do |format|
       format.html do
-        redirect_to @announcement,
-                    warning_notice: I18n.t('announcement.already_marked_message')
+        flash[:warning_notice] = I18n.t('announcement.already_marked_message')
+        redirect_to @announcement
       end
       format.json { head :no_content }
     end
@@ -111,8 +113,10 @@ class AnnouncementsController < AuthenticatedController
   def redirect_back_if_not_found
     respond_to do |format|
       format.html do
-        redirect_to(announcements_url,
-                    error_notice: I18n.t('announcement.not_found')) unless @announcement
+        unless @announcement
+          flash[:error_notice] = I18n.t('announcement.not_found')
+          redirect_to announcements_url
+        end
       end
       format.json { head :not_found } unless @announcement
     end
