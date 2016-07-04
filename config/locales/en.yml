@@ -258,6 +258,11 @@ en:
     edit_account: "Edit Account"
     sign_in: "Sign In"
     sign_out: "Sign Out"
+    image_caption: 'Your image from'
+    form:
+      password_tip: "leave blank if you don't want to change it"
+      current_password_confirmation: 'we need your current password to confirm your changes'
+      wating_confirmation: 'Currently waiting confirmation for:'
   views:
     pagination:
       first: "&laquo; First"

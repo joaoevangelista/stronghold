@@ -254,6 +254,11 @@ pt-BR:
     edit_account: 'Editar conta'
     sign_in: 'Entrar'
     sign_out: 'Sair'
+    image_caption: 'Sua imagem do'
+    form:
+      password_tip: "deixe em branco se você não quiser muda-la"
+      current_password_confirmation: 'precisamos da sua senha para confirmar as alterações'
+      wating_confirmation: 'Atualmente esperando confirmação para:'
   views:
     pagination:
       first: "&laquo; First"
