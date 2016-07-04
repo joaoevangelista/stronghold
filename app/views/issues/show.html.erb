@@ -2,8 +2,7 @@
   <div class="row">
     <div class="col-md-12 hidden-xs">
       <div class="pull-left">
-        <%= link_to icon('chevron-left', t('links.back'), class: 'fa-fw'), issues_path,
-        class: ['btn','btn-sm','btn-default']  %>
+        <%= go_back_link issues_path %>
       </div>
       <div class="pull-right">
         <%= link_to icon('pencil', t('links.edit'), class: 'fa-fw'), edit_issue_path(@issue),
@@ -68,7 +67,7 @@
             <% if @issue.is_resolved %>
             <%= link_to t('issue.reopen'), open_issue_path(@issue), class: ['btn','btn-sm','btn-primary'], method: :put %>
             <% else %>
-            <%= link_to t('issue.resolve'), close_issue_path(@issue), class: ['btn','btn-sm','btn-default'], method: :delete %>
+            <%= link_to t('issue.resolve'), close_issue_path(@issue),  class: ['btn','btn-sm','btn-default'], method: :delete %>
             <% end %>
           </div>
         </div>
