@@ -192,6 +192,8 @@ en:
     save: Save
   issue:
     assignee: Assignee
+    assignee_prompt: 'Nobody'
+    issue_type_prompt: 'None'
     close_message: "Issue is now closed"
     create_message: "Issue was successfully created."
     destroy_message: "Issue was successfully destroyed."

@@ -191,6 +191,8 @@ pt-BR:
     save: 'Salvar'
   issue:
     assignee: 'Aos cuidados de'
+    assignee_prompt: 'Ninguém'
+    issue_type_prompt: 'Nenhum'
     close_message: 'Questão está resolvida.'
     create_message: 'Questão criada com sucesso'
     destroy_message: 'Questão foi removida com sucesso.'

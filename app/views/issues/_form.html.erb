@@ -58,7 +58,7 @@
           <div class="col-xs-12">
             <div class="form-group <%= @issue.errors[:assignee_id].empty? ? '' : 'has-error' %>">
               <%= f.label :assignee_id, class: 'control-label' %>
-              <%= f.collection_select :assignee_id, User.all, :id, :name,  { prompt: 'No one'}, class: 'form-control' %>
+              <%= f.collection_select :assignee_id, User.all, :id, :name,  { prompt: t('issue.assignee_prompt')}, class: 'form-control' %>
               <% if @issue.errors[:assignee_id].any? %>
               <% @issue.errors[:assignee_id].each do |message| %>
               <span class="help-block"><%= message.capitalize %></span>
@@ -71,7 +71,7 @@
           <div class="col-xs-12">
             <div class="form-group <%= @issue.errors[:issue_type_id].empty? ? '' : 'has-error' %>">
               <%= f.label :issue_type_id, class: 'control-label' %>
-              <%= f.collection_select :issue_type_id, IssueType.all, :id, :name , { prompt: 'No one'}, class: 'form-control' %>
+              <%= f.collection_select :issue_type_id, IssueType.all, :id, :name , { prompt: t('issue.issue_type_prompt')}, class: 'form-control' %>
               <% if @issue.errors[:issue_type_id].any? %>
               <% @issue.errors[:issue_type_id].each do |message| %>
               <span class="help-block"><%= message.capitalize %></span>
