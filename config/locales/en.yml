@@ -18,6 +18,13 @@ en:
   activity:
     singular: 'Activity'
     plural: 'Activities'
+    announcement:
+      create:
+        action: 'created announcement'
+      destroy: 'Announcement was deleted.'
+      update:
+        updated: 'updated'
+        entity: 'announcement.'
   announcement:
     plural: 'Announcements'
     singular: 'Announcement'
