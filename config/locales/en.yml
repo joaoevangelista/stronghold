@@ -1,119 +1,120 @@
+---
 en:
-  time:
-    past_word: 'ago'
-  form:
-    save: 'Save'
-  links:
-    back: 'Back'
-    edit: 'Edit'
-    remove: 'Remove'
-    delete: 'Delete'
-    show: 'Show'
-  app:
-    description: 'Your tool fo a better community'
-  user:
-    sign_in: 'Sign In'
-    sign_out: 'Sign Out'
-    edit_account: 'Edit Account'
   activity:
-    singular: 'Activity'
-    plural: 'Activities'
-    updated: 'updated'
-    changed: 'changed'
     announcement:
       create:
-        action: 'created announcement'
-      destroy: 'Announcement was deleted.'
+        action: "created announcement"
+      destroy: "Announcement was deleted."
       update:
-        entity: 'announcement.'
+        entity: announcement.
+    changed: changed
     event:
       create:
-        action: 'created event'
-      destroy: 'Event was deleted.'
+        action: "created event"
+      destroy: "Event was deleted."
       update:
-        entity: 'event.'
+        entity: event.
     issue:
+      closed: "status to resolved"
       create:
-        action: 'created an issue'
-      destroy: 'Issue was deleted.'
-      closed: 'status to resolved'
-      opened: 'status to open'
+        action: "created an issue"
+      destroy: "Issue was deleted."
+      opened: "status to open"
       update:
-        entity: 'issue.'
+        entity: issue.
+    plural: Activities
+    singular: Activity
     type:
       create:
-        entity: 'Type'
-        action: 'was created.'
-      destroy: 'Type was deleted.'
+        action: "was created."
+        entity: Type
+      destroy: "Type was deleted."
       update:
-        entity: 'Type'
-        action: 'was updated.'
+        action: "was updated."
+        entity: Type
+    updated: updated
   announcement:
-    plural: 'Announcements'
-    singular: 'Announcement'
-    edit_title: 'Editing Announcement'
-    new_title: 'New Announcement'
-    index_title: 'Newest Announcements'
-    empty_array: 'No announcements yet made.'
-    about_title: 'About'
-    made_by_title: 'Made by'
-    create_message: 'Announcement was successfully created.'
-    update_message: 'Announcement was successfully updated.'
-    destroy_message: 'Announcement was successfully destroyed.'
+    about_title: About
+    create_message: "Announcement was successfully created."
+    destroy_message: "Announcement was successfully destroyed."
+    edit_title: "Editing Announcement"
+    empty_array: "No announcements yet made."
+    index_title: "Newest Announcements"
     links:
-      new: 'New Announcement'
+      new: "New Announcement"
+    made_by_title: "Made by"
+    new_title: "New Announcement"
+    plural: Announcements
+    singular: Announcement
+    update_message: "Announcement was successfully updated."
+  app:
+    description: "Your tool fo a better community"
   event:
-    title: 'Title'
-    time: 'Event time'
-    plural: 'Events'
-    singular: 'Event'
-    new_title: 'New Event'
-    edit_title: 'Editing Event'
-    empty_array: 'No events yet.'
-    create_message: 'Event was successfully created.'
-    update_message: 'Event was successfully updated.'
-    destroy_message: 'Event was successfully destroyed.'
+    create_message: "Event was successfully created."
+    destroy_message: "Event was successfully destroyed."
+    edit_title: "Editing Event"
+    empty_array: "No events yet."
     links:
-      new: 'Create Event'
-  issue_type:
-    name: 'Name'
-    singular: 'Type'
-    plural: 'Types'
-    type: 'Title'
-    status: 'Status'
-    reporter: 'Reporter'
-    resolved: 'Resolved'
-    open: 'Open'
-    edit_title: 'Editing Issue Type'
-    new_title: 'New Issue Type'
-    empty_array: 'No types yet created.'
-    empty_issue_array: 'No issues with this type yet reported.'
-    opened_issues_count: 'opened issue(s)'
-    create_message: 'Type was successfully created.'
-    update_message: 'Type was successfully updated.'
-    destroy_message: 'Type was successfully destroyed.'
+      new: "Create Event"
+    new_title: "New Event"
+    plural: Events
+    singular: Event
+    time: "Event time"
+    title: Title
+    update_message: "Event was successfully updated."
+  form:
+    save: Save
   issue:
-    title: 'Title'
-    status: 'Status'
-    reporter: 'Reporter'
-    type: 'Type'
-    resolved: 'Resolved'
-    open: 'Open'
-    new_title: 'New Issue'
-    singular: 'Issue'
-    plural: 'Issues'
-    reopen: 'Reopen'
-    resolve: 'Resolve'
-    due_date: 'Due date'
-    assignee: 'Assignee'
-    not_set: 'Not set'
-    edit_title: 'Editing Issue'
-    empty_array: 'No issues yet reported.'
-    create_message: 'Issue was successfully created.'
-    update_message: 'Issue was successfully updated.'
-    destroy_message: 'Issue was successfully destroyed.'
-    open_message: 'Issue is now open'
-    close_message: 'Issue is now closed'
+    assignee: Assignee
+    close_message: "Issue is now closed"
+    create_message: "Issue was successfully created."
+    destroy_message: "Issue was successfully destroyed."
+    due_date: "Due date"
+    edit_title: "Editing Issue"
+    empty_array: "No issues yet reported."
     links:
-      new: 'New Issue'
-      new_type: 'New Type'
+      new: "New Issue"
+      new_type: "New Type"
+    new_title: "New Issue"
+    not_set: "Not set"
+    open: Open
+    open_message: "Issue is now open"
+    plural: Issues
+    reopen: Reopen
+    reporter: Reporter
+    resolve: Resolve
+    resolved: Resolved
+    singular: Issue
+    status: Status
+    title: Title
+    type: Type
+    update_message: "Issue was successfully updated."
+  issue_type:
+    create_message: "Type was successfully created."
+    destroy_message: "Type was successfully destroyed."
+    edit_title: "Editing Issue Type"
+    empty_array: "No types yet created."
+    empty_issue_array: "No issues with this type yet reported."
+    name: Name
+    new_title: "New Issue Type"
+    open: Open
+    opened_issues_count: "opened issue(s)"
+    plural: Types
+    reporter: Reporter
+    resolved: Resolved
+    singular: Type
+    status: Status
+    type: Title
+    update_message: "Type was successfully updated."
+  links:
+    back: Back
+    delete: Delete
+    edit: Edit
+    remove: Remove
+    show: Show
+  time:
+    past_word: ago
+  user:
+    edit_account: "Edit Account"
+    sign_in: "Sign In"
+    sign_out: "Sign Out"
