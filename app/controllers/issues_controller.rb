@@ -31,7 +31,7 @@ class IssuesController < AuthenticatedController
 
     respond_to do |format|
       if @issue.save
-        format.html { redirect_to @issue, notice: 'Issue was successfully created.' }
+        format.html { redirect_to @issue, notice: I18n.t('issue.create_message') }
         format.json { render :show, status: :created, location: @issue }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class IssuesController < AuthenticatedController
   def update
     respond_to do |format|
       if @issue.update(issue_params)
-        format.html { redirect_to @issue, notice: 'Issue was successfully updated.' }
+        format.html { redirect_to @issue, notice: I18n.t('issue.update_message') }
         format.json { render :show, status: :ok, location: @issue }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class IssuesController < AuthenticatedController
     respond_to do |format|
       if @issue.update(is_resolved: false)
         @issue.create_activity :issue_opened
-        format.html { redirect_to @issue, notice: 'Issue is now open' }
+        format.html { redirect_to @issue, notice: I18n.t('issue.open_message') }
         format.json { render :show, status: :ok, location: @issue }
       else
         format.html { render :show }
@@ -74,7 +74,7 @@ class IssuesController < AuthenticatedController
     respond_to do |format|
       if @issue.update(is_resolved: true)
         @issue.create_activity :issue_closed
-        format.html { redirect_to @issue, notice: 'Issue is now open' }
+        format.html { redirect_to @issue, notice: I18n.t('issue.close_message') }
         format.json { render :show, status: :ok, location: @issue }
       else
         format.html { render :show }
@@ -88,7 +88,7 @@ class IssuesController < AuthenticatedController
   def destroy
     @issue.destroy
     respond_to do |format|
-      format.html { redirect_to issues_url, notice: 'Issue was successfully destroyed.' }
+      format.html { redirect_to issues_url, notice: I18n.t('issue.close_message') }
       format.json { head :no_content }
     end
   end

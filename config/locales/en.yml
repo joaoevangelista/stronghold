@@ -35,6 +35,9 @@ en:
     new_title: 'New Event'
     edit_title: 'Editing Event'
     empty_array: 'No events yet.'
+    create_message: 'Event was successfully created.'
+    update_message: 'Event was successfully updated.'
+    destroy_message: 'Event was successfully destroyed.'
     links:
       new: 'Create Event'
   issue_type:
@@ -51,6 +54,9 @@ en:
     empty_array: 'No types yet created.'
     empty_issue_array: 'No issues with this type yet reported.'
     opened_issues_count: 'opened issue(s)'
+    create_message: 'Type was successfully created.'
+    update_message: 'Type was successfully updated.'
+    destroy_message: 'Type was successfully destroyed.'
   issue:
     title: 'Title'
     status: 'Status'
@@ -68,6 +74,11 @@ en:
     not_set: 'Not set'
     edit_title: 'Editing Issue'
     empty_array: 'No issues yet reported.'
+    create_message: 'Issue was successfully created.'
+    update_message: 'Issue was successfully updated.'
+    destroy_message: 'Issue was successfully destroyed.'
+    open_message: 'Issue is now open'
+    close_message: 'Issue is now closed'
     links:
       new: 'New Issue'
       new_type: 'New Type'
