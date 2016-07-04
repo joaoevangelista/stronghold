@@ -22,7 +22,7 @@ en:
         is_resolved: 'Is Resolved ?'
         due_date: 'Due Date'
         assignee_id: 'Assignee'
-        issue_type_id: 'Issue Type'    
+        issue_type_id: 'Issue Type'
       user:
         name: 'Name'
         email: 'Email'
