@@ -8,9 +8,9 @@
       <div class="pull-right">
         <%= link_to icon('pencil', t('links.edit'), class: 'fa-fw'), edit_issue_path(@issue),
         class: ['btn','btn-sm','btn-default'] %>
-        <%= link_to icon('plus', 'New Issue', class: 'fa-fw'), new_issue_path,
+        <%= link_to icon('plus', t('issue.links.new'), class: 'fa-fw'), new_issue_path,
         class: ['btn','btn-sm','btn-default'] %>
-        <%= link_to icon('plus', 'New Type', class: 'fa-fw'), new_issue_type_path,
+        <%= link_to icon('plus', t('issue.links.new_type'), class: 'fa-fw'), new_issue_type_path,
         class: 'btn btn-sm btn-default' %>
       </div>
     </div>
