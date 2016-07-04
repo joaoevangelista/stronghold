@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get 'activities' => 'activity#index', as: :activities
 
   resources :issues
-  resources :announcements
+  resources :announcements do
+    put :mark_as_read_by, on: :member
+  end
   resources :events
   resources :events
   resources :issues do

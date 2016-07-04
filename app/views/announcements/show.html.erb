@@ -60,6 +60,7 @@
       </div>
       <div class="col-xs-12 col-md-3 spaced-xs">
         <span class="text-muted"><i class="fa fa-fw fa-clock-o"></i></span>
+        <%= t('announcement.published') %>
         <%= distance_of_time_in_words @announcement.created_at, Time.zone.now %> ago
       </div>
       <div class="col-xs-12 col-md-3 spaced-xs">
@@ -77,6 +78,17 @@
           <% end %>
 
         </span>
+      </div>
+      <div class="col-xs-12 col-md-3 spaced-xs">
+        <% if not @read %>
+        <%= link_to t('announcement.mark_as_read'), mark_as_read_by_announcement_path(@announcement),
+         class: ['btn', 'btn-sm', 'btn-link'], method: :put   %>
+         <% else %>
+         <span class="text-success">
+           <i class="fa fa-check fa-fw"></i>
+           <%= t('announcement.already_marked') %>
+         </span>
+        <% end %>
       </div>
     </div>
     <hr>

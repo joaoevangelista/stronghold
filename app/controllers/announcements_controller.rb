@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 # :nodoc:
 class AnnouncementsController < AuthenticatedController
-  before_action :set_announcement, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:mark_as_read_by]
+  before_action :set_announcement, only: [:show, :edit, :update, :destroy, :mark_as_read_by]
 
   # GET /announcements
   # GET /announcements.json
@@ -12,6 +13,7 @@ class AnnouncementsController < AuthenticatedController
   # GET /announcements/1
   # GET /announcements/1.json
   def show
+    @read = Read.exists? announcement_id: @announcement.id, user_id: current_user.id
   end
 
   # GET /announcements/new
@@ -69,7 +71,43 @@ class AnnouncementsController < AuthenticatedController
     end
   end
 
+  def mark_as_read_by
+    redirect_back_if_not_found
+    @read = Read.exists? announcement_id: @announcement.id, user_id: current_user.id
+    if not @read
+      read = Read.new(announcement_id: @announcement.id, user_id: current_user.id)
+      respond_to do |format|
+        if read.save
+          format.html do
+            redirect_to @announcement, notice: I18n.t('announcement.marked_as_read')
+          end
+          format.json { head :ok }
+        else
+          format.html { render :new }
+          format.json { render json: @announcement.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to @announcement,
+           warning_notice: I18n.t('announcement.already_marked_message')
+         }
+        format.json { head :no_content }
+      end
+    end
+  end
+
   private
+
+  def redirect_back_if_not_found
+    respond_to do |format|
+      format.html do
+        redirect_to(announcements_url,
+        error_notice: I18n.t('announcement.not_found')) unless @announcement
+      end
+      format.json { head :not_found } unless @announcement
+    end
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_announcement
