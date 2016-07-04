@@ -54,7 +54,7 @@
           <span class="label label-lg label-warning"><%= t('issue.open') %></span>
           <% end %>
           &nbsp;&nbsp;&nbsp;
-          Create by
+          <%= t('issue.created_by') %>
           &nbsp;
           <%= image_tag gravatar(@issue.user.email, 35), height: 35,
           class: 'img-circle' %>

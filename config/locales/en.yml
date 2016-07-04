@@ -204,6 +204,7 @@ en:
     issue_type_prompt: 'None'
     close_message: "Issue is now closed"
     create_message: "Issue was successfully created."
+    created_by: 'Created by'
     destroy_message: "Issue was successfully destroyed."
     due_date: "Due date"
     edit_title: "Editing Issue"

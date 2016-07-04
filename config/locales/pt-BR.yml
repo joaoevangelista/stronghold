@@ -200,6 +200,7 @@ pt-BR:
     issue_type_prompt: 'Nenhum'
     close_message: 'Questão está resolvida.'
     create_message: 'Questão criada com sucesso'
+    created_by: 'Criado por'
     destroy_message: 'Questão foi removida com sucesso.'
     due_date: 'Data de conclusão'
     edit_title: 'Editando Questão'
