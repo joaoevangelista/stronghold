@@ -1,5 +1,5 @@
 ---
-en:
+pt-BR:
   activerecord:
     errors:
       messages:
@@ -191,7 +191,7 @@ en:
     save: 'Salvar'
   issue:
     assignee: 'Aos cuidados de'
-    close_message: 'Questão está resolvido.'
+    close_message: 'Questão está resolvida.'
     create_message: 'Questão criada com sucesso'
     destroy_message: 'Questão foi removida com sucesso.'
     due_date: 'Data de conclusão'
@@ -202,7 +202,7 @@ en:
       new_type: 'Novo Tipo'
     new_title: 'Nova Questão'
     not_set: 'Nenhum'
-    open: 'Abrir'
+    open: 'Em Aberto'
     open_message: 'Questão agora está em aberto'
     plural: 'Questões'
     reopen: 'Reabrir'
