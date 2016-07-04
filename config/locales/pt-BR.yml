@@ -1,0 +1,155 @@
+---
+en:
+  activerecord:
+    errors:
+      messages:
+        blank: 'Por favor preencha %{attribute}'
+    attributes:
+      announcement:
+        title: 'Título'
+        description: 'Descrição'
+        notify: 'Notificar ?'
+      event:
+        title: 'Título'
+        description: 'Descrição'
+        time: 'Hora'
+      issue_type:
+        name: 'Nome'
+        color: 'Cor'
+      issue:
+        title: 'Título'
+        description: 'Descrição'
+        is_resolved: 'Está Resolvido ?'
+        due_date: 'Data de conclusão'
+        assignee_id: 'Síndico / Aos cuidados de'
+        issue_type_id: 'Tipo'
+      user:
+        name: 'Nome'
+        email: 'Email'
+        password: 'Senha'
+        password_confirmation: 'Confirmção da senha'
+  activity:
+    announcement:
+      create:
+        action: "crio anúncio"
+      destroy: "Anúncio foi deletado."
+      update:
+        entity: 'anúncio.'
+    changed: 'mudou'
+    event:
+      create:
+        action: "crio evento"
+      destroy: "Evento foi deleteado."
+      update:
+        entity: 'evento.'
+    issue:
+      closed: 'estado para resolvido'
+      create:
+        action: "crio uma questão"
+      destroy: "Questão foi deletado."
+      opened: "estado para aberto"
+      update:
+        entity: 'questão.'
+    plural: 'Atividades'
+    singular: 'Atividade'
+    type:
+      create:
+        action: 'foi criado'
+        entity: 'Tipo'
+      destroy: 'Tipo foi deletado.'
+      update:
+        action: 'foi atualizado.'
+        entity: 'Tipo'
+    updated: 'atualizado'
+  announcement:
+    about_title: 'Sobre'
+    create_message: 'Aúncio foi criado com sucesso.'
+    destroy_message: "Aúncio foi removido com sucesso."
+    edit_title: 'Editando anúncio'
+    empty_array: 'Nenhum anúncio ainda foi feito.'
+    index_title: 'Novos anúncios'
+    links:
+      new: 'Novo Anúncio'
+    made_by_title: 'Feito por'
+    new_title: 'Novo Anúncio'
+    plural: 'Anúncios'
+    singular: 'Anúncio'
+    update_message: 'Anúncio foi atualizado com sucesso'
+  app:
+    description: 'Sua ferramenta para uma comunidade melhor.'
+  event:
+    create_message: 'Evento foi criado com sucesso.'
+    destroy_message: 'Evento foi removido com sucesso.'
+    edit_title: 'Editando evento'
+    empty_array: 'Sem eventos por enquanto.'
+    links:
+      new: 'Criar evento'
+    new_title: 'Novo evento'
+    plural: 'Eventos'
+    singular: 'Evento'
+    time: 'Horário'
+    title: 'Título'
+    update_message: 'Evento foi atualizado com sucesso.'
+  form:
+    save: 'Salvar'
+  issue:
+    assignee: 'Aos cuidados de'
+    close_message: 'Questão está resolvido.'
+    create_message: 'Questão criada com sucesso'
+    destroy_message: 'Questão foi removida com sucesso.'
+    due_date: 'Data de conclusão'
+    edit_title: 'Editando Questão'
+    empty_array: 'Nenhuma questão ainda reportada'
+    links:
+      new: 'Nova Questão'
+      new_type: 'Novo Tipo'
+    new_title: 'Nova Questão'
+    not_set: 'Nenhum'
+    open: 'Abrir'
+    open_message: 'Questão agora está em aberto'
+    plural: 'Questões'
+    reopen: 'Reabrir'
+    reporter: 'Relator'
+    resolve: 'Resolver'
+    resolved: 'Resolvido'
+    singular: 'Questão'
+    status: 'Estado'
+    title: 'Título'
+    type: 'Tipo'
+    update_message: 'Questão foi atualizada com sucesso.'
+  issue_type:
+    create_message: "Type was successfully created."
+    destroy_message: "Type was successfully destroyed."
+    edit_title: "Editing Issue Type"
+    empty_array: "No types yet created."
+    empty_issue_array: "No issues with this type yet reported."
+    name: Name
+    new_title: "New Issue Type"
+    open: Open
+    opened_issues_count: "opened issue(s)"
+    plural: Types
+    reporter: Reporter
+    resolved: Resolved
+    singular: Type
+    status: Status
+    type: Title
+    update_message: "Type was successfully updated."
+  links:
+    back: Back
+    delete: Delete
+    edit: Edit
+    remove: Remove
+    show: Show
+  time:
+    past_word: ago
+  user:
+    edit_account: "Edit Account"
+    sign_in: "Sign In"
+    sign_out: "Sign Out"
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "&hellip;"
