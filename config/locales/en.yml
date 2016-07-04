@@ -158,8 +158,12 @@ en:
         entity: Type
     updated: updated
   announcement:
+    already_marked_message: 'Announcement already marked as read by you.'
+    already_marked: 'Already Read'
     about_title: About
     notify_label: 'Notify people about this ?'
+    will_notify: 'People will be notified'
+    will_not_notify: 'People not notified'
     description_label: 'Body'
     create_message: "Announcement was successfully created."
     destroy_message: "Announcement was successfully destroyed."
@@ -169,10 +173,13 @@ en:
     links:
       new: "New Announcement"
     made_by_title: "Made by"
+    marked_as_read: 'Successfully marked as read.'
     new_title: "New Announcement"
     plural: 'Announcements'
+    published: 'Published'
     singular: 'Announcement'
     update_message: "Announcement was successfully updated."
+    not_found: 'Announcement not found.'
     placeholders:
       title: 'What this is about ?'
       description: 'Body of announcement'
@@ -180,6 +187,8 @@ en:
     description: "Your tool fo a better community"
   notice:
     success: 'Well done!'
+    warning: 'Careful!'
+    error: 'Ouch!'
   event:
     create_message: "Event was successfully created."
     destroy_message: "Event was successfully destroyed."

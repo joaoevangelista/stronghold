@@ -158,7 +158,11 @@ pt-BR:
     updated: 'atualizou'
   announcement:
     about_title: 'Sobre'
+    already_marked_message: 'Anúncio já marcado como lido por você.'
+    already_marked: 'Já Lido'
     notify_label: 'Notificar todos sobre este anúncio ?'
+    will_notify: 'Pessoas serão notificadas'
+    will_not_notify: 'Pessoas não serão notificadas'
     description_label: 'Corpo'
     create_message: 'Aúncio foi criado com sucesso.'
     destroy_message: "Aúncio foi removido com sucesso."
@@ -168,14 +172,22 @@ pt-BR:
     links:
       new: 'Novo Anúncio'
     made_by_title: 'Feito por'
+    marked_as_read: 'Marcado como lido com sucesso.'
     new_title: 'Novo Anúncio'
     plural: 'Anúncios'
+    published: 'Publicado'
     singular: 'Anúncio'
     update_message: 'Anúncio foi atualizado com sucesso'
+    not_found: 'Anúncio não encontrado'
+    placeholders:
+      title: 'De um títlo'
+      description: 'O corpo do anúncio'
   app:
     description: 'Sua ferramenta para uma comunidade melhor.'
   notice:
     success: 'Muito bem!'
+    warning: 'Cuidado!'
+    error: 'Ouch!'
   event:
     create_message: 'Evento foi criado com sucesso.'
     destroy_message: 'Evento foi removido com sucesso.'
