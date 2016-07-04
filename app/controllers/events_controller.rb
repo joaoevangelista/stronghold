@@ -30,7 +30,7 @@ class EventsController < AuthenticatedController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to @event, notice: I18n.t('event.create_message') }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class EventsController < AuthenticatedController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        format.html { redirect_to @event, notice: I18n.t('event.update_message') }
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class EventsController < AuthenticatedController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
+      format.html { redirect_to events_url, notice: I18n.t('event.destroy_message') }
       format.json { head :no_content }
     end
   end

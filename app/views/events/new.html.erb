@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <%= link_to icon('chevron-left', 'Back', class: 'fa-fw'), events_path,
+      <%= link_to icon('chevron-left', t('links.back'), class: 'fa-fw'), events_path,
        class: ['btn', 'btn-sm', 'btn-default'] %>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <h1 class="text-center">New Event</h1>
+      <h1 class="text-center"><%= t('event.new_title') %></h1>
     </div>
   </div>
   <%= render 'form' %>

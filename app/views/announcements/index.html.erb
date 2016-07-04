@@ -2,14 +2,14 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="pull-right">
-        <%= link_to icon('plus', 'New Announcement', class: 'fa-fw'),
+        <%= link_to icon('plus', t('announcement.links.new'), class: 'fa-fw'),
         new_announcement_path, class: ['btn','btn-sm','btn-default'] %>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <h1 class="text-center">Newest Announcements</h1>
+      <h1 class="text-center"><%= t('announcement.index_title') %></h1>
     </div>
   </div>
   <div class="row">
@@ -20,14 +20,14 @@
   <div class="row">
     <div class="col-xs-12 spaced">
       <% if @announcements.empty? %>
-      <p class="lead text-center">No announcements yet made.</p>
+      <p class="lead text-center"><%= t('announcement.empty_array') %></p>
       <% else %>
       <div class="table-responsive">
         <table class="table table-striped table-hover">
           <thead>
             <tr>
-              <th class="text-center">About</th>
-              <th class="text-center hidden-xs">Made by</th>
+              <th class="text-center"><%= t('announcement.about_title') %></th>
+              <th class="text-center hidden-xs"><%= t('announcement.made_by_title') %></th>
               <th colspan="1"></th>
             </tr>
           </thead>
@@ -38,7 +38,7 @@
               <td>
                 <%= link_to icon('bullhorn',announcement.title, class: 'fa-fw'), announcement %></td>
                 <td class="hidden-xs"><%= announcement.user.name %></td>
-                <td class="hidden-xs"><%= distance_of_time_in_words announcement.created_at, Time.zone.now %> ago</td>
+                <td class="hidden-xs"><%= distance_of_time_in_words announcement.created_at, Time.zone.now %> <%= t('time.past_word') %></td>
               </tr>
               <% end %>
             </tbody>

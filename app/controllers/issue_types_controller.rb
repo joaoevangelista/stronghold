@@ -31,7 +31,7 @@ class IssueTypesController < AuthenticatedController
     respond_to do |format|
       if @issue_type.save
         format.html do
-          redirect_to @issue_type, notice: 'Issue type was successfully created.'
+          redirect_to @issue_type, notice: I18n.t('issue_type.create_message')
         end
         format.json { render :show, status: :created, location: @issue_type }
       else
@@ -47,7 +47,7 @@ class IssueTypesController < AuthenticatedController
     respond_to do |format|
       if @issue_type.update(issue_type_params)
         format.html do
-          redirect_to @issue_type, notice: 'Issue type was successfully updated.'
+          redirect_to @issue_type, notice: I18n.t('issue_type.update_message')
         end
         format.json { render :show, status: :ok, location: @issue_type }
       else
@@ -63,7 +63,7 @@ class IssueTypesController < AuthenticatedController
     @issue_type.destroy
     respond_to do |format|
       format.html do
-        redirect_to issue_types_url, notice: 'Issue type was successfully destroyed.'
+        redirect_to issue_types_url, notice: I18n.t('issue_type.destroy_message')
       end
       format.json { head :no_content }
     end

@@ -35,6 +35,8 @@ gem 'twitter-bootstrap-rails-confirm'
 gem 'devise'
 gem 'pundit'
 gem 'public_activity'
+# Language selector
+gem 'http_accept_language'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

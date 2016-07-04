@@ -121,7 +121,7 @@ RSpec.describe IssuesController, type: :controller do
         expect(assigns(:issue)).to eq(issue)
       end
 
-      it "re-renders the 'edit' template" do
+      it 're-renders the edit template' do
         issue = Issue.create! valid_attributes
         put :update, { id: issue.to_param, issue: invalid_attributes }, valid_session
         expect(response).to render_template('edit')

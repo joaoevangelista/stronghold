@@ -2,16 +2,16 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="pull-right">
-        <%= link_to icon('plus', 'New Issue', class: 'fa-fw'), new_issue_path,
+        <%= link_to icon('plus', t('issue.links.new'), class: 'fa-fw'), new_issue_path,
         class: 'btn btn-sm btn-default' %>
-        <%= link_to icon('plus', 'New Type', class: 'fa-fw'), new_issue_type_path,
+        <%= link_to icon('plus', t('issue.links.new_type'), class: 'fa-fw'), new_issue_type_path,
         class: 'btn btn-sm btn-default' %>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <h1 class="text-center">Issues</h1>
+      <h1 class="text-center"><%= t('issue.plural') %></h1>
     </div>
   </div>
   <div class="row">
@@ -22,16 +22,16 @@
   <div class="row">
     <div class="col-xs-12 spaced">
       <% if @issues.empty? %>
-      <p class="lead text-center">No issues yet reported.</p>
+      <p class="lead text-center"><%= t('issue.empty_array') %></p>
       <% else %>
       <div class="table-responsive">
         <table class="table">
           <thead>
             <tr>
-              <th>Title</th>
-              <th>Status</th>
-              <th class="hidden-xs">Reporter</th>
-              <th class="hidden-xs">Type</th>
+              <th><%= t('issue.title') %></th>
+              <th><%= t('issue.status') %></th>
+              <th class="hidden-xs"><%= t('issue.reporter') %></th>
+              <th class="hidden-xs"><%= t('issue.type') %></th>
             </tr>
           </thead>
 
@@ -41,9 +41,9 @@
               <td><%= link_to issue.title, issue %></td>
               <td>
                 <% if issue.is_resolved %>
-                <span class="label label-success">Resolved</span>
+                <span class="label label-success"><%= t('issue.resolved') %></span>
                 <% else %>
-                <span class="label label-warning">Open</span>
+                <span class="label label-warning"><%= t('issue.open') %></span>
                 <% end %>
               </td>
               <td class="hidden-xs"><%= issue.user.name %></td>

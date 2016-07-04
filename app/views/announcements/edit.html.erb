@@ -2,14 +2,14 @@
   <div class="row">
     <div class="col-xs-12">
         <div class="pull-left">
-          <%= link_to icon('chevron-left', 'Back', class: 'fa-fw'),
+          <%= link_to icon('chevron-left', t('links.back'), class: 'fa-fw'),
           @announcement, class: ['btn','btn-sm','btn-default'] %>
         </div>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <h1 class="text-center">Editing Announcement</h1>
+      <h1 class="text-center"><%= t('announcement.edit_announcement') %></h1>
     </div>
   </div>
   <section class="form">
