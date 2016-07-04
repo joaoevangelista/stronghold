@@ -1,5 +1,33 @@
 ---
 en:
+  activerecord:
+    errors:
+      messages:
+        blank: 'Please fill %{attribute}'
+    attributes:
+      announcement:
+        title: 'Title'
+        description: 'Description'
+        notify: 'Notify?'
+      event:
+        title: 'Title'
+        description: 'Description'
+        time: 'Time'
+      issue_type:
+        name: 'Name'
+        color: 'Color'
+      issue:
+        title: 'Title'
+        description: 'Description'
+        is_resolved: 'Is Resolved ?'
+        due_date: 'Due Date'
+        assignee_id: 'Assignee'
+        issue_type_id: 'Issue Type'    
+      user:
+        name: 'Name'
+        email: 'Email'
+        password: 'Password'
+        password_confirmation: 'Password confirmation'
   activity:
     announcement:
       create:
