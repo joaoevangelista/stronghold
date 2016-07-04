@@ -12,10 +12,10 @@
     <div id="navbar" class="navbar-collapse collapse">
       <% if user_signed_in? %>
       <ul class="nav navbar-nav">
-        <li><%= link_to icon('heartbeat','Activity', class: 'fa-fw'), activities_path %></li>
-        <li><%= link_to icon('bullhorn', 'Announcements', class: 'fa-fw'), announcements_path %></li>
-        <li><%= link_to icon('calendar-check-o', 'Events', class: 'fa-fw'), events_path %></li>
-        <li><%= link_to icon('cubes','Issues', class: 'fa-fw'), issues_path %></li>
+        <li><%= link_to icon('heartbeat',t('activity.singular'), class: 'fa-fw'), activities_path %></li>
+        <li><%= link_to icon('bullhorn', t('announcement.plural'), class: 'fa-fw'), announcements_path %></li>
+        <li><%= link_to icon('calendar-check-o', t('event.plural'), class: 'fa-fw'), events_path %></li>
+        <li><%= link_to icon('cubes',t('issue.plural'), class: 'fa-fw'), issues_path %></li>
       </ul>
       <% end %>
     </li>
@@ -26,10 +26,10 @@
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
       aria-haspopup="true" aria-expanded="false"><%= current_user.name %><span class="caret"></span></a>
       <ul class="dropdown-menu">
-        <li><%= link_to icon('pencil', 'Edit Account', class: 'fa-fw'), edit_user_registration_path(current_user) %></li>
+        <li><%= link_to icon('pencil', t('user.edit_account'), class: 'fa-fw'), edit_user_registration_path(current_user) %></li>
         <li class="divider"></li>
 
-        <li><%= link_to(icon('sign-out', 'Sign Out', class: 'fa-fw'), destroy_user_session_path, method: :delete) %></li>
+        <li><%= link_to(icon('sign-out', t('user.sign_out'), class: 'fa-fw'), destroy_user_session_path, method: :delete) %></li>
       </ul>
     </li>
     <% else %>

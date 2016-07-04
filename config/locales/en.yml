@@ -13,6 +13,11 @@ en:
     description: 'Your tool fo a better community'
   user:
     sign_in: 'Sign In'
+    sign_out: 'Sign Out'
+    edit_account: 'Edit Account'
+  activity:
+    singular: 'Activity'
+    plural: 'Activities'
   announcement:
     plural: 'Announcements'
     singular: 'Announcement'
