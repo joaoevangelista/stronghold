@@ -5,17 +5,17 @@
         <div class="col-md-12 hidden-xs">
 
           <div class="pull-left">
-            <%= link_to icon('chevron-left', 'Back', class: 'fa-fw'), events_path,
+            <%= link_to icon('chevron-left', t('links.back'), class: 'fa-fw'), events_path,
             class: ['btn', 'btn-sm', 'btn-default'] %>
           </div>
           <div class="pull-right">
-            <%= link_to icon('pencil', 'Edit', class: 'fa-fw'),
+            <%= link_to icon('pencil', t('links.edit'), class: 'fa-fw'),
             edit_event_path(@event),
             class: ['btn', 'btn-sm', 'btn-default'] %>
             <%= link_to icon('plus', 'Create event', class: 'fa-fw'),
             new_event_path,
             class: ['btn', 'btn-sm', 'btn-default'] %>
-            <%= delete_link icon('trash-o', 'Delete', class: 'fa-fw'), @event,
+            <%= delete_link icon('trash-o', t('links.delete'), class: 'fa-fw'), @event,
              class: ['btn', 'btn-sm', 'btn-danger'] %>
           </div>
         </div>
@@ -28,11 +28,11 @@
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                <li><%= link_to 'Back', events_path%></li>
-                <li><%= link_to 'Edit', edit_event_path(@event)%></li>
-                <li><%= link_to 'Create event', new_event_path %></li>
+                <li><%= link_to t('links.back'), events_path%></li>
+                <li><%= link_to t('links.edit'), edit_event_path(@event)%></li>
+                <li><%= link_to t('event.links.new'), new_event_path %></li>
                 <li class="divider"></li>
-                <li><%= delete_link 'Delete', @event %></li>
+                <li><%= delete_link t('links.delete'), @event %></li>
               </ul>
             </div>
           </div>

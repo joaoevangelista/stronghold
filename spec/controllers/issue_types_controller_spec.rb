@@ -119,10 +119,10 @@ RSpec.describe IssueTypesController, type: :controller do
         expect(assigns(:issue_type)).to eq(issue_type)
       end
 
-      it "re-renders the 'edit' template" do
+      it "re-renders the t('links.edit') template" do
         issue_type = IssueType.create! valid_attributes
         put :update, { id: issue_type.to_param, issue_type: invalid_attributes }, valid_session
-        expect(response).to render_template('edit')
+        expect(response).to render_template(t('links.edit'))
       end
     end
   end

@@ -2,21 +2,21 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="pull-left">
-        <%= link_to icon('chevron-left', 'Back', class: 'fa-fw'), issues_path, class: ['btn','btn-sm','btn-default'] %>
+        <%= link_to icon('chevron-left', t('links.back'), class: 'fa-fw'), issues_path, class: ['btn','btn-sm','btn-default'] %>
       </div>
       <div class="pull-right">
-        <%= link_to icon('eye', 'Show', class: 'fa-fw'), @issue, class: ['btn','btn-sm','btn-default'] %>
-        <%= delete_link icon('trash', 'Delete', class: 'fa-fw'), @issue, class: ['btn','btn-sm','btn-danger'] %>
+        <%= link_to icon('eye', t('links.show'), class: 'fa-fw'), @issue, class: ['btn','btn-sm','btn-default'] %>
+        <%= delete_link icon('trash', t('links.delete'), class: 'fa-fw'), @issue, class: ['btn','btn-sm','btn-danger'] %>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-        <h1 class="text-center">Editing Issue</h1>
+        <h1 class="text-center"><%= t('issue.edit_title') %></h1>
     </div>
   </div>
   <section class="form">
       <%= render 'form' %>
   </section>
 </div>
-<%= link_to 'Back', issues_path %>
+<%= link_to t('links.back'), issues_path %>

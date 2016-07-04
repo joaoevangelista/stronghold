@@ -2,11 +2,11 @@
   <div class="row">
     <div class="col-md-12 hidden-xs">
       <div class="pull-left">
-        <%= link_to icon('chevron-left', 'Back', class: 'fa-fw'), issues_path,
+        <%= link_to icon('chevron-left', t('links.back'), class: 'fa-fw'), issues_path,
         class: ['btn','btn-sm','btn-default']  %>
       </div>
       <div class="pull-right">
-        <%= link_to icon('pencil', 'Edit', class: 'fa-fw'), edit_issue_path(@issue),
+        <%= link_to icon('pencil', t('links.edit'), class: 'fa-fw'), edit_issue_path(@issue),
         class: ['btn','btn-sm','btn-default'] %>
         <%= link_to icon('plus', 'New Issue', class: 'fa-fw'), new_issue_path,
         class: ['btn','btn-sm','btn-default'] %>
@@ -22,12 +22,12 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-            <li><%= link_to 'Back', issues_path%></li>
-            <li><%= link_to 'Edit', edit_issue_path(@issue)%></li>
-            <li><%= link_to 'New Issue', new_issue_path %></li>
-            <li><%= link_to 'New Type', new_issue_type_path %></li>
+            <li><%= link_to t('links.back'), issues_path%></li>
+            <li><%= link_to t('links.edit'), edit_issue_path(@issue)%></li>
+            <li><%= link_to t('issue.links.new'), new_issue_path %></li>
+            <li><%= link_to t('issue.links.new_type'), new_issue_type_path %></li>
             <li class="divider"></li>
-            <li><%= delete_link 'Delete', @issue %></li>
+            <li><%= delete_link t('links.delete'), @issue %></li>
           </ul>
         </div>
       </div>
@@ -49,9 +49,9 @@
       <div class="row">
         <div class="col-xs-12 col-md-8">
           <% if @issue.is_resolved %>
-          <span class="label label-lg label-success">Resolved</span>
+          <span class="label label-lg label-success"><%= t('issue.resolved') %></span>
           <% else %>
-          <span class="label label-lg label-warning">Open</span>
+          <span class="label label-lg label-warning"><%= t('issue.open') %></span>
           <% end %>
           &nbsp;&nbsp;&nbsp;
           Create by
@@ -60,15 +60,15 @@
           class: 'img-circle' %>
 
           <%= @issue.user.name %>,
-          <%= distance_of_time_in_words @issue.created_at, Time.zone.now %> ago
+          <%= distance_of_time_in_words @issue.created_at, Time.zone.now %> <%= t('time.past_word') %>
 
         </div>
         <div class="col-xs-12 col-md-4 spaced-xs">
           <div class="pull-right">
             <% if @issue.is_resolved %>
-            <%= link_to 'Reopen', open_issue_path(@issue), class: ['btn','btn-sm','btn-primary'], method: :put %>
+            <%= link_to t('issue.reopen'), open_issue_path(@issue), class: ['btn','btn-sm','btn-primary'], method: :put %>
             <% else %>
-            <%= link_to 'Resolve', close_issue_path(@issue), class: ['btn','btn-sm','btn-default'], method: :delete %>
+            <%= link_to t('issue.resolve'), close_issue_path(@issue), class: ['btn','btn-sm','btn-default'], method: :delete %>
             <% end %>
           </div>
         </div>
@@ -84,20 +84,20 @@
       <hr class="visible-xs">
       <div class="row">
         <div class="col-xs-12">
-          <p class="text-muted">Due date</p>
-          <span><%= @issue.due_date ? date(@issue.due_date) : 'Not Set' %></span>
+          <p class="text-muted"><%= t('issue.due_date') %></p>
+          <span><%= @issue.due_date ? date(@issue.due_date) : t('issue.not_set') %></span>
           <hr>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <p class="text-muted">Assignee</p>
+          <p class="text-muted"><%= t('issue.assignee') %></p>
           <span>
             <% if @assignee %>
             <%= image_tag(gravatar(@assignee.email, 25), height: 25, class: 'img-circle') %>
             <%= @assignee.name %>
             <% else %>
-            Not set
+            <%= t('issue.not_set') %>
             <% end %>
           </span>
           <hr>
@@ -105,11 +105,11 @@
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <p class="text-muted">Type</p>
+          <p class="text-muted"><%= t('issue.type') %></p>
           <% if @issue.issue_type %>
           <%=  link_to_type @issue.issue_type %>
           <% else %>
-          Not set
+          <%= t('issue.not_set') %>
           <% end %>
           <hr>
         </div>

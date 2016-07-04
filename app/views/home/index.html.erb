@@ -11,16 +11,16 @@
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <p class="text-center lead">Your tool fo a better community</p>
+      <p class="text-center lead"><%= t('app.description') %></p>
     </div>
   </div>
   <hr>
   <div class="row">
     <div class="col-xs-12 text-center">
       <% if user_signed_in? %>
-      <%= link_to icon('bullhorn', 'Announcements', class: 'fa-fw'), announcements_path, class: ['btn', 'btn-success'] %>
+      <%= link_to icon('bullhorn', t('announcements.plural'), class: 'fa-fw'), announcements_path, class: ['btn', 'btn-success'] %>
       <% else %>
-      <%= link_to icon('sign-in', 'Sign In', class: 'fa-fw'), new_user_session_path, class: ['btn', 'btn-info'] %>
+      <%= link_to icon('sign-in', t('user.sign_in'), class: 'fa-fw'), new_user_session_path, class: ['btn', 'btn-info'] %>
       <% end %>
 
     </div>
