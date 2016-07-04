@@ -5,7 +5,7 @@
           <div class="col-xs-12">
             <div class="form-group <%= @issue.errors[:title].empty? ? '' : 'has-error' %>">
               <%= f.label :title, class: 'control-label' %>
-              <%= f.text_field :title, class: 'form-control' %>
+              <%= f.text_field :title, class: 'form-control', placeholder: t('issue.placeholders.title') %>
               <% if @issue.errors[:title].any? %>
               <% @issue.errors[:title].each do |message| %>
               <span class="help-block"><%= message.capitalize %></span>
@@ -18,7 +18,7 @@
           <div class="col-xs-12">
             <div class="form-group <%= @issue.errors[:description].empty? ? '' : 'has-error' %>">
               <%= f.label :description, class: 'control-label' %>
-              <%= f.text_area :description, class: 'form-control', rows: 12 %>
+              <%= f.text_area :description, class: 'form-control', rows: 12, placeholder: t('issue.placeholders.description') %>
               <% if @issue.errors[:description].any? %>
               <% @issue.errors[:description].each do |message| %>
               <span class="help-block"><%= message.capitalize %></span>

@@ -173,8 +173,13 @@ en:
     plural: 'Announcements'
     singular: 'Announcement'
     update_message: "Announcement was successfully updated."
+    placeholders:
+      title: 'What this is about ?'
+      description: 'Body of announcement'
   app:
     description: "Your tool fo a better community"
+  notice:
+    success: 'Well done!'
   event:
     create_message: "Event was successfully created."
     destroy_message: "Event was successfully destroyed."
@@ -188,6 +193,9 @@ en:
     time: "Event time"
     title: Title
     update_message: "Event was successfully updated."
+    placeholders:
+      title: 'About the event'
+      description: 'Tell more about the event'
   form:
     save: Save
   issue:
@@ -217,6 +225,9 @@ en:
     title: Title
     type: Type
     update_message: "Issue was successfully updated."
+    placeholders:
+      title: 'What is this issue about ?'
+      description: 'Tell more details about it'
   issue_type:
     create_message: "Type was successfully created."
     destroy_message: "Type was successfully destroyed."
