@@ -186,6 +186,8 @@ pt-BR:
     description: 'Sua ferramenta para uma comunidade melhor.'
   notice:
     success: 'Muito bem!'
+    warning: 'Cuidado!'
+    error: 'Ouch!'
   event:
     create_message: 'Evento foi criado com sucesso.'
     destroy_message: 'Evento foi removido com sucesso.'

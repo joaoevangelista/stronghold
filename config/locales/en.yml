@@ -187,6 +187,8 @@ en:
     description: "Your tool fo a better community"
   notice:
     success: 'Well done!'
+    warning: 'Careful!'
+    error: 'Ouch!'
   event:
     create_message: "Event was successfully created."
     destroy_message: "Event was successfully destroyed."
