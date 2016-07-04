@@ -160,6 +160,8 @@ en:
   announcement:
     about_title: About
     notify_label: 'Notify people about this ?'
+    will_notify: 'People will be notified'
+    will_not_notify: 'People not notified'
     description_label: 'Body'
     create_message: "Announcement was successfully created."
     destroy_message: "Announcement was successfully destroyed."

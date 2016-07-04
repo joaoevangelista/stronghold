@@ -159,6 +159,8 @@ pt-BR:
   announcement:
     about_title: 'Sobre'
     notify_label: 'Notificar todos sobre este anúncio ?'
+    will_notify: 'Pessoas serão notificadas'
+    will_not_notify: 'Pessoas não serão notificadas'
     description_label: 'Corpo'
     create_message: 'Aúncio foi criado com sucesso.'
     destroy_message: "Aúncio foi removido com sucesso."

@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row">
     <div class="col-md-12 hidden-xs">
@@ -12,7 +13,7 @@
         new_announcement_path,
         class: ['btn', 'btn-sm', 'btn-default'] %>
         <%= delete_link icon('trash-o', t('links.delete'), class: 'fa-fw'), @announcement,
-         class: ['btn', 'btn-sm', 'btn-danger'] %>
+        class: ['btn', 'btn-sm', 'btn-danger'] %>
       </div>
     </div>
     <!-- Mobile menu -->
@@ -21,62 +22,69 @@
         <div class="dropdown">
           <button class="btn btn-sm btn-info dropdown-toggle" type="button"
           id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            <span><i class="fa fa-cog"></i></span>
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-            <li><%= link_to t('links.back'), announcements_path%></li>
-            <li><%= link_to t('links.edit'), edit_announcement_path(@announcement)%></li>
-            <li><%= link_to t('announcement.links.new'), new_announcement_path %></li>
-            <li class="divider"></li>
-            <li><%= link_to t('links.delete'), @announcement, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-          </ul>
-        </div>
+          <span><i class="fa fa-cog"></i></span>
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+          <li><%= link_to t('links.back'), announcements_path%></li>
+          <li><%= link_to t('links.edit'), edit_announcement_path(@announcement)%></li>
+          <li><%= link_to t('announcement.links.new'), new_announcement_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to t('links.delete'), @announcement, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        </ul>
       </div>
     </div>
-    <!-- ./Mobile menu -->
   </div>
-  <div class="row">
-    <div class="col-xs-12 spaced">
-      <h1 class="text-center">
-        <%= @announcement.title %>
-      </h1>
-    </div>
+  <!-- ./Mobile menu -->
+</div>
+<div class="row">
+  <div class="col-xs-12 spaced">
+    <h1 class="text-center">
+      <%= @announcement.title %>
+    </h1>
   </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <%= render 'layouts/success_notice', notice: notice %>
-    </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <%= render 'layouts/success_notice', notice: notice %>
   </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <hr>
-      <div class="row">
-        <div class="col-xs-12 col-md-3">
-          <%= image_tag gravatar(@announcement.user.email, 25), height: 25, class: 'img-circle' %>
-          &nbsp;
-          <%= mail_to @announcement.user.email, @announcement.user.name %>
-        </div>
-        <div class="col-xs-12 col-md-3 spaced-xs">
-          <span class="text-muted"><i class="fa fa-fw fa-clock-o"></i></span>
-          <%= distance_of_time_in_words @announcement.created_at, Time.zone.now %> ago
-        </div>
-        <div class="col-xs-12 col-md-3 spaced-xs">
-          <span class="<%= @announcement.notify ? 'text-success': 'text-muted' %>"
-            data-toggle="tooltip" data-placement="right" title="<%=
-                                                  @announcement.notify ?
-                                                  'People will be notified' :
-                                                  'People not notified'  %>">
-            <i class="fa fa-fw fa-bell-o"></i>
-          </span>
-        </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <hr>
+    <div class="row">
+      <div class="col-xs-12 col-md-3">
+        <%= image_tag gravatar(@announcement.user.email, 25), height: 25, class: 'img-circle' %>
+        &nbsp;
+        <%= mail_to @announcement.user.email, @announcement.user.name %>
       </div>
-      <hr>
+      <div class="col-xs-12 col-md-3 spaced-xs">
+        <span class="text-muted"><i class="fa fa-fw fa-clock-o"></i></span>
+        <%= distance_of_time_in_words @announcement.created_at, Time.zone.now %> ago
+      </div>
+      <div class="col-xs-12 col-md-3 spaced-xs">
+        <span class="<%= @announcement.notify ? 'text-success': 'text-muted' %>"
+          data-toggle="tooltip" data-placement="right" title="<%=
+          @announcement.notify ?
+          t('announcement.will_notify') :
+          t('announcement.will_not_notify')  %>">
+          <% if @announcement.notify %>
+          <i class="fa fa-fw fa-bell-o"></i>
+          <%= t('announcement.will_notify') %>
+          <% else %>
+          <i class="fa fa-fw fa-bell-slash-o"></i>
+          <%= t('announcement.will_not_notify') %>
+          <% end %>
+
+        </span>
+      </div>
     </div>
+    <hr>
   </div>
-  <div class="row">
-    <div class="col-xs-12">
-        <%= @announcement.description %>
-    </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <%= @announcement.description %>
   </div>
+</div>
 </div>
