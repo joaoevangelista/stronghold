@@ -9,6 +9,8 @@ services:
       SECRET_KEY_BASE: yourkeyhere
       POSTGRES_PASSWORD: yourpassword
       POSTGRES_USER: stronghold
+      MAIL_USER: stronghold.notifier@gmail.com
+      MAIL_PASSWORD: <yourpassword>
     links:
       - postgres
     depends_on:
