@@ -173,6 +173,7 @@ pt-BR:
       new: 'Novo Anúncio'
     made_by_title: 'Feito por'
     marked_as_read: 'Marcado como lido com sucesso.'
+    mark_as_read: 'Marcar como lido'
     new_title: 'Novo Anúncio'
     plural: 'Anúncios'
     published: 'Publicado'

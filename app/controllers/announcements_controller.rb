@@ -76,9 +76,7 @@ class AnnouncementsController < AuthenticatedController
     @read = Read.exists? announcement_id: @announcement.id, user_id: current_user.id
     if !@read
       read = Read.new(announcement_id: @announcement.id, user_id: current_user.id)
-      respond_to do |_format|
-        format_save read
-      end
+      format_save read
     else
       format_already_marked
     end

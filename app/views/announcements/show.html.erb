@@ -88,7 +88,7 @@
       <div class="col-xs-12 col-md-3 spaced-xs">
         <% if not @read %>
         <%= link_to t('announcement.mark_as_read'), mark_as_read_by_announcement_path(@announcement),
-        class: ['btn', 'btn-sm', 'btn-link'], method: :put   %>
+          method: :put   %>
         <% else %>
         <span class="text-success">
           <i class="fa fa-check fa-fw"></i>
