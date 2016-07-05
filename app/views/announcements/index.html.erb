@@ -2,8 +2,23 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="pull-right">
-        <%= link_to icon('plus', t('announcement.links.new'), class: 'fa-fw'),
-        new_announcement_path, class: ['btn', 'btn-sm', 'btn-default'] %>
+        <div class="hidden-xs">
+          <%= link_to icon('plus', t('announcement.links.new'), class: 'fa-fw'),
+          new_announcement_path, class: ['btn', 'btn-sm', 'btn-default'] %>
+        </div>
+        <div class="visible-xs">
+          <div class="dropdown">
+            <button class="btn btn-sm btn-info dropdown-toggle" type="button"
+            id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <span><i class="fa fa-cog"></i></span>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+            <li><%= link_to t('announcement.links.new'), new_announcement_path %></li>
+          </ul>
+        </div>
+        </div>
+
       </div>
     </div>
   </div>
