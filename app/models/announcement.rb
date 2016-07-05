@@ -7,4 +7,13 @@ class Announcement < ActiveRecord::Base
   validates :user, :title, :description, presence: true
 
   belongs_to :user
+
+  after_save :notify_users
+
+
+  def notify_users
+    if self.notify
+      AnnouncementNotificationService.new(self).send
+    end
+  end
 end
