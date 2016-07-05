@@ -271,6 +271,11 @@ pt-BR:
     sign_out: 'Sair'
     image_caption: 'Sua imagem do'
     remember_me: 'Lembre-me'
+    sign_up: 'Registrar'
+    forgot_password: 'Esqueceu sua senha ?'
+    no_confirmation_yet: "Não recebeu ainda instruções de confirmação ?"
+    no_unlock_instructions: "Não recebeu ainda instruções para desbloqueio ?"
+    sign_in_with: 'Entrar com'
     placeholders:
       email: 'Digite seu email'
       password: 'Digite sua senha'

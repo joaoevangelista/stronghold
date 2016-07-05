@@ -28,6 +28,7 @@ en:
         email: 'Email'
         password: 'Password'
         password_confirmation: 'Password confirmation'
+
   date:
     abbr_day_names:
     - Sun
@@ -275,6 +276,11 @@ en:
     sign_out: "Sign Out"
     image_caption: 'Your image from'
     remember_me: 'Remember me'
+    sign_up: 'Sign Up'
+    forgot_password: 'Forgot Password ?'
+    no_confirmation_yet: "Didn't receive confirmation instructions?"
+    no_unlock_instructions: "Didn't receive unlock instructions?"
+    sign_in_with: 'Sign in with'
     placeholders:
       email: 'Enter your email'
       password: 'Enter your password'
