@@ -256,6 +256,8 @@ en:
     status: Status
     type: Title
     update_message: "Type was successfully updated."
+    links:
+      new_type: 'New Type'
   links:
     back: Back
     delete: Delete

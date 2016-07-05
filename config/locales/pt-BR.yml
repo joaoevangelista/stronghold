@@ -255,6 +255,8 @@ pt-BR:
     status: 'Estado'
     type: 'Título'
     update_message: 'Tipo foi atualizado com sucesso.'
+    links:
+      new_type: 'Novo Tipo'
   links:
     back: 'Voltar'
     delete: 'Deletar'
