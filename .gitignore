@@ -43,3 +43,6 @@ rethinkdb_data/*
 
 # Ignore site folder
 site/*
+
+#Ignore env file from public repository
+*.env
