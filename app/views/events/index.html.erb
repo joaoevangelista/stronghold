@@ -52,7 +52,7 @@
                 <span><i class="fa fa-sun-o"></i></span>
                 <%= link_to event.title, event %>
               </td>
-              <td><%= date_time event.time %></td>
+              <td><%= l event.time, format: :long %></td>
             </tr>
             <% end %>
           </tbody>

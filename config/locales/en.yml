@@ -59,9 +59,9 @@ en:
     - Thursday
     - Friday
     - Saturday
-    formats:
-      default: "%Y-%m-%d"
-      long: "%B %d, %Y"
+    formats: # You can use different names to indicate when parsing date or time
+      default: "%b, %d %Y"
+      long: "%B %d, %Y %H:%M"
       short: "%b %d"
     month_names:
     -
@@ -81,6 +81,9 @@ en:
     - :year
     - :month
     - :day
+  time:
+    formats:
+      default: '%H:%M'
   datetime:
     distance_in_words:
       about_x_hours:
