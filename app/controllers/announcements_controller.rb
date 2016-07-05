@@ -90,7 +90,7 @@ class AnnouncementsController < AuthenticatedController
     respond_to do |format|
       if read.save
         format.html do
-            redirect_to @announcement, notice: I18n.t('announcement.marked_as_read')
+          redirect_to @announcement, notice: I18n.t('announcement.marked_as_read')
         end
         format.json { head :ok }
       else

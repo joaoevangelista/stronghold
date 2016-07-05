@@ -25,3 +25,5 @@ RSpec/ExampleLength:
   Max: 10
 RSpec/InstanceVariable:
   Enabled: false
+Metrics/ClassLength:
+  Max: 110

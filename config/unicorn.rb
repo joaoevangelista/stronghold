@@ -1,4 +1,5 @@
-app_dir = File.expand_path("../..", __FILE__)
+# frozen_string_literal: true
+app_dir = File.expand_path('../..', __FILE__)
 working_directory app_dir
 
 pid "#{app_dir}/tmp/unicorn.pid"
@@ -7,5 +8,5 @@ pid "#{app_dir}/tmp/unicorn.pid"
 # stdout_path "#{app_dir}/log/unicorn.stdout.log"
 
 worker_processes 1
-listen "/tmp/unicorn.sock", :backlog => 64
+listen '/tmp/unicorn.sock', backlog: 64
 timeout 30
