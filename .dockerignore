@@ -1,3 +1,6 @@
 .git
 .dockerignore
 Gemfile.lock
+
+# Ignore bundler folder to not include development args into production
+.bundle
