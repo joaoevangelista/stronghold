@@ -7,10 +7,9 @@ services:
       - '80:80'
     environment:
       SECRET_KEY_BASE: yourkeyhere
-      POSTGRES_PASSWORD: yourpassword
       POSTGRES_USER: stronghold
       MAIL_USER: stronghold.notifier@gmail.com
-      MAIL_PASSWORD: <yourpassword>
+    env_file: stronghold.env
     links:
       - postgres
     depends_on:
