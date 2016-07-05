@@ -3,6 +3,6 @@ class NotificationMailJob < ActiveJob::Base
 
   def perform(announcement)
     users = User.all
-    AnnouncementNotification.notify_about announcement, users
+    AnnouncementNotification.notify_about(announcement, users).deliver_now
   end
 end

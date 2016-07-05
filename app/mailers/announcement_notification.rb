@@ -1,8 +1,9 @@
 class AnnouncementNotification < ApplicationMailer
+
+  default to: Proc.new { User.all.map(&:email) }
+
   def notify_about(announcement, recipients)
     @announcement = announcement
-    recipients.each do |recipient|
-      mail(to: recipient.email, subject: announcement.title)
-    end
+    mail(subject: announcement.title)
   end
 end

@@ -11,7 +11,10 @@ Development
 
 * System dependencies: Be sure to install rails gem globally and have Devkit if needed for your platform.
 
-* Configuration: Set `TEST_KEY` env var to generated string from `rake secret ` also set a `DEV_KEY` to another generated string from `rake secret ` so they can be used on secrets.yml without been shared.
+* Configuration:
+  - Set `TEST_KEY` env var to generated string from `rake secret ` also set a `DEV_KEY` to another generated string from `rake secret ` so they can be used on secrets.yml without been shared.
+  - To use the mail service, and you will, set up a GMail account with you need one.
+   Then set the `MAIL_USER` env variable as the email and `MAIL_PASSWORD` as your password.
 
 * Database creation: To migrate the database run `rake db:migrate`.
 
