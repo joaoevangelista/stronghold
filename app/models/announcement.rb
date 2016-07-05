@@ -10,10 +10,7 @@ class Announcement < ActiveRecord::Base
 
   after_save :notify_users
 
-
   def notify_users
-    if self.notify
-      AnnouncementNotificationService.new(self).send
-    end
+    AnnouncementNotificationService.new(self).send if notify
   end
 end

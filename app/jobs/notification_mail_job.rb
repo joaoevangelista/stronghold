@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+# Job adapter to send email rightaway on background
 class NotificationMailJob < ActiveJob::Base
   queue_as :default
 

@@ -71,10 +71,11 @@ Rails.application.configure do
     address:              'smtp.gmail.com',
     port:                 587,
     domain:               'gmail.com',
-    user_name:            ENV['MAIL_USER'] ||'stronghold.notifier@gmail.com',
+    user_name:            ENV['MAIL_USER'] || 'stronghold.notifier@gmail.com',
     password:             ENV['MAIL_PASSWORD'],
     authentication:       'plain',
-    enable_starttls_auto: true  }
+    enable_starttls_auto: true
+  }
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
