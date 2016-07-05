@@ -26,7 +26,7 @@ module IssueTypesHelper
 
   def link_to_type(type)
     return '' unless type
-    link_to type_label(type), issue_type_path(type)
+    link_to type_label(type, class: 'label-normal'), issue_type_path(type)
   end
 end
 
