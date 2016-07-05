@@ -21,7 +21,7 @@ WORKDIR $INSTALL_DIR
 
 COPY Gemfile Gemfile
 
-RUN gem install bundler rake && bundle install --without development test
+RUN gem install bundler rake foreman && bundle install --without development test
 
 # Copy in the application code from your work station at the current directory
 # over to the working directory.
