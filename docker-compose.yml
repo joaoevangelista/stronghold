@@ -9,7 +9,8 @@ services:
       SECRET_KEY_BASE: yourkeyhere
       POSTGRES_USER: stronghold
       MAIL_USER: stronghold.notifier@gmail.com
-    env_file: stronghold.env
+    env_file:
+      - ./stronghold.env
     links:
       - postgres
     depends_on:
