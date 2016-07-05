@@ -8,7 +8,7 @@ class AnnouncementNotificationService
 
   def send
     puts "I'm sending an email to nofify about #{@announcement.title}"
-    # todo call job
+    NotificationMailJob.perform_later @announcement
   end
 
 end
