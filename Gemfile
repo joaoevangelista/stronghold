@@ -32,8 +32,12 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # https://github.com/bluerail/twitter-bootstrap-rails-confirm
 gem 'twitter-bootstrap-rails-confirm'
 
+# Authorization & Authentication
 gem 'devise'
 gem 'pundit'
+gem 'rolify'
+
+# Paginator
 gem 'public_activity'
 # Language selector
 gem 'http_accept_language'
