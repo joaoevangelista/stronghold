@@ -106,7 +106,7 @@ class AnnouncementsController < AuthenticatedController
   def format_already_marked
     respond_to do |format|
       format.html do
-        flash[:warning_notice] = I18n.t('announcement.already_marked_message')
+        flash[:warning] = I18n.t('announcement.already_marked_message')
         redirect_to @announcement
       end
       format.json { head :no_content }
@@ -117,7 +117,7 @@ class AnnouncementsController < AuthenticatedController
     respond_to do |format|
       format.html do
         unless @announcement
-          flash[:error_notice] = I18n.t('announcement.not_found')
+          flash[:error] = I18n.t('announcement.not_found')
           redirect_to announcements_url
         end
       end
