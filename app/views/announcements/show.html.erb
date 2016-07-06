@@ -58,13 +58,7 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <%= render 'layouts/success_notice', notice: notice %>
-    <% if flash[:error_notice] %>
-    <%= render 'layouts/error_notice', error_notice: flash[:error_notice] %>
-    <% end %>
-    <% if flash[:warning_notice] %>
-    <%= render 'layouts/warning_notice', warning_notice: flash[:warning_notice] %>
-    <% end %>
+    <%= render 'layouts/notice' %>
   </div>
 </div>
 <div class="row">
