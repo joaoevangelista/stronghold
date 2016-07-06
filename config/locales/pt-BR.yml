@@ -1,5 +1,9 @@
 ---
 pt-BR:
+  pudint:
+    default: 'Você não pode executar essa ação'
+    announcemnt_policy:
+      update?: 'Você não pode editar este anúncio'
   activerecord:
     errors:
       messages:

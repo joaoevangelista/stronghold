@@ -1,5 +1,9 @@
 ---
 en:
+  pudint:
+    default: 'You can not perform this action'
+    announcemnt_policy:
+      update?: 'You can not edit this announcement!'
   activerecord:
     errors:
       messages:
