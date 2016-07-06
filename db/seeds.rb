@@ -8,3 +8,6 @@
 
 user = User.create!({name: 'Adminstration', email: 'admin@stronghold.com', password: '123456' })
 user.add_role :manager
+
+johnny = User.create!({name: 'Johnny', email: 'johnny@stronghold.com', password: '123456' })
+johnny.add_role :resident
