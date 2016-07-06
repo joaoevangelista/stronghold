@@ -1,4 +1,12 @@
 .datetime {
-    width: 17%;
-    display: inline-block;
+  width: 17%;
+  display: inline-block;
+}
+
+@media (max-width: 767px) {
+  .datetime {
+    width: 100%;
+    display: block;
+    margin-top: 1.2rem;
+  }
 }

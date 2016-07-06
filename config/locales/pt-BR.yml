@@ -1,6 +1,6 @@
 ---
 pt-BR:
-  pudint:
+  pundit:
     default: 'Você não pode executar essa ação'
     announcemnt_policy:
       update?: 'Você não pode editar este anúncio'
@@ -291,7 +291,7 @@ pt-BR:
     roles:
       label: 'Função'
       manager: 'Síndico'
-      resident: 'Residente'  
+      resident: 'Residente'
   views:
     pagination:
       first: "&laquo; First"
