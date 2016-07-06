@@ -7,18 +7,21 @@ class AnnouncementsController < AuthenticatedController
   # GET /announcements
   # GET /announcements.json
   def index
+    authorize Announcement
     @announcements = Announcement.order(:updated_at).page params[:page]
   end
 
   # GET /announcements/1
   # GET /announcements/1.json
   def show
+    authorize @announcement
     @read = Read.exists? announcement_id: @announcement.id, user_id: current_user.id
   end
 
   # GET /announcements/new
   def new
     @announcement = Announcement.new(user_id: current_user.id)
+    authorize @announcement
   end
 
   # GET /announcements/1/edit
@@ -29,7 +32,7 @@ class AnnouncementsController < AuthenticatedController
   # POST /announcements.json
   def create
     @announcement = Announcement.new(announcement_params)
-
+    authorize @announcement
     respond_to do |format|
       if @announcement.save
         format.html do
@@ -46,6 +49,7 @@ class AnnouncementsController < AuthenticatedController
   # PATCH/PUT /announcements/1
   # PATCH/PUT /announcements/1.json
   def update
+    authorize @announcement
     respond_to do |format|
       if @announcement.update(announcement_params)
         format.html do
@@ -62,6 +66,7 @@ class AnnouncementsController < AuthenticatedController
   # DELETE /announcements/1
   # DELETE /announcements/1.json
   def destroy
+    authorize @announcement
     @announcement.destroy
     respond_to do |format|
       format.html do

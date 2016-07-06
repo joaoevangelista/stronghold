@@ -6,6 +6,7 @@ class EventsController < AuthenticatedController
   # GET /events
   # GET /events.json
   def index
+    authorize Event
     @events = Event.order(:created_at).page params[:page]
   end
 
@@ -17,17 +18,19 @@ class EventsController < AuthenticatedController
   # GET /events/new
   def new
     @event = Event.new(user_id: current_user.id)
+    authorize @event
   end
 
   # GET /events/1/edit
   def edit
+    authorize @event
   end
 
   # POST /events
   # POST /events.json
   def create
     @event = Event.new(event_params)
-
+    authorize @event
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: I18n.t('event.create_message') }
@@ -42,6 +45,7 @@ class EventsController < AuthenticatedController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
+    authorize @event
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to @event, notice: I18n.t('event.update_message') }
@@ -56,6 +60,7 @@ class EventsController < AuthenticatedController
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
+    authorize @event
     @event.destroy
     respond_to do |format|
       format.html { redirect_to events_url, notice: I18n.t('event.destroy_message') }

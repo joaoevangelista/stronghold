@@ -2,8 +2,10 @@
   <div class="row">
     <div class="col-md-12 hidden-xs">
       <div class="pull-right">
+        <% if policy(Event).new? %>
         <%= link_to icon('plus', t('event.links.new'), class: 'fa-fw'),
         new_event_path, class: ['btn', 'btn-sm', 'btn-default'] %>
+        <% end %>
       </div>
     </div>
     <div class="col-xs-12 visible-xs">
@@ -14,7 +16,9 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+            <% if policy(Event).new? %>
             <li><%= link_to t('event.links.new'), new_event_path %></li>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -52,7 +56,7 @@
                 <span><i class="fa fa-sun-o"></i></span>
                 <%= link_to event.title, event %>
               </td>
-              <td><%= date_time event.time %></td>
+              <td><%= l event.time, format: :long %></td>
             </tr>
             <% end %>
           </tbody>

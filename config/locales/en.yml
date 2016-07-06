@@ -1,5 +1,9 @@
 ---
 en:
+  pudint:
+    default: 'You can not perform this action'
+    announcemnt_policy:
+      update?: 'You can not edit this announcement!'
   activerecord:
     errors:
       messages:
@@ -28,6 +32,7 @@ en:
         email: 'Email'
         password: 'Password'
         password_confirmation: 'Password confirmation'
+
   date:
     abbr_day_names:
     - Sun
@@ -59,9 +64,9 @@ en:
     - Thursday
     - Friday
     - Saturday
-    formats:
-      default: "%Y-%m-%d"
-      long: "%B %d, %Y"
+    formats: # You can use different names to indicate when parsing date or time
+      default: "%b, %d %Y"
+      long: "%B %d, %Y %H:%M"
       short: "%b %d"
     month_names:
     -
@@ -256,6 +261,8 @@ en:
     status: Status
     type: Title
     update_message: "Type was successfully updated."
+    links:
+      new_type: 'New Type'
   links:
     back: Back
     delete: Delete
@@ -268,11 +275,25 @@ en:
     edit_account: "Edit Account"
     sign_in: "Sign In"
     sign_out: "Sign Out"
+    register: 'Register User'
     image_caption: 'Your image from'
+    remember_me: 'Remember me'
+    sign_up: 'Sign Up'
+    forgot_password: 'Forgot Password ?'
+    no_confirmation_yet: "Didn't receive confirmation instructions?"
+    no_unlock_instructions: "Didn't receive unlock instructions?"
+    sign_in_with: 'Sign in with'
+    placeholders:
+      email: 'Enter your email'
+      password: 'Enter your password'
     form:
       password_tip: "leave blank if you don't want to change it"
       current_password_confirmation: 'we need your current password to confirm your changes'
       wating_confirmation: 'Currently waiting confirmation for:'
+    roles:
+      label: 'Roles'
+      manager: 'Manager'
+      resident: 'Resident'
   views:
     pagination:
       first: "&laquo; First"

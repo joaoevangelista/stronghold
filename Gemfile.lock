@@ -186,6 +186,7 @@ GEM
       json (~> 1.4)
     responders (2.2.0)
       railties (>= 4.2.0, < 5.1)
+    rolify (5.1.0)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -282,6 +283,7 @@ DEPENDENCIES
   public_activity
   pundit
   rails (= 4.2.6)
+  rolify
   rspec-rails (~> 3.4)
   rubocop (~> 0.40.0)
   rubocop-rspec (~> 1.5.0)

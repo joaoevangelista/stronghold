@@ -36,6 +36,15 @@
           </div>
         </div>
         <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+            <%= label_tag :role, t('user.roles.label') , class: 'control-label' %>
+            <%= select_tag :role, options_for_select(@roles) ,class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
           <div class="col-md-12">
             <div class="form-group">
               <%= f.label :password, class: 'control-label' %>
