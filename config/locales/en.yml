@@ -82,9 +82,6 @@ en:
     - :year
     - :month
     - :day
-  time:
-    formats:
-      default: '%H:%M'
   datetime:
     distance_in_words:
       about_x_hours:
