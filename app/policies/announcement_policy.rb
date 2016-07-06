@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Annoncement Policies
 class AnnouncementPolicy < ApplicationPolicy
   # Only managers can create new announcements

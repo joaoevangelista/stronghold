@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Issue Policies
 class IssuePolicy < ApplicationPolicy
   def open?
