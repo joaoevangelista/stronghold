@@ -275,6 +275,7 @@ en:
     edit_account: "Edit Account"
     sign_in: "Sign In"
     sign_out: "Sign Out"
+    register: 'Register User'
     image_caption: 'Your image from'
     remember_me: 'Remember me'
     sign_up: 'Sign Up'

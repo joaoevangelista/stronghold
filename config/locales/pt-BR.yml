@@ -273,6 +273,7 @@ pt-BR:
     edit_account: 'Editar conta'
     sign_in: 'Entrar'
     sign_out: 'Sair'
+    register: 'Registrar Usuário'
     image_caption: 'Sua imagem do'
     remember_me: 'Lembre-me'
     sign_up: 'Registrar'

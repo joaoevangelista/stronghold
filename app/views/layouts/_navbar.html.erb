@@ -27,8 +27,11 @@
       aria-haspopup="true" aria-expanded="false"><%= current_user.name %><span class="caret"></span></a>
       <ul class="dropdown-menu">
         <li><%= link_to icon('pencil', t('user.edit_account'), class: 'fa-fw'), edit_user_registration_path(current_user) %></li>
+        <% if policy(current_user).create? %>
         <li class="divider"></li>
-
+        <li><%= link_to icon('key', t('user.register'), class: 'fa-fw'), new_user_registration_path %></li>
+        <% end %>
+        <li class="divider"></li>
         <li><%= link_to(icon('sign-out', t('user.sign_out'), class: 'fa-fw'), destroy_user_session_path, method: :delete) %></li>
       </ul>
     </li>
