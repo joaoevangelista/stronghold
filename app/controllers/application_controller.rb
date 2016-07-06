@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
     policy_name = exception.policy.class.to_s.underscore
     flash[:error_notice] = t("#{policy_name}.#{exception.query}", scope: 'pudint',
     default: :default)
+    redirect_to(request.refferer || root_path)
   end
 
   private
