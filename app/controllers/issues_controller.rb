@@ -6,29 +6,33 @@ class IssuesController < AuthenticatedController
   # GET /issues
   # GET /issues.json
   def index
+    authorize Issue
     @issues = Issue.order(:updated_at).page params[:page]
   end
 
   # GET /issues/1
   # GET /issues/1.json
   def show
+    authorize @issue
     @assignee = User.find(@issue.assignee_id) if @issue.assignee_id
   end
 
   # GET /issues/new
   def new
     @issue = Issue.new(user_id: current_user.id)
+    authorize @issue
   end
 
   # GET /issues/1/edit
   def edit
+    authorize @issue
   end
 
   # POST /issues
   # POST /issues.json
   def create
     @issue = Issue.new(issue_params)
-
+    authorize @issue
     respond_to do |format|
       if @issue.save
         format.html { redirect_to @issue, notice: I18n.t('issue.create_message') }
@@ -43,6 +47,7 @@ class IssuesController < AuthenticatedController
   # PATCH/PUT /issues/1
   # PATCH/PUT /issues/1.json
   def update
+    authorize @issue
     respond_to do |format|
       if @issue.update(issue_params)
         format.html { redirect_to @issue, notice: I18n.t('issue.update_message') }
@@ -56,6 +61,7 @@ class IssuesController < AuthenticatedController
 
   # PUT /issues/1/open
   def open
+    authorize @issue
     respond_to do |format|
       if @issue.update(is_resolved: false)
         @issue.create_activity :issue_opened
@@ -71,6 +77,7 @@ class IssuesController < AuthenticatedController
   # DELETE /issues/1/close
 
   def close
+    authorize @issue
     respond_to do |format|
       if @issue.update(is_resolved: true)
         @issue.create_activity :issue_closed
@@ -86,6 +93,7 @@ class IssuesController < AuthenticatedController
   # DELETE /issues/1
   # DELETE /issues/1.json
   def destroy
+    authorize @issue
     @issue.destroy
     respond_to do |format|
       format.html { redirect_to issues_url, notice: I18n.t('issue.close_message') }

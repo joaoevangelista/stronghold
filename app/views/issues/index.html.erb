@@ -3,10 +3,14 @@
     <div class="col-xs-12">
       <div class="pull-right">
         <div class="hidden-xs">
+        <% if policy(Issue).new? %>
         <%= link_to icon('plus', t('issue.links.new'), class: 'fa-fw'), new_issue_path,
         class: 'btn btn-sm btn-default' %>
+        <% end %>
+        <% if policy(IssueType).new? %>
         <%= link_to icon('plus', t('issue.links.new_type'), class: 'fa-fw'), new_issue_type_path,
         class: 'btn btn-sm btn-default' %>
+        <% end %>
         </div>
         <div class="visible-xs">
           <div class="dropdown">
@@ -15,8 +19,12 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+              <% if policy(Issue).new? %>
               <li><%= link_to t('issue.links.new'), new_issue_path %></li>
+              <% end %>
+              <% if policy(IssueType).new? %>
               <li><%= link_to t('issue.links.new_type'), new_issue_type_path %></li>
+              <% end %>
             </ul>
           </div>
         </div>

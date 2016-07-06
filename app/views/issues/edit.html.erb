@@ -6,7 +6,9 @@
       </div>
       <div class="pull-right">
         <%= link_to icon('eye', t('links.show'), class: 'fa-fw'), @issue,  class: ['btn','btn-sm','btn-default'] %>
-        <%= delete_link icon('trash', t('links.delete'), class: 'fa-fw'), @issue, class: ['btn','btn-sm','btn-danger'] %>
+        <% if policy(@isse).destroy? %>
+          <%= delete_link icon('trash', t('links.delete'), class: 'fa-fw'), @issue, class: ['btn','btn-sm','btn-danger'] %>
+        <% end %>
       </div>
     </div>
     <div class="col-xs-12 visible-xs">
@@ -20,7 +22,9 @@
             <li><%= link_to t('links.back'), issues_path %></li>
             <li><%= link_to t('links.show'), @issue %> </li>
             <li class="divider"></li>
-            <li><%= delete_link t('links.delete'), @issue %></li>
+            <% if policy(@isse).destroy? %>
+              <li><%= delete_link t('links.delete'), @issue %></li>
+            <% end %>
           </ul>
         </div>
       </div>
