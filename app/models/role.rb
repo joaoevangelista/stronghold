@@ -5,7 +5,7 @@ class Role < ActiveRecord::Base
 
   belongs_to :resource,
              polymorphic: true
-            # optional: true Only Rails 5 supports
+  # optional: true Only Rails 5 supports
 
   validates :resource_type,
             inclusion: { in: Rolify.resource_types },
