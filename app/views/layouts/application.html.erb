@@ -27,7 +27,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'layouts/navbar' unless @disable_nav %>
+  <% if @disable_nav or current_user %>
+  <%= render 'layouts/navbar' %>  
+  <% end %>
+
   <%= yield %>
 
 </body>
