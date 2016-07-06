@@ -1,4 +1,5 @@
 <div class="container">
+  <% if policy(Announcement).new? %>
   <div class="row">
     <div class="col-xs-12">
       <div class="pull-right">
@@ -17,56 +18,56 @@
             <li><%= link_to t('announcement.links.new'), new_announcement_path %></li>
           </ul>
         </div>
-        </div>
-
       </div>
+    </div>
+  </div>
+</div>
+<% end %>
+<div class="row">
+  <div class="col-xs-12">
+    <h1 class="text-center"><%= t('announcement.index_title') %></h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 spaced">
+    <%= render 'layouts/success_notice', notice: notice %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 spaced">
+    <% if @announcements.empty? %>
+    <p class="lead text-center"><%= t('announcement.empty_array') %></p>
+    <% else %>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th class="text-center"><%= t('announcement.about_title') %></th>
+            <th class="text-center hidden-xs"><%= t('announcement.made_by_title') %></th>
+            <th colspan="1"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @announcements.each do |announcement| %>
+          <tr>
+            <td>
+              <%= link_to icon('bullhorn',announcement.title, class: 'fa-fw'), announcement %></td>
+              <td class="hidden-xs"><%= announcement.user.name %></td>
+              <td class="hidden-xs"><%= distance_of_time_in_words announcement.created_at, Time.zone.now %> <%= t('time.past_word') %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <% end %>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <h1 class="text-center"><%= t('announcement.index_title') %></h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 spaced">
-      <%= render 'layouts/success_notice', notice: notice %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 spaced">
-      <% if @announcements.empty? %>
-      <p class="lead text-center"><%= t('announcement.empty_array') %></p>
-      <% else %>
-      <div class="table-responsive">
-        <table class="table table-striped table-hover">
-          <thead>
-            <tr>
-              <th class="text-center"><%= t('announcement.about_title') %></th>
-              <th class="text-center hidden-xs"><%= t('announcement.made_by_title') %></th>
-              <th colspan="1"></th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <% @announcements.each do |announcement| %>
-            <tr>
-              <td>
-                <%= link_to icon('bullhorn',announcement.title, class: 'fa-fw'), announcement %></td>
-                <td class="hidden-xs"><%= announcement.user.name %></td>
-                <td class="hidden-xs"><%= distance_of_time_in_words announcement.created_at, Time.zone.now %> <%= t('time.past_word') %></td>
-              </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="pull-right">
-          <%= paginate @announcements %>
-        </div>
+      <div class="pull-right">
+        <%= paginate @announcements %>
       </div>
     </div>
   </div>
+</div>
