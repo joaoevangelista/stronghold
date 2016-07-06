@@ -6,28 +6,32 @@ class IssueTypesController < AuthenticatedController
   # GET /issue_types
   # GET /issue_types.json
   def index
+    authorize IssueType
     @issue_types = IssueType.all
   end
 
   # GET /issue_types/1
   # GET /issue_types/1.json
   def show
+    authorize @issue_type
   end
 
   # GET /issue_types/new
   def new
     @issue_type = IssueType.new
+    authorize @issue_type
   end
 
   # GET /issue_types/1/edit
   def edit
+    authorize @issue_type
   end
 
   # POST /issue_types
   # POST /issue_types.json
   def create
     @issue_type = IssueType.new(issue_type_params)
-
+    authorize @issue_type
     respond_to do |format|
       if @issue_type.save
         format.html do
@@ -44,6 +48,7 @@ class IssueTypesController < AuthenticatedController
   # PATCH/PUT /issue_types/1
   # PATCH/PUT /issue_types/1.json
   def update
+    authorize @issue_type
     respond_to do |format|
       if @issue_type.update(issue_type_params)
         format.html do
@@ -60,6 +65,7 @@ class IssueTypesController < AuthenticatedController
   # DELETE /issue_types/1
   # DELETE /issue_types/1.json
   def destroy
+    authorize @issue_type
     @issue_type.destroy
     respond_to do |format|
       format.html do
