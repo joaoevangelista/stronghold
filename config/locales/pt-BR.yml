@@ -288,6 +288,10 @@ pt-BR:
       password_tip: "deixe em branco se você não quiser muda-la"
       current_password_confirmation: 'precisamos da sua senha para confirmar as alterações'
       wating_confirmation: 'Atualmente esperando confirmação para:'
+    roles:
+      label: 'Função'
+      manager: 'Síndico'
+      resident: 'Residente'  
   views:
     pagination:
       first: "&laquo; First"
