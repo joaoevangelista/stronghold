@@ -12,6 +12,7 @@ AllCops:
     - rethinkdb_data/**/*
     - config/initializers/**/*
     - config/secrets.*
+    - db/migrate/**
 
 Metrics/LineLength:
   Max: 95
@@ -26,4 +27,4 @@ RSpec/ExampleLength:
 RSpec/InstanceVariable:
   Enabled: false
 Metrics/ClassLength:
-  Max: 110
+  Max: 150

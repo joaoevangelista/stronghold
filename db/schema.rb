@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160706151106) do
+ActiveRecord::Schema.define(version: 20160707180510) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -120,5 +120,15 @@ ActiveRecord::Schema.define(version: 20160706151106) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "issue_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "votes", ["issue_id"], name: "index_votes_on_issue_id"
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id"
 
 end

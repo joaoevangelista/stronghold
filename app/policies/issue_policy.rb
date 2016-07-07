@@ -8,4 +8,12 @@ class IssuePolicy < ApplicationPolicy
   def close?
     update?
   end
+
+  def upvote?
+    @user
+  end
+
+  def unvote?
+    @user
+  end
 end

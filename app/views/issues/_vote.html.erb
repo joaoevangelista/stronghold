@@ -1,0 +1,12 @@
+<% unless @have_voted %>
+<% if policy(@issue).upvote?  %>
+<%= link_to icon('thumbs-o-up', "#{t('issue.vote.vote')}<span class='badge'>#{@votes}</span>".html_safe, class: 'fa-fw'),
+vote_issue_path(@issue), class: 'btn btn-sm btn-primary', method: :put %>
+<%end%>
+<% else %>
+<% if policy(@issue).unvote?  %>
+<%= link_to icon('thumbs-o-up', "#{t('issue.vote.have_voted')}
+<small><span class='badge'>#{@votes}</span></small>".html_safe, class: 'fa-fw'),
+vote_issue_path(@issue), class: 'btn btn-sm btn-info', method: :delete %>
+<% end %>
+<% end %>
