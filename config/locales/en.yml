@@ -244,6 +244,11 @@ en:
     placeholders:
       title: 'What is this issue about ?'
       description: 'Tell more details about it'
+    vote:
+      success_message: 'You have voted !'
+      remove_message: 'Removed your vote from this issue'
+      vote: 'Vote'
+      have_voted: 'You have voted !'
   issue_type:
     create_message: "Type was successfully created."
     destroy_message: "Type was successfully destroyed."

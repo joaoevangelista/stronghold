@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 # :nodoc:
 class IssuesController < AuthenticatedController
-  before_action :set_issue, only: [:show, :edit, :update, :destroy, :open, :close]
+  before_action :set_issue, only: [:show, :edit, :update, :destroy, :open, :close,
+                                  :upvote, :unvote]
 
   # GET /issues
   # GET /issues.json
@@ -15,6 +16,8 @@ class IssuesController < AuthenticatedController
   def show
     authorize @issue
     @assignee = User.find(@issue.assignee_id) if @issue.assignee_id
+    @votes = @issue.votes.count
+    @have_voted = Vote.find_by(user: current_user, issue: @issue)
   end
 
   # GET /issues/new
@@ -86,6 +89,34 @@ class IssuesController < AuthenticatedController
       else
         format.html { render :show }
         format.json { render json: @issue.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT /issues/1/vote
+  def upvote
+    authorize @issue
+    respond_to do |format|
+      if Vote.upvote(current_user, @issue)
+        format.html { redirect_to @issue, notice: I18n.t('issue.vote.success_message') }
+        format.json { render :show, status: :ok, location: @issue }
+      else
+        format.html { render :show }
+        format.json { head :no_content }
+      end
+    end
+  end
+
+  # DELETE /issues/1/vote
+  def unvote
+    authorize @issue
+    respond_to do |format|
+      if Vote.unvote(current_user, @issue)
+        format.html { redirect_to @issue, notice: I18n.t('issue.vote.remove_message') }
+        format.json { render :show, status: :ok, location: @issue }
+      else
+        format.html { render :show, notice: '' }
+        format.json { head :no_content }
       end
     end
   end

@@ -242,6 +242,11 @@ pt-BR:
     placeholders:
       title: 'Sobre o que é está questão ?'
       description: 'Conte mais detalhes sobre'
+    vote:
+      success_message: 'Você votou !'
+      remove_message: 'Seu voto foi removido desta questão'
+      vote: 'Votar'
+      have_voted: 'Você já votou !'
   issue_type:
     create_message: "Tipo foi criado com sucesso."
     destroy_message: "Tipo foi removido com sucesso."

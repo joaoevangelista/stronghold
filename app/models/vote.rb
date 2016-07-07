@@ -7,7 +7,7 @@ class Vote < ActiveRecord::Base
   def self.upvote(user, issue)
     vote = Vote.find_by user: user, issue: issue
     unless vote
-     new_vote = Vote.new{user: user, issue: issue}
+     new_vote = Vote.new(user: user, issue: issue)
      new_vote.save
    else
      false

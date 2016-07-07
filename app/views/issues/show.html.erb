@@ -76,16 +76,32 @@
           <%= distance_of_time_in_words @issue.created_at, Time.zone.now %> <%= t('time.past_word') %>
 
         </div>
-        <div class="col-xs-12 col-md-4 spaced-xs">
+        <div class="col-xs-12 col-md-2 spaced-xs">
+          <div class="pull-right">
+            <% unless @have_voted %>
+            <% if policy(@issue).upvote?  %>
+            <%= link_to icon('thumbs-o-up', "#{t('issue.vote.vote')}<span class='badge'>#{@votes}</span>".html_safe, class: 'fa-fw'),
+            vote_issue_path(@issue), class: 'btn btn-sm btn-primary', method: :put %>
+            <%end%>
+            <% else %>
+            <% if policy(@issue).unvote?  %>
+            <%= link_to icon('thumbs-o-up', "#{t('issue.vote.have_voted')}
+            <small><span class='badge'>#{@votes}</span></small>".html_safe, class: 'fa-fw'),
+            vote_issue_path(@issue), class: 'btn btn-sm btn-info', method: :delete %>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-2 spaced-xs">
           <div class="pull-right">
             <% if @issue.is_resolved %>
-              <% if policy(@issue).open? %>
-                <%= link_to t('issue.reopen'), open_issue_path(@issue), class: ['btn','btn-sm','btn-primary'], method: :put %>
-              <% end %>
+            <% if policy(@issue).open? %>
+            <%= link_to t('issue.reopen'), open_issue_path(@issue), class: ['btn','btn-sm','btn-primary'], method: :put %>
+            <% end %>
             <% else %>
-              <% if policy(@issue).close? %>
-                <%= link_to t('issue.resolve'), close_issue_path(@issue),  class: ['btn','btn-sm','btn-default'], method: :delete %>
-              <% end %>
+            <% if policy(@issue).close? %>
+            <%= link_to t('issue.resolve'), close_issue_path(@issue),  class: ['btn','btn-sm','btn-default'], method: :delete %>
+            <% end %>
             <% end %>
           </div>
         </div>
