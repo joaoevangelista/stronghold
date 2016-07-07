@@ -1,0 +1,9 @@
+<% if @issue.is_resolved %>
+<% if policy(@issue).open? %>
+<%= link_to t('issue.reopen'), open_issue_path(@issue), class: ['btn','btn-sm','btn-primary'], method: :put %>
+<% end %>
+<% else %>
+<% if policy(@issue).close? %>
+<%= link_to t('issue.resolve'), close_issue_path(@issue),  class: ['btn','btn-sm','btn-default'], method: :delete %>
+<% end %>
+<% end %>
