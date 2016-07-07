@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   resources :issues do
     put :open, on: :member
     delete :close, on: :member
-    put :vote, on: :member, to: :upvote
-    delete :vote, on: :member, to: :unvote
+    put :vote, on: :member, action: :upvote
+    delete :vote, on: :member, action: :unvote
   end
   resources :issue_types
   devise_for :users, controllers: { registrations: 'registrations' }
