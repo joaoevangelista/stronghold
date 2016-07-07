@@ -12,7 +12,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <% if user_signed_in? %>
       <ul class="nav navbar-nav">
-        <li><%= link_to icon('heartbeat',t('activity.singular'), class: 'fa-fw'), activities_path %></li>
         <li><%= link_to icon('bullhorn', t('announcement.plural'), class: 'fa-fw'), announcements_path %></li>
         <li><%= link_to icon('calendar-check-o', t('event.plural'), class: 'fa-fw'), events_path %></li>
         <li><%= link_to icon('cubes',t('issue.plural'), class: 'fa-fw'), issues_path %></li>
@@ -21,7 +20,8 @@
     </li>
   </ul>
   <ul class="nav navbar-nav navbar-right">
-    <% if current_user %>
+    <% if user_signed_in? %>
+    <li><%= link_to icon('heartbeat',t('activity.singular'), class: 'fa-fw'), activities_path %></li>
     <li class="dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
       aria-haspopup="true" aria-expanded="false"><%= current_user.name %>&nbsp;<span class="caret"></span></a>
