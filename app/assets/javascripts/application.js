@@ -7,15 +7,15 @@
 //= require twitter/bootstrap/rails/confirm
 //= require_tree .
 
+NProgress.configure({
+  showSpinner: false,
+  ease: 'ease',
+  speed: 500
+});
+
 // Close the notice autommatic
 $('#notice').ready(function () {
     $('#notice').fadeTo(2000,1000).slideUp(1000, function () {
     $('#notice').alert('close');
   });
-});
-
-NProgress.configure({
-  showSpinner: false,
-  ease: 'ease',
-  speed: 500
 });
