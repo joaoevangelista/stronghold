@@ -2,7 +2,7 @@
 # Override of Devise controller to customize the permited fields
 class RegistrationsController < Devise::RegistrationsController
   skip_before_action :require_no_authentication, only: [:new, :create]
-  
+
   # Override devise to better manage the sign up process
   def create
     build_resource(sign_up_params)
