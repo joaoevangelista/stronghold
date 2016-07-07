@@ -2,6 +2,10 @@
 # Issue Type Policy
 class IssueTypePolicy < ApplicationPolicy
   def destroy?
-    @resource.user.eql?(@user) || @user.has_role?(:manager)
+    @user.has_role?(:manager)
+  end
+
+  def update?
+    @user.has_role? :manager
   end
 end
