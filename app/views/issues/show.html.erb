@@ -13,8 +13,8 @@
         <%= link_to icon('plus', t('issue.links.new'), class: 'fa-fw'), new_issue_path,
         class: ['btn','btn-sm','btn-default'] %>
         <% end %>
-        <% if policy(IssueType).new? %>
-        <%= link_to icon('plus', t('issue.links.new_type'), class: 'fa-fw'), new_issue_type_path,
+        <% if policy(IssueType).index? %>
+        <%= link_to icon('tags', t('issue_type.links.types'), class: 'fa-fw'), issue_types_path,
         class: 'btn btn-sm btn-default' %>
         <% end %>
       </div>
@@ -34,8 +34,8 @@
             <% if policy(@issue).new? %>
             <li><%= link_to t('issue.links.new'), new_issue_path %></li>
             <% end %>
-            <% if policy(IssueType).new? %>
-            <li><%= link_to t('issue.links.new_type'), new_issue_type_path %></li>
+            <% if policy(IssueType).index? %>
+            <li>  <%= link_to t('issue_type.links.types'), issue_types_path %></li>
             <% end %>
             <li class="divider"></li>
             <% if policy(@issue).destroy? %>

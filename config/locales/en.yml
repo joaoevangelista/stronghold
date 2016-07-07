@@ -270,6 +270,7 @@ en:
     update_message: "Type was successfully updated."
     links:
       new_type: 'New Type'
+      types: 'Issue Types'
   links:
     back: Back
     delete: Delete

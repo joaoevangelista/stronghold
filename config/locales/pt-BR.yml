@@ -268,6 +268,7 @@ pt-BR:
     update_message: 'Tipo foi atualizado com sucesso.'
     links:
       new_type: 'Novo Tipo'
+      types: 'Tipos de Questão'
   links:
     back: 'Voltar'
     delete: 'Deletar'
