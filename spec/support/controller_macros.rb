@@ -9,6 +9,7 @@ module ControllerMacros
              else
                maybe_user
              end
+      user.add_role :manager
       sign_in user
     end
   end
