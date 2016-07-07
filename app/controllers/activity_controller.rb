@@ -2,6 +2,8 @@
 # :nodoc:
 class ActivityController < AuthenticatedController
   def index
-    @activities = PublicActivity::Activity.order('created_at DESC')
+    @activities = Kaminari.paginate_array(PublicActivity::Activity.order('created_at DESC'))
+                                          .page(params[:page]).per(10)
+
   end
 end
