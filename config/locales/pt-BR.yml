@@ -247,6 +247,8 @@ pt-BR:
       remove_message: 'Seu voto foi removido desta questão'
       vote: 'Votar'
       have_voted: 'Você já votou !'
+      have_voted_on_issue: 'votou na questão'
+      remove_vote_from: 'removeu seu voto da questão'
   issue_type:
     create_message: "Tipo foi criado com sucesso."
     destroy_message: "Tipo foi removido com sucesso."

@@ -98,6 +98,7 @@ class IssuesController < AuthenticatedController
     authorize @issue
     respond_to do |format|
       if Vote.upvote(current_user, @issue)
+        @issue.create_activity :voted
         format.html { redirect_to @issue, notice: I18n.t('issue.vote.success_message') }
         format.json { render :show, status: :ok, location: @issue }
       else
@@ -112,6 +113,7 @@ class IssuesController < AuthenticatedController
     authorize @issue
     respond_to do |format|
       if Vote.unvote(current_user, @issue)
+        @issue.create_activity :unvote
         format.html { redirect_to @issue, notice: I18n.t('issue.vote.remove_message') }
         format.json { render :show, status: :ok, location: @issue }
       else
