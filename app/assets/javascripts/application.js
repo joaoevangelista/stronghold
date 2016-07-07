@@ -6,6 +6,9 @@
 //= require bootstrap-sprockets
 //= require twitter/bootstrap/rails/confirm
 //= require bootstrap-datepicker
+//= require moment
+//= require moment/<locale>
+//= require bootstrap-datetimepicker
 //= require_tree .
 
 NProgress.configure({
