@@ -2,7 +2,7 @@
 # :nodoc:
 class IssuesController < AuthenticatedController
   before_action :set_issue, only: [:show, :edit, :update, :destroy, :open, :close,
-                                  :upvote, :unvote]
+                                   :upvote, :unvote]
 
   # GET /issues
   # GET /issues.json
