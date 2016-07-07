@@ -6,8 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user = User.create!({name: 'Adminstration', email: 'admin@stronghold.com', password: '123456' })
-user.add_role :manager
+if Rails.env.production?
+  User.create!({name: 'Adminstration', email: 'admin@stronghold.com', password: 'AdMiNP4sS' })
+else
 
-johnny = User.create!({name: 'Johnny', email: 'johnny@stronghold.com', password: '123456' })
-johnny.add_role :resident
+  user = User.create!({name: 'Adminstration', email: 'admin@stronghold.com', password: '123456' })
+  user.add_role :manager
+
+  johnny = User.create!({name: 'Johnny', email: 'johnny@stronghold.com', password: '123456' })
+  johnny.add_role :resident
+
+
+end
