@@ -10,10 +10,10 @@ class IssuePolicy < ApplicationPolicy
   end
 
   def upvote?
-    update?
+    @user
   end
 
   def unvote?
-    update?
+    @user
   end
 end
