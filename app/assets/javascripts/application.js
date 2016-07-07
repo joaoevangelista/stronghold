@@ -5,6 +5,7 @@
 //= require nprogress-turbolinks
 //= require bootstrap-sprockets
 //= require twitter/bootstrap/rails/confirm
+//= require bootstrap-datepicker
 //= require_tree .
 
 NProgress.configure({
