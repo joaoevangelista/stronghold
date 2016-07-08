@@ -59,15 +59,11 @@ group :development, :test do
   gem 'rails-controller-testing'
   # Use RuboCop as Linter
   gem 'rubocop', '~> 0.40.0', require: false
-
   gem 'rubocop-rspec', '~> 1.5.0', require: false
-
   gem 'factory_girl_rails'
-
   gem 'kaminari-rspec'
-
   gem 'listen'
-
+  gem 'dotenv-rails'
   gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 end
 
