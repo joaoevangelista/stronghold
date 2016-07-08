@@ -1,7 +1,8 @@
 image: "ruby:2.3"
 
 services:
-  - rethinkdb:latest
+  - postgres:latest
+  - redis:alpine
 
 stages:
   - lint
@@ -31,6 +32,10 @@ rubocop:
 
 rspec:
   stage: test
+  variables:
+    POSTGRES_URI: 'postgres://postgres:5432'
+    REDIS_CACHE_URI: 'redis://redis:6379/0/cache'
+    REDIS_SESSION_URI: 'redis://redis:6379/0/session'
   script:
   - bundle exec rspec
   tags:
