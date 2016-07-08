@@ -18,18 +18,13 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include PolicyMacros, type: :view
   [:controller, :view, :request].each do |type|
-   config.include ::Rails::Controller::Testing::TestProcess, :type => type
-   config.include ::Rails::Controller::Testing::TemplateAssertions, :type => type
-   config.include ::Rails::Controller::Testing::Integration, :type => type
-   config.include Devise::Test::ControllerHelpers, :type => type
-   config.include Devise::Test::ControllerHelpers, :type => type
-   config.include Devise::Test::ControllerHelpers, :type => type
-   config.extend ControllerMacros, :type => type
-   config.extend ControllerMacros, :type => type
-   config.extend ControllerMacros, :type => type
- end
-
-
+    config.include Devise::Test::ControllerHelpers, type: type
+    config.include Devise::Test::ControllerHelpers, type: type
+    config.include Devise::Test::ControllerHelpers, type: type
+    config.extend ControllerMacros, type: type
+    config.extend ControllerMacros, type: type
+    config.extend ControllerMacros, type: type
+  end
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false

@@ -54,7 +54,7 @@ group :development, :test do
   # Use RSpec to do testing
   gem 'rspec-rails', '~> 3.5'
   # Brings back assign and assert_template
-  gem 'rails-controller-testing'
+  gem 'rails-controller-testing', require: false
   # Use RuboCop as Linter
   gem 'rubocop', '~> 0.40.0', require: false
 
