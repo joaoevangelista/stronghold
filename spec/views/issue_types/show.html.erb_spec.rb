@@ -2,15 +2,5 @@
 require 'rails_helper'
 
 RSpec.describe 'issue_types/show', type: :view do
-  before(:each) do
-    @issue_type = assign(:issue_type, IssueType.create!(
-                                        name: 'Name',
-                                        color: '#ff5555'
-    ))
-  end
-
-  it 'renders attributes in <p>' do
-    render
-    expect(rendered).to match(/Name/)
-  end
+  pending "add some examples to (or delete) #{__FILE__}"
 end

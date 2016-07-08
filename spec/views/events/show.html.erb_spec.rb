@@ -2,16 +2,5 @@
 require 'rails_helper'
 
 RSpec.describe 'events/show', type: :view do
-  before(:each) do
-    @event = assign(:event, Event.create!(
-                              title: 'Title',
-                              description: 'Description',
-                              time: Time.now,
-                              user: FactoryGirl.create(:user)
-    ))
-  end
-
-  it 'renders attributes in <p>' do
-    render
-  end
+  pending "add some examples to (or delete) #{__FILE__}"
 end

@@ -2,16 +2,5 @@
 require 'rails_helper'
 
 RSpec.describe 'announcements/show', type: :view do
-  before(:each) do
-    @announcement = assign(:announcement, Announcement.create!(
-                                            title: 'Title',
-                                            description: 'Description',
-                                            user: FactoryGirl.create(:user),
-                                            notify: false
-    ))
-  end
-
-  it 'renders attributes' do
-    render
-  end
+  pending "add some examples to (or delete) #{__FILE__}"
 end
