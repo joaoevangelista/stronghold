@@ -7,6 +7,8 @@ services:
     image: redis:alpine
   postgres:
     image: postgres:latest
+    # This will create databases for testing and development
+    command: bash -c 'createdb stronghold_dev && createdb stronghold_test'
     ports:
      - '5432:5432'
     environment:
