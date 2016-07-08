@@ -265,6 +265,7 @@ GEM
       raindrops (~> 0.7)
     warden (1.2.6)
       rack (>= 1.0)
+    wdm (0.1.1)
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -292,6 +293,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   kaminari-rspec
+  listen
   momentjs-rails (>= 2.9.0)
   nprogress-rails
   pg
@@ -310,6 +312,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   unicorn
+  wdm (>= 0.1.0)
   web-console (~> 2.0)
 
 BUNDLED WITH

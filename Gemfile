@@ -64,6 +64,9 @@ group :development, :test do
 
   gem 'kaminari-rspec'
 
+  gem 'listen'
+
+  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
   # Use sqlite3 as the database for Active Record
   if RUBY_PLATFORM =~ /x64-mingw32/
     gem 'sqlite3', ' ~> 1.3.11-x64-mingw32', platform: [:mingw, :mswin, :x64_mingw, :jruby]
