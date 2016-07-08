@@ -126,4 +126,20 @@
       </div>
     </div>
   </div>
+  <!-- Comenting -->
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+      <h3 class="text-center">Comments</h3>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+        <% @issue.comments.each do |comment| %>
+        <%= render 'issues/comment', comment: comment %>
+        <%  end %>
+        <hr>
+    </div>
+  </div>
+  <%= render 'issues/comment_form' %>
 </div>

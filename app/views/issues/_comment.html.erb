@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-12">
+            <%= image_tag gravatar(comment.user.email, 25), height: 25, class: 'img-circle' %>
+            &nbsp;
+            <%= comment.user.name %>
+            <%= date_time comment.created_at %>
+            <div class="pull-right">
+              <div class="hidden-xs">
+                <%= delete_link icon('trash-o'), [comment.issue, comment] %>
+                &nbsp;
+                <%= link_to icon('pencil-square-o'), edit_issue_comment_path(comment.issue, comment)%>
+              </div>
+              <div class="visible-xs">
+                <div class="dropdown">
+                  <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <span>
+                      <i class="fa fa-cog"></i>
+                    </span>
+                    <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu-right dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><%= link_to t('links.edit'), edit_issue_comment_path(comment.issue, comment)%></li>
+                    <li><%= delete_link t('links.remove'), [comment.issue, comment] %></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <%= simple_format comment.content %>
+      </div>
+    </div>
+
+  </div>
+</div>

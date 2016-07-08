@@ -1,0 +1,27 @@
+<div class="row form">
+  <div class="col-xs-12 col-md-8 spaced">
+    <%= form_for([@issue, @comment]) do |f| %>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="form-group <%= @comment.errors[:content].empty? ? '' : 'has-error' %>">
+          <%= f.text_area :content, class: 'form-control', rows: '5', placeholder: 'Type to comment somthing about this issue', required: true %>
+          <% if @comment.errors[:content].any? %>
+          <% @comment.errors[:content].each do |message| %>
+          <span class="help-block"><%= message.capitalize %></span>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="actions">
+          <%= f.hidden_field :issue_id %>
+          <%= f.hidden_field :user_id %>
+          <%= f.submit 'Comment', class: 'btn btn-success btn-xs-block' %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

@@ -1,34 +1,33 @@
 .label-lg {
-  padding: .6rem 1.2rem .6rem;
+  padding: 0.6rem 1.2rem;
   font-size: 100%;
 }
-
 .label-normal {
   padding: 0.4rem 0.6667rem;
   font-size: 85%;
 }
-
 .label {
   font-weight: normal;
 }
-
-table a:not(.btn), .table a:not(.btn) {
+.table a:not(.btn),
+table a:not(.btn) {
   text-decoration: none;
 }
-
 .table-option:not(:last-child) {
   padding-right: 0;
   padding-left: 0;
-
 }
-
 .badge {
   font-size: 10px;
   margin-left: 1rem;
 }
-
 @media(min-width:768px) {
   .pull-md-right {
     float: right;
+  }
+}
+@media (max-width: 767px) {
+  .btn-xs-block {
+    width: 100%;
   }
 }

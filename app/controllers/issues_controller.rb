@@ -18,6 +18,7 @@ class IssuesController < AuthenticatedController
     @assignee = User.find(@issue.assignee_id) if @issue.assignee_id
     @votes = @issue.votes.count
     @have_voted = Vote.find_by(user: current_user, issue: @issue)
+    @comment = Comment.new(user_id: current_user.id, issue_id: @issue.id)
   end
 
   # GET /issues/new

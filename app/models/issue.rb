@@ -11,4 +11,5 @@ class Issue < ApplicationRecord
   belongs_to :issue_type
   belongs_to :user
   has_many :votes
+  has_many :comments
 end
