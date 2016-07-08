@@ -20,6 +20,7 @@ RSpec.describe 'announcements/index', type: :view do
   end
 
   it 'renders a list of announcements' do
+    allow(view).to receive(:policy).and_return double(new?: true)
     render
     assert_select 'tr>td', text: 'Title'.to_s, count: 2
   end

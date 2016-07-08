@@ -6,6 +6,7 @@ RSpec.describe 'events/new', type: :view do
     assign(:event, Event.new(
                      title: 'MyString',
                      description: 'MyString',
+                     time: Time.now,
                      user: FactoryGirl.create(:user)
     ))
   end

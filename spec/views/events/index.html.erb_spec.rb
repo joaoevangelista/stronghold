@@ -6,11 +6,13 @@ RSpec.describe 'events/index', type: :view do
     assign(:events, Kaminari.paginate_array([
                                               Event.create!(
                                                 title: 'Title',
+                                                time: Time.now,
                                                 description: 'Description',
                                                 user: FactoryGirl.create(:user)
                                               ),
                                               Event.create!(
                                                 title: 'Title',
+                                                time: Time.now,
                                                 description: 'Description',
                                                 user: FactoryGirl.create(:another_user)
                                               )
