@@ -46,3 +46,6 @@ site/*
 
 #Ignore env file from public repository
 *.env
+
+#Ignore Rubymine
+.idea/
