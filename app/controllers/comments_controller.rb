@@ -13,15 +13,6 @@ class CommentsController < ApplicationController
   def show
   end
 
-  # GET issues/1/comments/new
-  def new
-    @comment = Comment.new
-  end
-
-  # GET issues/1/comments/1/edit
-  def edit
-  end
-
   # POST issues/1/comments
   # POST issues/1/comments.json
   def create
