@@ -52,7 +52,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   # Use RSpec to do testing
-  gem 'rspec-rails', '~> 3.4'
+  gem 'rspec-rails', '~> 3.5'
+  # Brings back assign and assert_template
+  gem 'rails-controller-testing'
   # Use RuboCop as Linter
   gem 'rubocop', '~> 0.40.0', require: false
 
