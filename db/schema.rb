@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160707180510) do
+ActiveRecord::Schema.define(version: 20160708051621) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -24,11 +23,10 @@ ActiveRecord::Schema.define(version: 20160707180510) do
     t.string   "recipient_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type"
+    t.index ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type"
+    t.index ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
   end
-
-  add_index "activities", ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type"
-  add_index "activities", ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type"
-  add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
 
   create_table "announcements", force: :cascade do |t|
     t.string   "title"
@@ -37,9 +35,8 @@ ActiveRecord::Schema.define(version: 20160707180510) do
     t.boolean  "notify"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_announcements_on_user_id"
   end
-
-  add_index "announcements", ["user_id"], name: "index_announcements_on_user_id"
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
@@ -48,9 +45,14 @@ ActiveRecord::Schema.define(version: 20160707180510) do
     t.datetime "time"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
-  add_index "events", ["user_id"], name: "index_events_on_user_id"
+  create_table "foos", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "issue_types", force: :cascade do |t|
     t.string   "name"
@@ -69,20 +71,18 @@ ActiveRecord::Schema.define(version: 20160707180510) do
     t.integer  "issue_type_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.index ["issue_type_id"], name: "index_issues_on_issue_type_id"
+    t.index ["user_id"], name: "index_issues_on_user_id"
   end
-
-  add_index "issues", ["issue_type_id"], name: "index_issues_on_issue_type_id"
-  add_index "issues", ["user_id"], name: "index_issues_on_user_id"
 
   create_table "reads", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "announcement_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["announcement_id"], name: "index_reads_on_announcement_id"
+    t.index ["user_id"], name: "index_reads_on_user_id"
   end
-
-  add_index "reads", ["announcement_id"], name: "index_reads_on_announcement_id"
-  add_index "reads", ["user_id"], name: "index_reads_on_user_id"
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -90,10 +90,9 @@ ActiveRecord::Schema.define(version: 20160707180510) do
     t.string   "resource_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
+    t.index ["name"], name: "index_roles_on_name"
   end
-
-  add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
-  add_index "roles", ["name"], name: "index_roles_on_name"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -109,26 +108,23 @@ ActiveRecord::Schema.define(version: 20160707180510) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "users_roles", id: false, force: :cascade do |t|
     t.integer "user_id"
     t.integer "role_id"
+    t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
   end
-
-  add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
 
   create_table "votes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "issue_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["issue_id"], name: "index_votes_on_issue_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
   end
-
-  add_index "votes", ["issue_id"], name: "index_votes_on_issue_id"
-  add_index "votes", ["user_id"], name: "index_votes_on_user_id"
 
 end
