@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 # A vote of an user on an issue
-class Vote < ActiveRecord::Base
+class Vote < ApplicationRecord
   belongs_to :user
   belongs_to :issue
 

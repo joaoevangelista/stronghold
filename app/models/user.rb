@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 # :nodoc:
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

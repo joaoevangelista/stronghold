@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 # :nodoc:
-class Announcement < ActiveRecord::Base
+class Announcement < ApplicationRecord
   include PublicActivity::Model
   tracked owner: proc { |controller, _model| controller.current_user }
 

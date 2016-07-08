@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 # :nodoc:
-class IssueType < ActiveRecord::Base
+class IssueType < ApplicationRecord
   include PublicActivity::Model
   tracked owner: proc { |controller, _model| controller.current_user }
 
