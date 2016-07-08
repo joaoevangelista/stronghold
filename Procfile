@@ -1,2 +1,2 @@
-app: bundle exec unicorn -c config/unicorn.rb
+app: bundle exec puma
 nginx: /usr/sbin/nginx -g 'daemon off;'
