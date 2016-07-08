@@ -9,11 +9,8 @@
 //= require_tree .
 
 // Close the notice autommatic
-$(document).on('turbolinks:load', function () {
-  var notice = $('#notice');
-  if(notice){
-    notice.fadeTo(2000,1000).slideUp(1000, function () {
-      notice.alert('close');
-    }
+$('#notice').ready(function () {
+  $('#notice').fadeTo(2000,1000).slideUp(1000, function () {
+    $('#notice').alert('close');
   });
 });
