@@ -41,7 +41,7 @@ All contributions are really apreciated, specially bug fixes and tests,
 if you are going to create a new feature, please first create an issue so we can
 discuss how to do it on a better way.
 
-For more information see our [Contributing guide](./CONTRIBUTING).
+For more information see our [Contributing guide](./CONTRIBUTING.md).
 
 ## Deployment
 
