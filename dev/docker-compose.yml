@@ -1,0 +1,14 @@
+# A docker composer file for easy start of the required services
+version: '2'
+services:
+  redis:
+    ports:
+    - '6379:6379'
+    image: redis:alpine
+  postgres:
+    image: postgres:latest
+    ports:
+     - '5432:5432'
+    environment:
+     POSTGRES_PASSWORD: devpassword
+     POSTGRES_USER: stronghold
