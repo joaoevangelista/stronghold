@@ -24,7 +24,6 @@ RSpec.configure do |config|
   config.extend ControllerMacros, type: :view
   config.extend ControllerMacros, type: :request
 
-
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
