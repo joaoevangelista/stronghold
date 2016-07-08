@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
@@ -31,7 +32,7 @@ class CommentsController < ApplicationController
         format.html { redirect_to @comment.issue, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: [@comment.issue, @comment] }
       else
-        format.html { redirect_to @comment.issue  }
+        format.html { redirect_to @comment.issue }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
@@ -63,13 +64,14 @@ class CommentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def comment_params
-      params.require(:comment).permit(:content, :user_id, :issue_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def comment_params
+    params.require(:comment).permit(:content, :user_id, :issue_id)
+  end
 end

@@ -12,7 +12,7 @@
               <div class="hidden-xs">
                 <%= delete_link icon('trash-o'), [comment.issue, comment] %>
                 &nbsp;
-                <%= link_to icon('pencil-square-o'), edit_issue_comment_path(comment.issue, comment)%>
+                <%= link_to icon('pencil-square-o'), issue_path(@issue, edit_comment: comment.id)%>
               </div>
               <div class="visible-xs">
                 <div class="dropdown">
@@ -23,7 +23,7 @@
                     <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu-right dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><%= link_to t('links.edit'), edit_issue_comment_path(comment.issue, comment)%></li>
+                    <li><%= link_to t('links.edit'), issue_path(@issue), edit_comment: comment.id %></li>
                     <li><%= delete_link t('links.remove'), [comment.issue, comment] %></li>
                   </ul>
                 </div>

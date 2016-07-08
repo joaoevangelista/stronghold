@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-
   get '/' => 'home#index', as: :root
 
   get 'activities' => 'activity#index', as: :activities
@@ -12,7 +11,6 @@ Rails.application.routes.draw do
   end
 
   resources :issues do
-
     put :open, on: :member
     delete :close, on: :member
 
@@ -25,5 +23,4 @@ Rails.application.routes.draw do
   resources :issue_types
 
   devise_for :users, controllers: { registrations: 'registrations' }
-  
 end

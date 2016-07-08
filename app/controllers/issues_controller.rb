@@ -18,7 +18,7 @@ class IssuesController < AuthenticatedController
     @assignee = User.find(@issue.assignee_id) if @issue.assignee_id
     @votes = @issue.votes.count
     @have_voted = Vote.find_by(user: current_user, issue: @issue)
-    @comment = Comment.new(user_id: current_user.id, issue_id: @issue.id)
+    @comment = find_if_exist_or_new
   end
 
   # GET /issues/new
@@ -140,6 +140,14 @@ class IssuesController < AuthenticatedController
   # Use callbacks to share common setup or constraints between actions.
   def set_issue
     @issue = Issue.find(params[:id])
+  end
+
+  def find_if_exist_or_new
+    if params[:edit_comment]
+      Comment.find params[:edit_comment].to_i
+    else
+      Comment.new(user_id: current_user.id, issue_id: @issue.id)
+    end
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
