@@ -11,8 +11,6 @@ class @DatePicker
         dp.val(e.format(0, 'dd/mm/yyyy'))
       )
 # bound to turbolinks
-$(document).on('page:load', (e)->
+$(document).on('turbolinks:load', (e)->
   DatePicker()
 )
-# bound to page load manually
-$(document).ready(-> DatePicker())

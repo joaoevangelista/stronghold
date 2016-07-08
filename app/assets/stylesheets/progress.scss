@@ -1,4 +1,4 @@
-$nprogress-color: #E91E63;
-$nprogress-zindex: 999999;
-@import 'nprogress';
-@import 'nprogress-bootstrap'
+.turbolinks-progress-bar {
+  height: 2px;
+  background-color: #E91E63;
+}

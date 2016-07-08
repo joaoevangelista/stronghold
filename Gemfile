@@ -23,8 +23,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Pager
 gem 'kaminari'
-# Use NProgress to add loader
-gem 'nprogress-rails'
 # Use font awesome gem to use sprockets
 gem 'font-awesome-sass', '~> 4.6.2'
 # Bootstrap

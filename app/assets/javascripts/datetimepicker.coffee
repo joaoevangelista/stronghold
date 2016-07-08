@@ -22,6 +22,4 @@ class @DateTimePicker
 
 
 # bound to turbolinks
-$(document).on('page:load', -> DateTimePicker())
-# bound to ready
-$(document).ready(-> DateTimePicker())
+$(document).on('turbolinks:load', -> DateTimePicker())
