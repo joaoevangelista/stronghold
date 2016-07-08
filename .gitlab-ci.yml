@@ -10,6 +10,9 @@ stages:
   - registry
 
 variables:
+  POSTGRES_DB: stronghold_test
+  POSTGRES_USER: stronghold
+  POSTGRES_PASSWORD: stronghold
   RAILS_ENV: test
 
 before_script:
@@ -33,7 +36,7 @@ rubocop:
 rspec:
   stage: test
   variables:
-    POSTGRES_URI: 'postgres://postgres:5432'
+    POSTGRES_URI: 'postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@postgres:5432/$POSTGRES_DB'
     REDIS_CACHE_URI: 'redis://redis:6379/0/cache'
     REDIS_SESSION_URI: 'redis://redis:6379/0/session'
   script:
