@@ -199,6 +199,12 @@ en:
     title: 'Comments'
     placeholders:
       content: 'Type to comment somthing about this issue'
+    commented_on: 'commented on'
+    updated_comment: 'edited comment on'
+    comment_removed: 'Comment was removed'
+    create_message: "Your comment was successfully created."
+    destroy_message: "Your comment was successfully removed."
+    update_message: "Your comment was successfully edited."
   event:
     create_message: "Event was successfully created."
     destroy_message: "Event was successfully destroyed."

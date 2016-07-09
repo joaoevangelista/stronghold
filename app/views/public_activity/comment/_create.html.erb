@@ -1,0 +1,21 @@
+<% if a.trackable %>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>
+          <span>
+            <i class="fa fa-2x fa-comment-o"></i>
+          </span>
+          &nbsp;&nbsp;
+          <!--<%= image_tag gravatar(a.trackable.user.email, 40), height: 40, class: 'img-circle' %>-->
+          <%= mail_to a.trackable.user.email, a.trackable.user.name %>
+          <span><%= t('comment.commented_on') %></span>
+          <%= link_to a.trackable.issue.title, issue_path(a.trackable.issue) %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

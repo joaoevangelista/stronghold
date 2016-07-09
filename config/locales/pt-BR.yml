@@ -197,6 +197,12 @@ pt-BR:
     title: 'Comentários'
     placeholders:
       content: 'Tecle para comentar algo sobre essa questão'
+    commented_on: 'comentou em'
+    updated_comment: 'editou seu comentário em'
+    comment_removed: 'Comentário foi removido'
+    create_message: "Seu comentário foi com criado com sucesso."
+    destroy_message: "Seu comentário foi com removido com sucesso."
+    update_message: "Seu comentário foi com editado com sucesso."
   event:
     create_message: 'Evento foi criado com sucesso.'
     destroy_message: 'Evento foi removido com sucesso.'
