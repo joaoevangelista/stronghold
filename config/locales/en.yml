@@ -197,6 +197,7 @@ en:
     error: 'Ouch!'
   comment:
     title: 'Comments'
+    save: 'Comment'
     placeholders:
       content: 'Type to comment somthing about this issue'
     commented_on: 'commented on'

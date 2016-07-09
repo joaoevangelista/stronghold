@@ -195,6 +195,7 @@ pt-BR:
     error: 'Ouch!'
   comment:
     title: 'Comentários'
+    save: 'Comentar'
     placeholders:
       content: 'Tecle para comentar algo sobre essa questão'
     commented_on: 'comentou em'
