@@ -193,6 +193,10 @@ pt-BR:
     success: 'Muito bem!'
     warning: 'Cuidado!'
     error: 'Ouch!'
+  comment:
+    title: 'Comentários'
+    placeholders:
+      content: 'Tecle para comentar algo sobre essa questão'
   event:
     create_message: 'Evento foi criado com sucesso.'
     destroy_message: 'Evento foi removido com sucesso.'

@@ -195,6 +195,10 @@ en:
     success: 'Well done!'
     warning: 'Careful!'
     error: 'Ouch!'
+  comment:
+    title: 'Comments'
+    placeholders:
+      content: 'Type to comment somthing about this issue'
   event:
     create_message: "Event was successfully created."
     destroy_message: "Event was successfully destroyed."

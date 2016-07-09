@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="form-group <%= @comment.errors[:content].empty? ? '' : 'has-error' %>">
-          <%= f.text_area :content, class: 'form-control', rows: '5', placeholder: 'Type to comment somthing about this issue', required: true %>
+          <%= f.text_area :content, class: 'form-control', rows: '5', placeholder: t('comment.placeholders.content'), required: true %>
           <% if @comment.errors[:content].any? %>
           <% @comment.errors[:content].each do |message| %>
           <span class="help-block"><%= message.capitalize %></span>
