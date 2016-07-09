@@ -10,10 +10,15 @@
             <%= date_time comment.created_at %>
             <div class="pull-right">
               <div class="hidden-xs">
-                <%= delete_link icon('trash-o'), [comment.issue, comment] %>
-                &nbsp;
+                <% if policy(comment).edit? %>
                 <%= link_to icon('pencil-square-o'), issue_path(@issue, edit_comment: comment.id)%>
+                <% end %>
+                &nbsp;
+                <% if policy(comment).destroy? %>
+                <%= delete_link icon('trash-o'), [comment.issue, comment] %>
+                <% end %>
               </div>
+              <% if policy(comment).edit? or policy(comment).destroy? %>
               <div class="visible-xs">
                 <div class="dropdown">
                   <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -23,11 +28,16 @@
                     <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu-right dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <% if policy(comment).edit? %>
                     <li><%= link_to t('links.edit'), issue_path(@issue), edit_comment: comment.id %></li>
+                    <% end %>
+                    <% if policy(comment).destroy? %>
                     <li><%= delete_link t('links.remove'), [comment.issue, comment] %></li>
+                    <% end %>
                   </ul>
                 </div>
               </div>
+              <% end %>
             </div>
           </div>
         </div>

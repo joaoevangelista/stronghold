@@ -1,10 +1,11 @@
 # frozen_string_literal: true
-class CommentsController < ApplicationController
+class CommentsController < AuthenticatedController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   # GET issues/1/comments
   # GET issues/1/comments.json
   def index
+    authorize Comment
     @comments = Comment.all
   end
 
@@ -17,7 +18,7 @@ class CommentsController < ApplicationController
   # POST issues/1/comments.json
   def create
     @comment = Comment.new(comment_params)
-
+    authorize @comment
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment.issue, notice: 'Comment was successfully created.' }
@@ -32,6 +33,7 @@ class CommentsController < ApplicationController
   # PATCH/PUT issues/1/comments/1
   # PATCH/PUT issues/1/comments/1.json
   def update
+    authorize @comment
     respond_to do |format|
       if @comment.update(comment_params)
         format.html { redirect_to @comment.issue, notice: 'Comment was successfully updated.' }
@@ -46,6 +48,7 @@ class CommentsController < ApplicationController
   # DELETE issues/1/comments/1
   # DELETE issues/1/comments/1.json
   def destroy
+    authorize @comment
     comment_issue = @comment.issue
     @comment.destroy
     respond_to do |format|

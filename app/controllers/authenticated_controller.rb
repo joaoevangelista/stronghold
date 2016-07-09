@@ -6,7 +6,6 @@
 # on those default methods
 #
 class AuthenticatedController < ApplicationController
-  include Pundit
   before_action :authenticate_user!, only: [:new, :create, :edit, :show,
                                             :index, :destroy]
 end
