@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', ->
   textarea = $('#comment_content')
-  if textarea && textarea.val().length
+  if textarea && textarea.val() != ''
     textarea.focus()
   )
