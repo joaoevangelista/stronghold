@@ -38,6 +38,10 @@ gem 'devise'
 gem 'pundit'
 gem 'rolify'
 
+# Badges
+gem 'merit'
+# We need this gem that was removed from Rails 5 core to merit work
+gem 'activemodel-serializers-xml'
 # Paginator
 gem 'public_activity'
 # Language selector
