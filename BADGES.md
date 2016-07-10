@@ -1,6 +1,6 @@
 # Badges
 
-Badges are a form that we recognize everyone by their contributions with their
+Badges are a way that we recognize everyone by their contributions with their
 community, if comment on an issue or open one, read announcements frequently and
 even manage events.
 
