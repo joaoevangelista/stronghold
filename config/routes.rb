@@ -2,13 +2,16 @@
 Rails.application.routes.draw do
   get '/' => 'home#index', as: :root
 
-  get 'activities' => 'activity#index', as: :activities
+  get 'achievements' => 'achievements#index', as: :achievements
+  get 'achievements/:id' => 'achievements#show', as: :achievement
 
-  resources :events
+  get 'activities' => 'activity#index', as: :activities
 
   resources :announcements do
     put :mark_as_read_by, on: :member
   end
+
+  resources :events
 
   resources :issues do
     put :open, on: :member
