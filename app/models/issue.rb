@@ -10,8 +10,10 @@ class Issue < ApplicationRecord
 
   belongs_to :issue_type
   belongs_to :user
-  has_many :votes
-  has_many :comments
+  has_many :votes, dependent: :delete_all
+  has_many :comments, dependent: :delete_all
+
+
 
   def self.count_by_user(user)
     Issue.where(user: user).count

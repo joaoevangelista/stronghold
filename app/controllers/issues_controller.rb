@@ -133,7 +133,7 @@ class IssuesController < AuthenticatedController
     authorize @issue
     @issue.destroy
     respond_to do |format|
-      format.html { redirect_to issues_url, notice: I18n.t('issue.close_message') }
+      format.html { redirect_to issues_url, notice: I18n.t('issue.destroy_message') }
       format.json { head :no_content }
     end
   end

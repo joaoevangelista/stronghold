@@ -1,79 +1,122 @@
-$bgDefault      : #ffffff;
-$bgHighlight    : #ffffff;
-$colDefault     : $light-blue;
-$colHighlight   : #1976d2;
-$dropDown       : false;
+$bgDefault: #ffffff;
+$bgHighlight: #ffffff;
+$colDefault: $light-blue;
+$colHighlight: #0D47A1;
+$dropDown: false;
 .navbar-default {
   background-color: $bgDefault;
   border-color: $bgHighlight;
   border-bottom: 1px solid darken($bgHighlight, 5%);
   .navbar-brand {
     color: $colDefault;
-    &:hover, &:focus {
-      color: $colHighlight; }}
+    &:focus,
+    &:hover {
+      color: $colHighlight;
+    }
+  }
   .navbar-text {
-    color: $colDefault; }
+    color: $colDefault;
+  }
   .navbar-nav {
     > li {
       > a {
         color: $colDefault;
-        &:hover,  &:focus {
-          color: $colHighlight; }}
+        &:focus,
+        &:hover {
+          color: $colHighlight;
+        }
+      }
       @if $dropDown {
         > .dropdown-menu {
           background-color: $bgDefault;
           > li {
             > a {
               color: $colDefault;
-              &:hover,  &:focus {
+              &:focus,
+              &:hover {
                 color: $colHighlight;
-                background-color: $bgHighlight; }}
+                background-color: $bgHighlight;
+              }
+            }
             > .divider {
-              background-color: $bgHighlight;}}}}}
+              background-color: $bgHighlight;
+            }
+          }
+        }
+      }
+    }
     @if $dropDown {
       .open .dropdown-menu > .active {
-        > a, > a:hover, > a:focus {
+         > a:focus,
+         > a:hover,
+        > a {
           color: $colHighlight;
-          background-color: $bgHighlight; }}}
+          background-color: $bgHighlight;
+        }
+      }
+    }
     > .active {
-      > a, > a:hover, > a:focus {
+       > a:focus,
+       > a:hover,
+      > a {
         color: $colHighlight;
-        background-color: $bgHighlight; }}
+        background-color: $bgHighlight;
+      }
+    }
     > .open {
-      > a, > a:hover, > a:focus {
+       > a:focus,
+       > a:hover,
+      > a {
         color: $colHighlight;
-        background-color: $bgHighlight; }}}
+        background-color: $bgHighlight;
+      }
+    }
+  }
   .navbar-toggle {
     border-color: $bgHighlight;
-    &:hover, &:focus {
-      background-color: $bgHighlight; }
+    &:focus,
+    &:hover {
+      background-color: $bgHighlight;
+    }
     .icon-bar {
-      background-color: $colDefault; }}
+      background-color: $colDefault;
+    }
+  }
   .navbar-collapse,
   .navbar-form {
-    border-color: $colDefault; }
+    border-color: $colDefault;
+  }
   .navbar-link {
     color: $colDefault;
     &:hover {
-      color: $colHighlight; }}}
+      color: $colHighlight;
+    }
+  }
+}
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu {
     > li > a {
       color: $colDefault;
-      &:hover, &:focus {
-        color: $colHighlight; }}
-    > .active {
-      > a, > a:hover, > a:focus {
+      &:focus,
+      &:hover {
         color: $colHighlight;
-        background-color: $bgHighlight; }}}
+      }
+    }
+    > .active {
+       > a:focus,
+       > a:hover,
+      > a {
+        color: $colHighlight;
+        background-color: $bgHighlight;
+      }
+    }
+  }
 }
-
-
 .header-logo {
-   position: absolute;
-   left: 50%;
-   margin-left: -18px;
-   top: 10px;
-   transition-duration: .3s;
-   z-index: 999;
+  position: absolute;
+  left: 50%;
+  margin-left: -18px;
+  top: 10px;
+  transition-duration: 0.3s;
+  z-index: 999;
 }
