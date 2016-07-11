@@ -3,4 +3,8 @@
 class Read < ApplicationRecord
   belongs_to :user
   belongs_to :announcement
+
+  def self.count_by_user(user)
+    where(user: user).distinct.count
+  end
 end

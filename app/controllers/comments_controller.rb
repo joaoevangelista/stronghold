@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# :nodoc:
 class CommentsController < AuthenticatedController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
@@ -52,7 +53,10 @@ class CommentsController < AuthenticatedController
     comment_issue = @comment.issue
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to issue_path(comment_issue), notice: 'Comment was successfully destroyed.' }
+      format.html do
+        redirect_to issue_path(comment_issue),
+                    notice: 'Comment was successfully destroyed.'
+      end
       format.json { head :no_content }
     end
   end

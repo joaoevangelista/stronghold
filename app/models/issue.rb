@@ -12,4 +12,12 @@ class Issue < ApplicationRecord
   belongs_to :user
   has_many :votes
   has_many :comments
+
+  def self.count_by_user(user)
+    Issue.where(user: user).count
+  end
+
+  def self.count_by_assignee(assignee)
+    Issue.where(assignee_id: assignee).count
+  end
 end

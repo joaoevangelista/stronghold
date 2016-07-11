@@ -108,20 +108,23 @@ RSpec.describe CommentsController, type: :controller do
 
       it 'updates the requested comment' do
         comment = Comment.create! valid_attributes
-        put :update, params: { id: comment.to_param, comment: new_attributes }, session: valid_session
+        put :update, params: { id: comment.to_param, comment: new_attributes },
+                     session: valid_session
         comment.reload
         skip('Add assertions for updated state')
       end
 
       it 'assigns the requested comment as @comment' do
         comment = Comment.create! valid_attributes
-        put :update, params: { id: comment.to_param, comment: valid_attributes }, session: valid_session
+        put :update, params: { id: comment.to_param, comment: valid_attributes },
+                     session: valid_session
         expect(assigns(:comment)).to eq(comment)
       end
 
       it 'redirects to the comment' do
         comment = Comment.create! valid_attributes
-        put :update, params: { id: comment.to_param, comment: valid_attributes }, session: valid_session
+        put :update, params: { id: comment.to_param, comment: valid_attributes },
+                     session: valid_session
         expect(response).to redirect_to(comment)
       end
     end
@@ -129,13 +132,15 @@ RSpec.describe CommentsController, type: :controller do
     context 'with invalid params' do
       it 'assigns the comment as @comment' do
         comment = Comment.create! valid_attributes
-        put :update, params: { id: comment.to_param, comment: invalid_attributes }, session: valid_session
+        put :update, params: { id: comment.to_param, comment: invalid_attributes },
+                     session: valid_session
         expect(assigns(:comment)).to eq(comment)
       end
 
       it "re-renders the 'edit' template" do
         comment = Comment.create! valid_attributes
-        put :update, params: { id: comment.to_param, comment: invalid_attributes }, session: valid_session
+        put :update, params: { id: comment.to_param, comment: invalid_attributes },
+                     session: valid_session
         expect(response).to render_template('edit')
       end
     end
