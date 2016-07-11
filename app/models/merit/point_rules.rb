@@ -8,8 +8,8 @@
 #
 # 'score' method may accept a block which evaluates to boolean
 # (recieves the object as parameter)
-
 module Merit
+  # :nodoc:
   class PointRules
     include Merit::PointRulesMethods
 

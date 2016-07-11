@@ -16,8 +16,8 @@
 # The :temporary option indicates that if the condition doesn't hold but the
 # badge is granted, then it's removed. It's false by default (badges are kept
 # forever).
-
 module Merit
+  # :nodoc:
   class BadgeRules
     include Merit::BadgeRulesMethods
 

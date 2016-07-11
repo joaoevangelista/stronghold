@@ -10,8 +10,8 @@
 # * :+to+ model or scope to check if new rankings apply
 # * :+level_name+ attribute name (default is empty and results in 'level'
 #   attribute, if set it's appended like 'level_#{level_name}')
-
 module Merit
+  # :nodoc:
   class RankRules
     include Merit::RankRulesMethods
 
