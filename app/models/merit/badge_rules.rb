@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Be sure to restart your server when you modify this file.
 #
 # +grant_on+ accepts:
@@ -44,6 +45,10 @@ module Merit
       #
       #   user.name.length > 4
       # end
+
+      grant_on 'announcements#create', badge_id: 2, to: :action_user do |_announcement|
+        true
+      end
     end
   end
 end
