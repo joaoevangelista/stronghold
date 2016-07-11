@@ -128,7 +128,8 @@ pt-BR:
     second: Segundo
     year: Ano
   achievements:
-    title: 'Achievements'
+    title: 'Conquistas'
+    see_others_link: 'Veja quem tem essa conquista tambem!'
   merits:
     badges:
       observer:
