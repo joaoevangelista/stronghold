@@ -10,6 +10,6 @@ class Comment < ApplicationRecord
   belongs_to :issue
 
   def self.count_by_user_distinct_issue(user)
-    where.(user: user).distinct(:issue_id).count
+    where(user: user).distinct(:issue_id).count
   end
 end

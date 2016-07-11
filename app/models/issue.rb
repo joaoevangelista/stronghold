@@ -13,7 +13,6 @@ class Issue < ApplicationRecord
   has_many :votes
   has_many :comments
 
-
   def self.count_by_user(user)
     Issue.where(user: user).count
   end

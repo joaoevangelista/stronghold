@@ -137,15 +137,12 @@ class AnnouncementsController < AuthenticatedController
   end
 
   def add_first_class_badge_if_met
-    if Read.count_by_user(current_user) == 10
-      current_user.add_badge 3 # first_class
-    end
+    return if Read.count_by_user(current_user) != 10
+    current_user.add_badge 3 # first_class
   end
-  
-  def add_changes_badge_if_met
-    if Read.count_by_user(current_user) == 25
-      current_user.add_badge 12 # changes
-    end
 
+  def add_changes_badge_if_met
+    return if Read.count_by_user(current_user) != 25
+    current_user.add_badge 12 # changes
   end
 end

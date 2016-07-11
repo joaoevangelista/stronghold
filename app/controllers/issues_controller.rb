@@ -167,8 +167,7 @@ class IssuesController < AuthenticatedController
   end
 
   def add_say_yes_badge_if_met
-    if Vote.count_by_voter(current_user) == 10
-      current_user.add_badge 10 # say_yes
-    end
+    return if Vote.count_by_voter(current_user) != 10
+    current_user.add_badge 10 # say_yes
   end
 end
