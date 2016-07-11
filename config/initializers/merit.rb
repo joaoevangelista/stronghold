@@ -25,9 +25,9 @@ louder = {id: 2, name: 'louder', description: 'Made an announcement'}
 first_class = {id: 3, name: 'first_class', description: 'Read 10 announcements'}
 opinator = {id: 4, name: 'opinator', description: 'Commented on five different issues'}
 any_voice_matters = {id: 5, name: 'any_voice_matters', description: 'Commented on an issue'}
-#taking_responsibility = {id: 7, name: 'taking_responsibility',
-#  description: 'Be assigned ten times on issues'
-#}
+taking_responsibility = {id: 7, name: 'taking_responsibility',
+  description: 'Be assigned ten times on issues'
+}
 # ticking = {id: 8, name: 'ticking', description: 'Set due date on fifteen issues'}
 watchful = {id: 9, name: 'watchful', description: 'Report tweenty issues'}
 #say_yes = {id: 10, name: 'say_yes', description: 'Vote on ten issues'}

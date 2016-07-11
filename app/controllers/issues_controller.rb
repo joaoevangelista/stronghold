@@ -39,6 +39,7 @@ class IssuesController < AuthenticatedController
     authorize @issue
     respond_to do |format|
       if @issue.save
+        add_taking_responsibility_badge_if_met @issue
         format.html { redirect_to @issue, notice: I18n.t('issue.create_message') }
         format.json { render :show, status: :created, location: @issue }
       else
@@ -54,6 +55,7 @@ class IssuesController < AuthenticatedController
     authorize @issue
     respond_to do |format|
       if @issue.update(issue_params)
+        add_taking_responsibility_badge_if_met @issue
         format.html { redirect_to @issue, notice: I18n.t('issue.update_message') }
         format.json { render :show, status: :ok, location: @issue }
       else
@@ -154,5 +156,12 @@ class IssuesController < AuthenticatedController
   def issue_params
     params.require(:issue).permit(:title, :description, :is_resolved,
                                   :user_id, :due_date, :assignee_id, :issue_type_id)
+  end
+
+  def add_taking_responsibility_badge_if_met(issue)
+    if Issue.count_by_assignee(issue.assignee_id) == 10
+      user_assigned = User.find(issue.assignee_id)
+      user_assigned.add_badge 7 # taking_responsibility
+    end
   end
 end
