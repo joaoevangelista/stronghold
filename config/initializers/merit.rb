@@ -30,7 +30,7 @@ taking_responsibility = {id: 7, name: 'taking_responsibility',
 }
 # ticking = {id: 8, name: 'ticking', description: 'Set due date on fifteen issues'}
 watchful = {id: 9, name: 'watchful', description: 'Report tweenty issues'}
-#say_yes = {id: 10, name: 'say_yes', description: 'Vote on ten issues'}
+say_yes = {id: 10, name: 'say_yes', description: 'Vote on ten issues'}
 #you_say_it_you_get_it = {id: 11, name: 'you_say_it_you_get_it',
 #  description: 'Close tweenty issues'
 #}

@@ -21,4 +21,8 @@ class Vote < ApplicationRecord
     return false unless vote
     vote.destroy
   end
+
+  def self.count_by_voter(user)
+    where(user: user).distinct.count
+  end
 end

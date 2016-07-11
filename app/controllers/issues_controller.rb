@@ -102,6 +102,7 @@ class IssuesController < AuthenticatedController
     respond_to do |format|
       if Vote.upvote(current_user, @issue)
         @issue.create_activity :voted
+        add_say_yes_badge_if_met
         format.html { redirect_to @issue, notice: I18n.t('issue.vote.success_message') }
         format.json { render :show, status: :ok, location: @issue }
       else
@@ -162,6 +163,12 @@ class IssuesController < AuthenticatedController
     if Issue.count_by_assignee(issue.assignee_id) == 10
       user_assigned = User.find(issue.assignee_id)
       user_assigned.add_badge 7 # taking_responsibility
+    end
+  end
+
+  def add_say_yes_badge_if_met
+    if Vote.count_by_voter(current_user) == 10
+      current_user.add_badge 10 # say_yes
     end
   end
 end
