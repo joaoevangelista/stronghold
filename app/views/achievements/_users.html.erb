@@ -1,0 +1,17 @@
+<% @users.each do |user| %>
+<div class="row">
+  <hr>
+  <div class="col-xs-12 col-md-4">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <%= image_tag gravatar(user.email, 75), height: 75, class: 'img-circle' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="min-space lead text-center"><%= user.name %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

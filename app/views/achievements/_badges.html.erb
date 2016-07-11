@@ -1,0 +1,35 @@
+<% @achievements.each do |achievement| %>
+<div class="row">
+  <hr>
+  <div class="col-xs-12">
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="text-center">
+          <span class="level <%= achievement.level %>">
+            <i class="fa fa-trophy fa-5x"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h3 class="text-center"><%= t("merits.badges.#{achievement.name}.name") %></h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="text-center"><%= t("merits.badges.#{achievement.name}.description") %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 text-xs-center">
+        <small class="pull-md-right">
+          <%= link_to icon('external-link', t('achievements.see_others_link'), class: 'fa-fw'),
+              achievement_path(achievement.id) %>
+        </small>
+      </div>
+    </div>
+  </div>
+  <hr>
+</div>
+<% end %>

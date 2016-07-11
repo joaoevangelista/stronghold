@@ -129,6 +129,39 @@ en:
     month: Month
     second: Seconds
     year: Year
+  achievements:
+    title: 'Achievements'
+    see_others_link: 'See who has this achievement too'
+    users_with: 'Users with %{name} achievement'
+  merits:
+    badges:
+      observer:
+        name: 'Observer'
+        description: 'Reported an issue'
+      louder:
+        name: 'Louder'
+        description: 'Made an announcement'
+      first_class:
+        name: 'First Class'
+        description: 'Read 10 announcements'
+      opinator:
+        name: 'Opinator'
+        description: 'Commented on five different issues'
+      any_voice_matters:
+        name: 'Any Voice Matters'
+        description: 'Commented on an issue'
+      taking_responsibility:
+        name: 'Taking Responsibility'
+        description: 'Be assigned ten times on issues'
+      watchful:
+        name: 'Watchful'
+        description: 'Report tweenty issues'
+      say_yes:
+        name: 'Say Yes!'
+        description: 'Voted on ten issues'
+      changes:
+        name: 'Changes'
+        description: 'Read tweenty five announcements'
   activity:
     announcement:
       create:
