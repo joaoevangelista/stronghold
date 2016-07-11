@@ -1,6 +1,6 @@
 default: &default
   adapter: postgres
-  url: <%= ENV['POSTGRES_URI'] ||"postgresql://#{ENV['POSTGRES_USER']}:#{ENV['POSTGRES_PASSWORD']}@postgres:5432/stronghold?encoding=utf8&pool=5&timeout=5000" %>
+  url: <%= ENV['DATABASE_URL'] || ENV['POSTGRES_URI'] ||"postgresql://#{ENV['POSTGRES_USER']}:#{ENV['POSTGRES_PASSWORD']}@postgres:5432/stronghold?encoding=utf8&pool=5&timeout=5000" %>
 
 development:
   <<: *default
@@ -14,3 +14,6 @@ test:
 
 production:
   <<: *default
+  timeout: 5000
+  pool: 5
+  encoding: utf8
