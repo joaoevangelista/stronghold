@@ -8,6 +8,7 @@ class AchievementsController < AuthenticatedController
 
   # GET /achievements/1
   def show
-    @users = Merit::Badge.find(params[:id]).users
+    @achievement = Merit::Badge.find(params[:id].to_i)
+    @users = @achievement.users if @achievement
   end
 end
