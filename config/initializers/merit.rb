@@ -39,7 +39,6 @@ changes = {id: 12, name: 'changes', description: 'Read tweenty five announcement
 
 [observer, louder, first_class, opinator,
   any_voice_matters, taking_responsibility,
-  organizer, ticking, watchful, say_yes, you_say_it_you_get_it,
-  changes, polishing].each do |badge|
+  watchful, say_yes, changes].each do |badge|
     Merit::Badge.create! badge
   end
