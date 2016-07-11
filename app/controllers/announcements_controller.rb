@@ -81,6 +81,7 @@ class AnnouncementsController < AuthenticatedController
     @read = Read.exists? announcement_id: @announcement.id, user_id: current_user.id
     if !@read
       read = Read.new(announcement_id: @announcement.id, user_id: current_user.id)
+      add_first_class_badge_if_met
       format_save read
     else
       format_already_marked
@@ -133,5 +134,17 @@ class AnnouncementsController < AuthenticatedController
   # Never trust parameters from the scary internet, only allow the white list through.
   def announcement_params
     params.require(:announcement).permit(:title, :description, :user_id, :notify)
+  end
+
+  def add_first_class_badge_if_met
+    if Read.count_by_user(current_user) == 10
+      current_user.add_badge 3 # first_class
+    end
+  end
+  def add_changes_badge_if_met
+    if Read.count_by_user(current_user) == 25
+      current_user.add_badge 12 # changes
+    end
+
   end
 end
