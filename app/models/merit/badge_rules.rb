@@ -46,9 +46,28 @@ module Merit
       #   user.name.length > 4
       # end
 
-      grant_on 'announcements#create', badge_id: 2, to: :action_user do |_announcement|
-        true
+      grant_on 'announcements#create', badge_id: 2, to: :action_user do |announcement|
+        announcement.user.announcements.count == 1
       end
+
+      grant_on 'issues#create', badge_id: 1, to: :action_user do |issue|
+        issue.user.issues.count == 1
+      end
+
+
+      grant_on 'comments#create', badge_id: 4, to: :action_user do |comment|
+        user = comment.user
+        Comment.count_by_user_distinct_issue(user) == 5
+      end
+
+      grant_on 'comments#create', badge_id: 5, to: :action_user do |comment|
+        comment.user.comments.count == 1
+      end
+
+      grant_on 'issues#create', badge_id: 9, to: :action_user do |issue|
+        Issue.count_by_user(issue.user) == 20
+      end
+
     end
   end
 end
