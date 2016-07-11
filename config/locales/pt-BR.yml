@@ -127,6 +127,37 @@ pt-BR:
     month: Mês
     second: Segundo
     year: Ano
+  achievements:
+    title: 'Achievements'
+  merits:
+    badges:
+      observer:
+        name: 'Observador'
+        description: 'Reportou uma questão'
+      louder:
+        name: 'Muito Alto'
+        description: 'Fez um anúncio'
+      first_class:
+        name: 'Primeiro da classe'
+        description: 'Leu dez anúncios'
+      opinator:
+        name: 'Opinador'
+        description: 'Comentou em cinco diferentes questões'
+      any_voice_matters:
+        name: 'Qualquer voz importa'
+        description: 'Comentou em uma questão'
+      taking_responsibility:
+        name: 'Tomando a responsabilidade'
+        description: 'Ser designado para cuidar de questões dez vezes'
+      watchful:
+        name: 'Vigilante'
+        description: 'Reportar vinte questões'
+      say_yes:
+        name: 'Diga Sim!'
+        description: 'Votou em dez questões'
+      changes:
+        name: 'Mudanças'
+        description: 'Leu vinte e cinco anúncios'
   activity:
     announcement:
       create:
