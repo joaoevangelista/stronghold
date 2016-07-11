@@ -132,6 +132,7 @@ en:
   achievements:
     title: 'Achievements'
     see_others_link: 'See who has this achievement too'
+    users_with: 'Users with %{name} achievement'
   merits:
     badges:
       observer:

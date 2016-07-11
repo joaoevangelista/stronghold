@@ -130,6 +130,7 @@ pt-BR:
   achievements:
     title: 'Conquistas'
     see_others_link: 'Veja quem tem essa conquista tambem!'
+    users_with: 'Pessoas com a conquista %{name}'
   merits:
     badges:
       observer:
