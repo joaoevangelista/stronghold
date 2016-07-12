@@ -3,7 +3,7 @@
 module ApplicationHelper
   def gravatar(email, size = 50)
     hash = Digest::MD5::hexdigest email
-    "http://gravatar.com/avatar/#{hash}.png?s=#{size}"
+    "https://gravatar.com/avatar/#{hash}.png?s=#{size}"
   end
 
   def date_time(str)
