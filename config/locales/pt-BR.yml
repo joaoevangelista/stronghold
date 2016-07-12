@@ -298,7 +298,7 @@ pt-BR:
     destroy_message: "Tipo foi removido com sucesso."
     edit_title: 'Editando Tipo de questão'
     empty_array: 'Nenhum tipo de questão criado ainda.'
-    empty_issue_array: 'Nenhuma questão com esse tipo ainda não foi reportada.'
+    empty_issue_array: 'Nenhuma questão com esse tipo ainda foi reportada.'
     name: 'Nome'
     new_title: 'Novo Tipo de questão'
     open: 'Abrir'
