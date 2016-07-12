@@ -8,6 +8,8 @@ class Announcement < ApplicationRecord
 
   belongs_to :user
 
+  has_many :reads, dependent: :delete_all
+
   # Call notification and send the current url of announcement into it
   def notify_users(from)
     AnnouncementNotificationService.new(self, from).send if notify
