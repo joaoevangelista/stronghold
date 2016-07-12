@@ -47,7 +47,7 @@
           <%= f.label :due_date, class: 'control-label' %><br>
           <%= f.text_field :due_date,
                value: @issue.due_date.try{|d| d.strftime('%d/%m/%Y')},
-               class: 'form-control date datepicker' %>
+               class: 'form-control date datepicker', autocomplete: 'off' %>
           <% if @issue.errors[:due_date].any? %>
           <% @issue.errors[:due_date].each do |message| %>
           <span class="help-block"><%= message.capitalize %></span>
