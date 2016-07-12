@@ -312,7 +312,7 @@ pt-BR:
     badges:
       any_voice_matters:
         description: "Comentou em uma questão"
-        name: "Qualquer voz importa"
+        name: "Toda voz importa"
       changes:
         description: "Leu vinte e cinco anúncios"
         name: Mudanças
