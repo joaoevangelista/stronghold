@@ -1,37 +1,111 @@
 ---
 pt-BR:
-  pundit:
-    default: 'Você não pode executar essa ação'
-    announcemnt_policy:
-      update?: 'Você não pode editar este anúncio'
+  achievements:
+    see_others_link: "Veja quem tem essa conquista tambem!"
+    title: Conquistas
+    users_with: "Pessoas com a conquista %{name}"
   activerecord:
-    errors:
-      messages:
-        blank: 'Por favor preencha %{attribute}'
     attributes:
       announcement:
-        title: 'Título'
-        description: 'Descrição'
-        notify: 'Notificar ?'
+        description: Descrição
+        notify: "Notificar ?"
+        title: Título
       event:
-        title: 'Título'
-        description: 'Descrição'
-        time: 'Hora'
-      issue_type:
-        name: 'Nome'
-        color: 'Cor'
+        description: Descrição
+        time: Hora
+        title: Título
       issue:
-        title: 'Título'
-        description: 'Descrição'
-        is_resolved: 'Está Resolvido ?'
-        due_date: 'Data de conclusão'
-        assignee_id: 'Síndico / Aos cuidados de'
-        issue_type_id: 'Tipo'
+        assignee_id: "Síndico / Aos cuidados de"
+        description: Descrição
+        due_date: "Data de conclusão"
+        is_resolved: "Está Resolvido ?"
+        issue_type_id: Tipo
+        title: Título
+      issue_type:
+        color: Cor
+        name: Nome
       user:
-        name: 'Nome'
-        email: 'Email'
-        password: 'Senha'
-        password_confirmation: 'Confirmção da senha'
+        email: Email
+        name: Nome
+        password: Senha
+        password_confirmation: "Confirmção da senha"
+    errors:
+      messages:
+        blank: "Por favor preencha %{attribute}"
+  activity:
+    announcement:
+      create:
+        action: "crio anúncio"
+      destroy: "Anúncio foi deletado."
+      update:
+        entity: anúncio.
+    changed: mudou
+    event:
+      create:
+        action: "crio evento"
+      destroy: "Evento foi deleteado."
+      update:
+        entity: evento.
+    issue:
+      closed: "estado para resolvido"
+      create:
+        action: "crio uma questão"
+      destroy: "Questão foi deletado."
+      opened: "estado para aberto"
+      update:
+        entity: questão.
+    plural: Atividades
+    singular: Atividade
+    type:
+      create:
+        action: "foi criado"
+        entity: Tipo
+      destroy: "Tipo foi deletado."
+      update:
+        action: "foi atualizado."
+        entity: Tipo
+    updated: atualizou
+  announcement:
+    about_title: Sobre
+    already_marked: "Já Lido"
+    already_marked_message: "Anúncio já marcado como lido por você."
+    create_message: "Aúncio foi criado com sucesso."
+    description_label: Corpo
+    destroy_message: "Aúncio foi removido com sucesso."
+    edit_title: "Editando anúncio"
+    empty_array: "Nenhum anúncio ainda foi feito."
+    index_title: "Novos anúncios"
+    links:
+      new: "Novo Anúncio"
+    made_by_title: "Feito por"
+    mark_as_read: "Marcar como lido"
+    marked_as_read: "Marcado como lido com sucesso."
+    new_title: "Novo Anúncio"
+    not_found: "Anúncio não encontrado"
+    notify_label: "Notificar todos sobre este anúncio ?"
+    placeholders:
+      description: "O corpo do anúncio"
+      title: "De um títlo"
+    plural: Anúncios
+    published: Publicado
+    singular: Anúncio
+    update_message: "Anúncio foi atualizado com sucesso"
+    will_not_notify: "Pessoas não serão notificadas"
+    will_notify: "Pessoas serão notificadas"
+  app:
+    description: "Sua ferramenta para uma comunidade melhor."
+  comment:
+    comment_removed: "Comentário foi removido"
+    commented_on: "comentou em"
+    create_message: "Seu comentário foi com criado com sucesso."
+    destroy_message: "Seu comentário foi com removido com sucesso."
+    empty_array: "Nenhum cometário ainda feito"
+    placeholders:
+      content: "Tecle para comentar algo sobre essa questão"
+    save: Comentar
+    title: Comentários
+    update_message: "Seu comentário foi com editado com sucesso."
+    updated_comment: "editou seu comentário em"
   date:
     abbr_day_names:
       - Dom
@@ -67,7 +141,7 @@ pt-BR:
       long: "%d de %B de %Y às %H:%M"
       short: "%d de %B"
     month_names:
-      -
+      - ~
       - Janeiro
       - Fevereiro
       - Março
@@ -81,45 +155,164 @@ pt-BR:
       - Novembro
       - Dezembro
     order:
-      - :day
-      - :month
-      - :year
+      - !ruby/symbol day
+      - !ruby/symbol month
+      - !ruby/symbol year
   datetime:
     distance_in_words:
       about_x_hours:
-        one: aproximadamente 1 hora
-        other: aproximadamente %{count} horas
+        one: "aproximadamente 1 hora"
+        other: "aproximadamente %{count} horas"
       about_x_months:
-        one: aproximadamente 1 mês
-        other: aproximadamente %{count} meses
+        one: "aproximadamente 1 mês"
+        other: "aproximadamente %{count} meses"
       about_x_years:
-        one: aproximadamente 1 ano
-        other: aproximadamente %{count} anos
+        one: "aproximadamente 1 ano"
+        other: "aproximadamente %{count} anos"
       almost_x_years:
-        one: quase 1 ano
-        other: quase %{count} anos
-      half_a_minute: meio minuto
+        one: "quase 1 ano"
+        other: "quase %{count} anos"
+      half_a_minute: "meio minuto"
       less_than_x_minutes:
-        one: menos de um minuto
-        other: menos de %{count} minutos
+        one: "menos de um minuto"
+        other: "menos de %{count} minutos"
       less_than_x_seconds:
-        one: menos de 1 segundo
-        other: menos de %{count} segundos
+        one: "menos de 1 segundo"
+        other: "menos de %{count} segundos"
       over_x_years:
-        one: mais de 1 ano
-        other: mais de %{count} anos
+        one: "mais de 1 ano"
+        other: "mais de %{count} anos"
       x_days:
-        one: 1 dia
+        one: "1 dia"
         other: "%{count} dias"
       x_minutes:
-        one: 1 minuto
+        one: "1 minuto"
         other: "%{count} minutos"
       x_months:
-        one: 1 mês
+        one: "1 mês"
         other: "%{count} meses"
       x_seconds:
-        one: 1 segundo
+        one: "1 segundo"
         other: "%{count} segundos"
+  event:
+    create_message: "Evento foi criado com sucesso."
+    destroy_message: "Evento foi removido com sucesso."
+    edit_title: "Editando evento"
+    empty_array: "Sem eventos por enquanto."
+    links:
+      new: "Criar evento"
+    new_title: "Novo evento"
+    placeholders:
+      description: "Conte mais sobre o evento"
+      title: "Título sobre o evento"
+    plural: Eventos
+    singular: Evento
+    time: Horário
+    title: Título
+    update_message: "Evento foi atualizado com sucesso."
+  form:
+    save: Salvar
+  helpers:
+    submit:
+      create: "Salvar %{model}"
+      update: "Editar %{model}"
+  issue:
+    assignee: "Aos cuidados de"
+    assignee_prompt: Ninguém
+    close_message: "Questão está resolvida."
+    create_message: "Questão criada com sucesso"
+    created_by: "Criado por"
+    destroy_message: "Questão foi removida com sucesso."
+    due_date: "Data de conclusão"
+    edit_title: "Editando Questão"
+    empty_array: "Nenhuma questão ainda reportada"
+    issue_type_prompt: Nenhum
+    links:
+      new: "Nova Questão"
+      new_type: "Novo Tipo"
+    new_title: "Nova Questão"
+    not_set: Nenhum
+    open: "Em Aberto"
+    open_message: "Questão agora está em aberto"
+    placeholders:
+      description: "Conte mais detalhes sobre"
+      title: "Sobre o que é está questão ?"
+    plural: Questões
+    reopen: Reabrir
+    reporter: Relator
+    resolve: Resolver
+    resolved: Resolvido
+    singular: Questão
+    status: Estado
+    title: Título
+    type: Tipo
+    update_message: "Questão foi atualizada com sucesso."
+    vote:
+      have_voted: "Você já votou !"
+      have_voted_on_issue: "votou na questão"
+      remove_message: "Seu voto foi removido desta questão"
+      remove_vote_from: "removeu seu voto da questão"
+      success_message: "Você votou !"
+      vote: Votar
+  issue_type:
+    create_message: "Tipo foi criado com sucesso."
+    destroy_message: "Tipo foi removido com sucesso."
+    edit_title: "Editando Tipo de questão"
+    empty_array: "Nenhum tipo de questão criado ainda."
+    empty_issue_array: "Nenhuma questão com esse tipo ainda foi reportada."
+    links:
+      new_type: "Novo Tipo"
+      types: "Tipos de Questão"
+    name: Nome
+    new_title: "Novo Tipo de questão"
+    open: Abrir
+    opened_issues_count: "questões aberta(s)"
+    plural: Tipos
+    reporter: Relator
+    resolved: Resolvido
+    singular: Tipo
+    status: Estado
+    type: Título
+    update_message: "Tipo foi atualizado com sucesso."
+  links:
+    back: Voltar
+    delete: Deletar
+    edit: Editar
+    remove: Remover
+    show: Ver
+  merits:
+    badges:
+      any_voice_matters:
+        description: "Comentou em uma questão"
+        name: "Qualquer voz importa"
+      changes:
+        description: "Leu vinte e cinco anúncios"
+        name: Mudanças
+      first_class:
+        description: "Leu dez anúncios"
+        name: "Primeiro da classe"
+      louder:
+        description: "Fez um anúncio"
+        name: "Muito Alto"
+      observer:
+        description: "Reportou uma questão"
+        name: Observador
+      opinator:
+        description: "Comentou em cinco diferentes questões"
+        name: Opinador
+      say_yes:
+        description: "Votou em dez questões"
+        name: "Diga Sim!"
+      taking_responsibility:
+        description: "Ser designado para cuidar de questões dez vezes"
+        name: "Tomando a responsabilidade"
+      watchful:
+        description: "Reportar vinte questões"
+        name: Vigilante
+  notice:
+    error: Ouch!
+    success: "Muito bem!"
+    warning: Cuidado!
   prompts:
     day: Dia
     hour: Hora
@@ -127,228 +320,39 @@ pt-BR:
     month: Mês
     second: Segundo
     year: Ano
-  achievements:
-    title: 'Conquistas'
-    see_others_link: 'Veja quem tem essa conquista tambem!'
-    users_with: 'Pessoas com a conquista %{name}'
-  merits:
-    badges:
-      observer:
-        name: 'Observador'
-        description: 'Reportou uma questão'
-      louder:
-        name: 'Muito Alto'
-        description: 'Fez um anúncio'
-      first_class:
-        name: 'Primeiro da classe'
-        description: 'Leu dez anúncios'
-      opinator:
-        name: 'Opinador'
-        description: 'Comentou em cinco diferentes questões'
-      any_voice_matters:
-        name: 'Qualquer voz importa'
-        description: 'Comentou em uma questão'
-      taking_responsibility:
-        name: 'Tomando a responsabilidade'
-        description: 'Ser designado para cuidar de questões dez vezes'
-      watchful:
-        name: 'Vigilante'
-        description: 'Reportar vinte questões'
-      say_yes:
-        name: 'Diga Sim!'
-        description: 'Votou em dez questões'
-      changes:
-        name: 'Mudanças'
-        description: 'Leu vinte e cinco anúncios'
-  activity:
-    announcement:
-      create:
-        action: "crio anúncio"
-      destroy: "Anúncio foi deletado."
-      update:
-        entity: 'anúncio.'
-    changed: 'mudou'
-    event:
-      create:
-        action: "crio evento"
-      destroy: "Evento foi deleteado."
-      update:
-        entity: 'evento.'
-    issue:
-      closed: 'estado para resolvido'
-      create:
-        action: "crio uma questão"
-      destroy: "Questão foi deletado."
-      opened: "estado para aberto"
-      update:
-        entity: 'questão.'
-    plural: 'Atividades'
-    singular: 'Atividade'
-    type:
-      create:
-        action: 'foi criado'
-        entity: 'Tipo'
-      destroy: 'Tipo foi deletado.'
-      update:
-        action: 'foi atualizado.'
-        entity: 'Tipo'
-    updated: 'atualizou'
-  announcement:
-    about_title: 'Sobre'
-    already_marked_message: 'Anúncio já marcado como lido por você.'
-    already_marked: 'Já Lido'
-    notify_label: 'Notificar todos sobre este anúncio ?'
-    will_notify: 'Pessoas serão notificadas'
-    will_not_notify: 'Pessoas não serão notificadas'
-    description_label: 'Corpo'
-    create_message: 'Aúncio foi criado com sucesso.'
-    destroy_message: "Aúncio foi removido com sucesso."
-    edit_title: 'Editando anúncio'
-    empty_array: 'Nenhum anúncio ainda foi feito.'
-    index_title: 'Novos anúncios'
-    links:
-      new: 'Novo Anúncio'
-    made_by_title: 'Feito por'
-    marked_as_read: 'Marcado como lido com sucesso.'
-    mark_as_read: 'Marcar como lido'
-    new_title: 'Novo Anúncio'
-    plural: 'Anúncios'
-    published: 'Publicado'
-    singular: 'Anúncio'
-    update_message: 'Anúncio foi atualizado com sucesso'
-    not_found: 'Anúncio não encontrado'
-    placeholders:
-      title: 'De um títlo'
-      description: 'O corpo do anúncio'
-  app:
-    description: 'Sua ferramenta para uma comunidade melhor.'
-  notice:
-    success: 'Muito bem!'
-    warning: 'Cuidado!'
-    error: 'Ouch!'
-  comment:
-    title: 'Comentários'
-    save: 'Comentar'
-    placeholders:
-      content: 'Tecle para comentar algo sobre essa questão'
-    commented_on: 'comentou em'
-    updated_comment: 'editou seu comentário em'
-    comment_removed: 'Comentário foi removido'
-    create_message: "Seu comentário foi com criado com sucesso."
-    destroy_message: "Seu comentário foi com removido com sucesso."
-    update_message: "Seu comentário foi com editado com sucesso."
-    empty_array: 'Nenhum cometário ainda feito'
-  event:
-    create_message: 'Evento foi criado com sucesso.'
-    destroy_message: 'Evento foi removido com sucesso.'
-    edit_title: 'Editando evento'
-    empty_array: 'Sem eventos por enquanto.'
-    links:
-      new: 'Criar evento'
-    new_title: 'Novo evento'
-    plural: 'Eventos'
-    singular: 'Evento'
-    time: 'Horário'
-    title: 'Título'
-    update_message: 'Evento foi atualizado com sucesso.'
-    placeholders:
-      title: 'Título sobre o evento'
-      description: 'Conte mais sobre o evento'
-  form:
-    save: 'Salvar'
-  issue:
-    assignee: 'Aos cuidados de'
-    assignee_prompt: 'Ninguém'
-    issue_type_prompt: 'Nenhum'
-    close_message: 'Questão está resolvida.'
-    create_message: 'Questão criada com sucesso'
-    created_by: 'Criado por'
-    destroy_message: 'Questão foi removida com sucesso.'
-    due_date: 'Data de conclusão'
-    edit_title: 'Editando Questão'
-    empty_array: 'Nenhuma questão ainda reportada'
-    links:
-      new: 'Nova Questão'
-      new_type: 'Novo Tipo'
-    new_title: 'Nova Questão'
-    not_set: 'Nenhum'
-    open: 'Em Aberto'
-    open_message: 'Questão agora está em aberto'
-    plural: 'Questões'
-    reopen: 'Reabrir'
-    reporter: 'Relator'
-    resolve: 'Resolver'
-    resolved: 'Resolvido'
-    singular: 'Questão'
-    status: 'Estado'
-    title: 'Título'
-    type: 'Tipo'
-    update_message: 'Questão foi atualizada com sucesso.'
-    placeholders:
-      title: 'Sobre o que é está questão ?'
-      description: 'Conte mais detalhes sobre'
-    vote:
-      success_message: 'Você votou !'
-      remove_message: 'Seu voto foi removido desta questão'
-      vote: 'Votar'
-      have_voted: 'Você já votou !'
-      have_voted_on_issue: 'votou na questão'
-      remove_vote_from: 'removeu seu voto da questão'
-  issue_type:
-    create_message: "Tipo foi criado com sucesso."
-    destroy_message: "Tipo foi removido com sucesso."
-    edit_title: 'Editando Tipo de questão'
-    empty_array: 'Nenhum tipo de questão criado ainda.'
-    empty_issue_array: 'Nenhuma questão com esse tipo ainda foi reportada.'
-    name: 'Nome'
-    new_title: 'Novo Tipo de questão'
-    open: 'Abrir'
-    opened_issues_count: 'questões aberta(s)'
-    plural: 'Tipos'
-    reporter: 'Relator'
-    resolved: 'Resolvido'
-    singular: 'Tipo'
-    status: 'Estado'
-    type: 'Título'
-    update_message: 'Tipo foi atualizado com sucesso.'
-    links:
-      new_type: 'Novo Tipo'
-      types: 'Tipos de Questão'
-  links:
-    back: 'Voltar'
-    delete: 'Deletar'
-    edit: 'Editar'
-    remove: 'Remover'
-    show: 'Ver'
+  pundit:
+    announcemnt_policy:
+      update?: "Você não pode editar este anúncio"
+    default: "Você não pode executar essa ação"
   time:
-    past_word: 'atrás'
+    past_word: atrás
   user:
-    edit_account: 'Editar conta'
-    sign_in: 'Entrar'
-    sign_out: 'Sair'
-    register: 'Registrar Usuário'
-    image_caption: 'Sua imagem do'
-    remember_me: 'Lembre-me'
-    sign_up: 'Registrar'
-    forgot_password: 'Esqueceu sua senha ?'
+    edit_account: "Editar conta"
+    forgot_password: "Esqueceu sua senha ?"
+    form:
+      current_password_confirmation: "precisamos da sua senha para confirmar as alterações"
+      password_tip: "deixe em branco se você não quiser muda-la"
+      wating_confirmation: "Atualmente esperando confirmação para:"
+    image_caption: "Sua imagem do"
     no_confirmation_yet: "Não recebeu ainda instruções de confirmação ?"
     no_unlock_instructions: "Não recebeu ainda instruções para desbloqueio ?"
-    sign_in_with: 'Entrar com'
     placeholders:
-      email: 'Digite seu email'
-      password: 'Digite sua senha'
-    form:
-      password_tip: "deixe em branco se você não quiser muda-la"
-      current_password_confirmation: 'precisamos da sua senha para confirmar as alterações'
-      wating_confirmation: 'Atualmente esperando confirmação para:'
+      email: "Digite seu email"
+      password: "Digite sua senha"
+    register: "Registrar Usuário"
+    remember_me: Lembre-me
     roles:
-      label: 'Função'
-      manager: 'Síndico'
-      resident: 'Residente'
+      label: Função
+      manager: Síndico
+      resident: Residente
+    sign_in: Entrar
+    sign_in_with: "Entrar com"
+    sign_out: Sair
+    sign_up: Registrar
   views:
     pagination:
-      first: "&laquo; First"
-      last: "Last &raquo;"
-      previous: "&lsaquo; Prev"
-      next: "Next &rsaquo;"
-      truncate: "&hellip;"
+      first: "« First"
+      last: "Last »"
+      next: "Next ›"
+      previous: "‹ Prev"
+      truncate: "…"

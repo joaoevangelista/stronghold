@@ -1,167 +1,37 @@
 ---
 en:
-  pundit:
-    default: 'You can not perform this action'
-    announcemnt_policy:
-      update?: 'You can not edit this announcement!'
+  achievements:
+    see_others_link: "See who has this achievement too"
+    title: Achievements
+    users_with: "Users with %{name} achievement"
   activerecord:
-    errors:
-      messages:
-        blank: 'Please fill %{attribute}'
     attributes:
       announcement:
-        title: 'Title'
-        description: 'Description'
-        notify: 'Notify?'
+        description: Description
+        notify: Notify?
+        title: Title
       event:
-        title: 'Title'
-        description: 'Description'
-        time: 'Time'
-      issue_type:
-        name: 'Name'
-        color: 'Color'
+        description: Description
+        time: Time
+        title: Title
       issue:
-        title: 'Title'
-        description: 'Description'
-        is_resolved: 'Is Resolved ?'
-        due_date: 'Due Date'
-        assignee_id: 'Assignee'
-        issue_type_id: 'Issue Type'
+        assignee_id: Assignee
+        description: Description
+        due_date: "Due Date"
+        is_resolved: "Is Resolved ?"
+        issue_type_id: "Issue Type"
+        title: Title
+      issue_type:
+        color: Color
+        name: Name
       user:
-        name: 'Name'
-        email: 'Email'
-        password: 'Password'
-        password_confirmation: 'Password confirmation'
-
-  date:
-    abbr_day_names:
-    - Sun
-    - Mon
-    - Tue
-    - Wed
-    - Thu
-    - Fri
-    - Sat
-    abbr_month_names:
-    -
-    - Jan
-    - Feb
-    - Mar
-    - Apr
-    - May
-    - Jun
-    - Jul
-    - Aug
-    - Sep
-    - Oct
-    - Nov
-    - Dec
-    day_names:
-    - Sunday
-    - Monday
-    - Tuesday
-    - Wednesday
-    - Thursday
-    - Friday
-    - Saturday
-    formats: # You can use different names to indicate when parsing date or time
-      default: "%b, %d %Y"
-      long: "%B %d, %Y %H:%M"
-      short: "%b %d"
-    month_names:
-    -
-    - January
-    - February
-    - March
-    - April
-    - May
-    - June
-    - July
-    - August
-    - September
-    - October
-    - November
-    - December
-    order:
-    - :year
-    - :month
-    - :day
-  datetime:
-    distance_in_words:
-      about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
-      about_x_months:
-        one: about 1 month
-        other: about %{count} months
-      about_x_years:
-        one: about 1 year
-        other: about %{count} years
-      almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
-      half_a_minute: half a minute
-      less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
-      less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
-      over_x_years:
-        one: over 1 year
-        other: over %{count} years
-      x_days:
-        one: 1 day
-        other: "%{count} days"
-      x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
-      x_months:
-        one: 1 month
-        other: "%{count} months"
-      x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
-  prompts:
-    day: Day
-    hour: Hour
-    minute: Minute
-    month: Month
-    second: Seconds
-    year: Year
-  achievements:
-    title: 'Achievements'
-    see_others_link: 'See who has this achievement too'
-    users_with: 'Users with %{name} achievement'
-  merits:
-    badges:
-      observer:
-        name: 'Observer'
-        description: 'Reported an issue'
-      louder:
-        name: 'Louder'
-        description: 'Made an announcement'
-      first_class:
-        name: 'First Class'
-        description: 'Read 10 announcements'
-      opinator:
-        name: 'Opinator'
-        description: 'Commented on five different issues'
-      any_voice_matters:
-        name: 'Any Voice Matters'
-        description: 'Commented on an issue'
-      taking_responsibility:
-        name: 'Taking Responsibility'
-        description: 'Be assigned ten times on issues'
-      watchful:
-        name: 'Watchful'
-        description: 'Report tweenty issues'
-      say_yes:
-        name: 'Say Yes!'
-        description: 'Voted on ten issues'
-      changes:
-        name: 'Changes'
-        description: 'Read tweenty five announcements'
+        email: Email
+        name: Name
+        password: Password
+        password_confirmation: "Password confirmation"
+    errors:
+      messages:
+        blank: "Please fill %{attribute}"
   activity:
     announcement:
       create:
@@ -196,14 +66,11 @@ en:
         entity: Type
     updated: updated
   announcement:
-    already_marked_message: 'Announcement already marked as read by you.'
-    already_marked: 'Already Read'
     about_title: About
-    notify_label: 'Notify people about this ?'
-    will_notify: 'People will be notified'
-    will_not_notify: 'People will not be notified'
-    description_label: 'Body'
+    already_marked: "Already Read"
+    already_marked_message: "Announcement already marked as read by you."
     create_message: "Announcement was successfully created."
+    description_label: Body
     destroy_message: "Announcement was successfully destroyed."
     edit_title: "Editing Announcement"
     empty_array: "No announcements yet made."
@@ -211,35 +78,123 @@ en:
     links:
       new: "New Announcement"
     made_by_title: "Made by"
-    marked_as_read: 'Successfully marked as read.'
-    mark_as_read: 'Mark as read'
+    mark_as_read: "Mark as read"
+    marked_as_read: "Successfully marked as read."
     new_title: "New Announcement"
-    plural: 'Announcements'
-    published: 'Published'
-    singular: 'Announcement'
-    update_message: "Announcement was successfully updated."
-    not_found: 'Announcement not found.'
+    not_found: "Announcement not found."
+    notify_label: "Notify people about this ?"
     placeholders:
-      title: 'What this is about ?'
-      description: 'Body of announcement'
+      description: "Body of announcement"
+      title: "What this is about ?"
+    plural: Announcements
+    published: Published
+    singular: Announcement
+    update_message: "Announcement was successfully updated."
+    will_not_notify: "People will not be notified"
+    will_notify: "People will be notified"
   app:
     description: "Your tool fo a better community"
-  notice:
-    success: 'Well done!'
-    warning: 'Careful!'
-    error: 'Ouch!'
   comment:
-    title: 'Comments'
-    save: 'Comment'
-    placeholders:
-      content: 'Type to comment something about this issue'
-    commented_on: 'commented on'
-    updated_comment: 'edited comment on'
-    comment_removed: 'Comment was removed'
+    comment_removed: "Comment was removed"
+    commented_on: "commented on"
     create_message: "Your comment was successfully created."
     destroy_message: "Your comment was successfully removed."
+    empty_array: "No comments yet made"
+    placeholders:
+      content: "Type to comment something about this issue"
+    save: Comment
+    title: Comments
     update_message: "Your comment was successfully edited."
-    empty_array: 'No comments yet made'
+    updated_comment: "edited comment on"
+  date:
+    abbr_day_names:
+      - Sun
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+    abbr_month_names:
+      - ~
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+    day_names:
+      - Sunday
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+    formats:
+      default: "%b, %d %Y"
+      long: "%B %d, %Y %H:%M"
+      short: "%b %d"
+    month_names:
+      - ~
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
+    order:
+      - !ruby/symbol year
+      - !ruby/symbol month
+      - !ruby/symbol day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "about 1 hour"
+        other: "about %{count} hours"
+      about_x_months:
+        one: "about 1 month"
+        other: "about %{count} months"
+      about_x_years:
+        one: "about 1 year"
+        other: "about %{count} years"
+      almost_x_years:
+        one: "almost 1 year"
+        other: "almost %{count} years"
+      half_a_minute: "half a minute"
+      less_than_x_minutes:
+        one: "less than a minute"
+        other: "less than %{count} minutes"
+      less_than_x_seconds:
+        one: "less than 1 second"
+        other: "less than %{count} seconds"
+      over_x_years:
+        one: "over 1 year"
+        other: "over %{count} years"
+      x_days:
+        one: "1 day"
+        other: "%{count} days"
+      x_minutes:
+        one: "1 minute"
+        other: "%{count} minutes"
+      x_months:
+        one: "1 month"
+        other: "%{count} months"
+      x_seconds:
+        one: "1 second"
+        other: "%{count} seconds"
   event:
     create_message: "Event was successfully created."
     destroy_message: "Event was successfully destroyed."
@@ -248,27 +203,31 @@ en:
     links:
       new: "Create Event"
     new_title: "New Event"
+    placeholders:
+      description: "Tell more about the event"
+      title: "About the event"
     plural: Events
     singular: Event
     time: "Event time"
     title: Title
     update_message: "Event was successfully updated."
-    placeholders:
-      title: 'About the event'
-      description: 'Tell more about the event'
   form:
     save: Save
+  helpers:
+    submit:
+      create: "Save %{model}"
+      update: "Update %{model}"
   issue:
     assignee: Assignee
-    assignee_prompt: 'Nobody'
-    issue_type_prompt: 'None'
+    assignee_prompt: Nobody
     close_message: "Issue is now closed"
     create_message: "Issue was successfully created."
-    created_by: 'Created by'
+    created_by: "Created by"
     destroy_message: "Issue was successfully destroyed."
     due_date: "Due date"
     edit_title: "Editing Issue"
     empty_array: "No issues yet reported."
+    issue_type_prompt: None
     links:
       new: "New Issue"
       new_type: "New Type"
@@ -276,6 +235,9 @@ en:
     not_set: "Not set"
     open: Open
     open_message: "Issue is now open"
+    placeholders:
+      description: "Tell more details about it"
+      title: "What is this issue about ?"
     plural: Issues
     reopen: Reopen
     reporter: Reporter
@@ -286,22 +248,22 @@ en:
     title: Title
     type: Type
     update_message: "Issue was successfully updated."
-    placeholders:
-      title: 'What is this issue about ?'
-      description: 'Tell more details about it'
     vote:
-      success_message: 'You have voted !'
-      remove_message: 'Removed your vote from this issue'
-      vote: 'Vote'
-      have_voted: 'You have voted !'
-      have_voted_on_issue: 'have voted on issue'
-      remove_vote_from: 'removed own vote from issue'
+      have_voted: "You have voted !"
+      have_voted_on_issue: "have voted on issue"
+      remove_message: "Removed your vote from this issue"
+      remove_vote_from: "removed own vote from issue"
+      success_message: "You have voted !"
+      vote: Vote
   issue_type:
     create_message: "Type was successfully created."
     destroy_message: "Type was successfully destroyed."
     edit_title: "Editing Issue Type"
     empty_array: "No types yet created."
     empty_issue_array: "No issues with this type yet reported."
+    links:
+      new_type: "New Type"
+      types: "Issue Types"
     name: Name
     new_title: "New Issue Type"
     open: Open
@@ -313,44 +275,85 @@ en:
     status: Status
     type: Title
     update_message: "Type was successfully updated."
-    links:
-      new_type: 'New Type'
-      types: 'Issue Types'
   links:
     back: Back
     delete: Delete
     edit: Edit
     remove: Remove
     show: Show
+  merits:
+    badges:
+      any_voice_matters:
+        description: "Commented on an issue"
+        name: "Any Voice Matters"
+      changes:
+        description: "Read tweenty five announcements"
+        name: Changes
+      first_class:
+        description: "Read 10 announcements"
+        name: "First Class"
+      louder:
+        description: "Made an announcement"
+        name: Louder
+      observer:
+        description: "Reported an issue"
+        name: Observer
+      opinator:
+        description: "Commented on five different issues"
+        name: Opinator
+      say_yes:
+        description: "Voted on ten issues"
+        name: "Say Yes!"
+      taking_responsibility:
+        description: "Be assigned ten times on issues"
+        name: "Taking Responsibility"
+      watchful:
+        description: "Report tweenty issues"
+        name: Watchful
+  notice:
+    error: Ouch!
+    success: "Well done!"
+    warning: Careful!
+  prompts:
+    day: Day
+    hour: Hour
+    minute: Minute
+    month: Month
+    second: Seconds
+    year: Year
+  pundit:
+    announcemnt_policy:
+      update?: "You can not edit this announcement!"
+    default: "You can not perform this action"
   time:
     past_word: ago
   user:
     edit_account: "Edit Account"
-    sign_in: "Sign In"
-    sign_out: "Sign Out"
-    register: 'Register User'
-    image_caption: 'Your image from'
-    remember_me: 'Remember me'
-    sign_up: 'Sign Up'
-    forgot_password: 'Forgot Password ?'
+    forgot_password: "Forgot Password ?"
+    form:
+      current_password_confirmation: "we need your current password to confirm your changes"
+      password_tip: "leave blank if you don't want to change it"
+      wating_confirmation: "Currently waiting confirmation for:"
+    image_caption: "Your image from"
     no_confirmation_yet: "Didn't receive confirmation instructions?"
     no_unlock_instructions: "Didn't receive unlock instructions?"
-    sign_in_with: 'Sign in with'
     placeholders:
-      email: 'Enter your email'
-      password: 'Enter your password'
-    form:
-      password_tip: "leave blank if you don't want to change it"
-      current_password_confirmation: 'we need your current password to confirm your changes'
-      wating_confirmation: 'Currently waiting confirmation for:'
+      email: "Enter your email"
+      password: "Enter your password"
+    register: "Register User"
+    remember_me: "Remember me"
     roles:
-      label: 'Roles'
-      manager: 'Manager'
-      resident: 'Resident'
+      label: Roles
+      manager: Manager
+      resident: Resident
+    sign_in: "Sign In"
+    sign_in_with: "Sign in with"
+    sign_out: "Sign Out"
+    sign_up: "Sign Up"
   views:
     pagination:
-      first: "&laquo; First"
-      last: "Last &raquo;"
-      previous: "&lsaquo; Prev"
-      next: "Next &rsaquo;"
-      truncate: "&hellip;"
+      first: "« First"
+      last: "Last »"
+      next: "Next ›"
+      previous: "‹ Prev"
+      truncate: "…"
