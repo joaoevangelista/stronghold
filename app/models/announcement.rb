@@ -8,9 +8,8 @@ class Announcement < ApplicationRecord
 
   belongs_to :user
 
-  after_save :notify_users
-
-  def notify_users
-    AnnouncementNotificationService.new(self).send if notify
+  # Call notification and send the current url of announcement into it
+  def notify_users(from)
+    AnnouncementNotificationService.new(self, from).send if notify
   end
 end

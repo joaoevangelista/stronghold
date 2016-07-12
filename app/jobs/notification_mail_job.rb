@@ -3,8 +3,7 @@
 class NotificationMailJob < ApplicationJob
   queue_as :default
 
-  def perform(announcement)
-    users = User.all
-    AnnouncementNotification.notify_about(announcement, users).deliver_now
+  def perform(announcement, url)
+    AnnouncementNotification.notify_about(announcement, url).deliver_now
   end
 end

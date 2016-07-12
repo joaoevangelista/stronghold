@@ -35,6 +35,7 @@ class AnnouncementsController < AuthenticatedController
     authorize @announcement
     respond_to do |format|
       if @announcement.save
+        send_email @announcement
         format.html do
           redirect_to @announcement, notice: I18n.t('announcement.create_message')
         end
@@ -134,6 +135,12 @@ class AnnouncementsController < AuthenticatedController
   # Never trust parameters from the scary internet, only allow the white list through.
   def announcement_params
     params.require(:announcement).permit(:title, :description, :user_id, :notify)
+  end
+
+  def send_email(announcement)
+    base = request.base_url
+    url = announcement_path(announcement)
+    announcement.notify_users base.concat url
   end
 
   def add_first_class_badge_if_met
