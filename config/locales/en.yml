@@ -232,7 +232,7 @@ en:
     title: 'Comments'
     save: 'Comment'
     placeholders:
-      content: 'Type to comment somthing about this issue'
+      content: 'Type to comment something about this issue'
     commented_on: 'commented on'
     updated_comment: 'edited comment on'
     comment_removed: 'Comment was removed'
