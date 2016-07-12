@@ -1,7 +1,7 @@
 .form-control,  input[type="text"] {
   border: 2px solid $gray;
   color: $input-gray;
-  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-family: "Roboto";
   -webkit-transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
   transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
 }

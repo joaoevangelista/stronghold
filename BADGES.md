@@ -14,9 +14,9 @@ The following badges are available:
 - Any voice matters: Commented on an issue
 - Organizer: Created an issue type
 - Taking responsibility: Be assigned 10 times on issues
-- Ticking: Set due date on 15 issues
+- Ticking: Set due date on 15 issues (coming soon)
 - Watchful: Report 20 issues
 - Say yes!: Vote on 10 issues
-- You say it, you get it: Close 20 issues
+- You say it, you get it: Close 20 issues (coming soon)
 - Changes: Read 25 announcements
-- Polishing: Edit 25 different issues
+- Polishing: Edit 25 different issues (coming soon)
