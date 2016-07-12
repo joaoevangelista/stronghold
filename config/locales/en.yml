@@ -32,6 +32,34 @@ en:
     errors:
       messages:
         blank: "Please fill %{attribute}"
+    models:
+      announcement:
+        one: 'Announcement'
+        others: 'Announcements'
+      comment:
+        one: 'Comment'
+        others: 'Comments'
+      event:
+        one: 'Event'
+        others: 'Events'
+      issue_type:
+        one: 'Issue Type'
+        others: 'Issue Types'
+      issue:
+        one: 'Issue'
+        others: 'Issues'
+      read:
+        one: 'Read'
+        others: 'Reads'
+      role:
+        one: 'Role'
+        others: 'Roles'
+      user:
+        one: 'Person'
+        others: 'People'
+      vote:
+        one: 'Vote'
+        others: 'Votes'
   activity:
     announcement:
       create:

@@ -28,7 +28,35 @@ pt-BR:
         email: Email
         name: Nome
         password: Senha
-        password_confirmation: "Confirmção da senha"
+        password_confirmation: "Confirmação da senha"
+    models:
+      announcement:
+        one: 'Anúncio'
+        others: 'Anúncios'
+      comment:
+        one: 'Comentário'
+        others: 'Comentários'
+      event:
+        one: 'Evento'
+        others: 'Eventos'
+      issue_type:
+        one: 'Tipo'
+        others: 'Tipos'
+      issue:
+        one: 'Questão'
+        others: 'Questãos'
+      read:
+        one: 'Lido'
+        others: 'Lidos'
+      role:
+        one: 'Papel'
+        others: 'Papeis'
+      user:
+        one: 'Pessoa'
+        others: 'Pessoas'
+      vote:
+        one: 'Voto'
+        others: 'Votos'
     errors:
       messages:
         blank: "Por favor preencha %{attribute}"
