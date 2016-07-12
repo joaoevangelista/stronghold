@@ -222,6 +222,12 @@ pt-BR:
       x_seconds:
         one: "1 segundo"
         other: "%{count} segundos"
+  email:
+    announcement:
+      title: 'Sua comunidade tem um novo anúncio!'
+      link: 'veja no Stronghold da sua comunidade.'
+      pre_link: 'Para ver o anúncio completo e interagir com ele'
+      short_description: 'Aqui está uma pequena parte.'
   event:
     create_message: "Evento foi criado com sucesso."
     destroy_message: "Evento foi removido com sucesso."

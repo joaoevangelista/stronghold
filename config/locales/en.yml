@@ -223,6 +223,12 @@ en:
       x_seconds:
         one: "1 second"
         other: "%{count} seconds"
+  email:
+    announcement:
+      title: 'Your community has a new announcement!'
+      link: 'check our on you community's Stronghold.'
+      pre_link: 'To see the full announcement and interact with it'
+      short_description: 'Here is a short slice of it'
   event:
     create_message: "Event was successfully created."
     destroy_message: "Event was successfully destroyed."

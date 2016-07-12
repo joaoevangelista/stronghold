@@ -2,6 +2,10 @@
   .text-center {
     text-align: center;
   }
+  .lead {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
   body {
     font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   }
@@ -10,13 +14,17 @@
 
 <div class="text-center">
 
-  <h1>Your community has a new announcement!</h1>
+  <h1><%= t('email.announcement.title') %></h1>
 
   <blockquote>
     <%= @announcement.title %>
   </blockquote>
 
-  To see the full announcement and interact with it,
-  <a href="<%=@url%>">check out on your community Stronghold</a>
+  <p>
+
+  </p>
+
+  <span><%= t('email.announcement.pre_link') %></span>
+  <a href="<%=@url%>"><%= t('email.announcement.link') %></a>
 
 </div>
