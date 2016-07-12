@@ -14,17 +14,17 @@
 
 <div class="text-center">
 
-  <h1><%= t('email.announcement.title') %></h1>
+  <h1 style="text-align: center;"><%= t('email.announcement.title') %></h1>
 
   <blockquote>
-    <%= @announcement.title %>
+    <h3><%= @announcement.title %></h3>
+    <p>
+      <%= short @announcement.description %>
+    </p>
   </blockquote>
 
-  <p>
-
-  </p>
-
-  <span><%= t('email.announcement.pre_link') %></span>
+  <span style="text-align: center;"><%= t('email.announcement.pre_link') %>
   <a href="<%=@url%>"><%= t('email.announcement.link') %></a>
+  </span>
 
 </div>
