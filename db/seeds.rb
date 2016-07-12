@@ -7,7 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 if Rails.env.production?
-  User.create!({name: 'Main', email: 'master@stronghold.com', password: 'AdMiNP4sS' })
+  user = User.create!({name: 'Main', email: 'master@stronghold.com', password: 'AdMiNP4sS' })
+  user.add_role :manager
 else
 
   user = User.create!({name: 'Adminstration', email: 'admin@stronghold.com', password: '123456' })
