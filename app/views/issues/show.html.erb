@@ -1,9 +1,6 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 hidden-xs">
-      <div class="pull-left">
-        <%= go_back_link issues_path %>
-      </div>
       <div class="pull-right">
         <% if policy(@issue).edit? %>
         <%= link_to icon('pencil', t('links.edit'), class: 'fa-fw'), edit_issue_path(@issue),
