@@ -47,8 +47,8 @@ $dropDown: false;
     }
     @if $dropDown {
       .open .dropdown-menu > .active {
-         > a:focus,
-         > a:hover,
+        > a:focus,
+        > a:hover,
         > a {
           color: $colHighlight;
           background-color: $bgHighlight;
@@ -56,16 +56,16 @@ $dropDown: false;
       }
     }
     > .active {
-       > a:focus,
-       > a:hover,
+      > a:focus,
+      > a:hover,
       > a {
         color: $colHighlight;
         background-color: $bgHighlight;
       }
     }
     > .open {
-       > a:focus,
-       > a:hover,
+      > a:focus,
+      > a:hover,
       > a {
         color: $colHighlight;
         background-color: $bgHighlight;
@@ -103,8 +103,8 @@ $dropDown: false;
       }
     }
     > .active {
-       > a:focus,
-       > a:hover,
+      > a:focus,
+      > a:hover,
       > a {
         color: $colHighlight;
         background-color: $bgHighlight;
@@ -119,4 +119,15 @@ $dropDown: false;
   top: 10px;
   transition-duration: 0.3s;
   z-index: 999;
+}
+
+$border-size: 1px;
+$dropdown-border-color: #ccc;
+.dropdown-menu {
+  border: none;
+  border-top: $border-size solid $dropdown-border-color;
+  border-left: $border-size solid $dropdown-border-color;
+  border-bottom: $border-size solid $dropdown-border-color;
+  border-right: $border-size solid $dropdown-border-color;
+  box-shadow: none;
 }
