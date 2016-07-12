@@ -22,7 +22,7 @@ class CommentsController < AuthenticatedController
     authorize @comment
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment.issue, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @comment.issue, notice: I18n.t('comment.create_message') }
         format.json { render :show, status: :created, location: [@comment.issue, @comment] }
       else
         format.html { redirect_to @comment.issue }
@@ -37,7 +37,7 @@ class CommentsController < AuthenticatedController
     authorize @comment
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment.issue, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to @comment.issue, notice: I18n.t('comment.update_message') }
         format.json { render :show, status: :ok, location: [@comment.issue, @comment] }
       else
         format.html { render :edit }
@@ -55,7 +55,7 @@ class CommentsController < AuthenticatedController
     respond_to do |format|
       format.html do
         redirect_to issue_path(comment_issue),
-                    notice: 'Comment was successfully destroyed.'
+                    notice: I18n.t('comment.destroy_message')
       end
       format.json { head :no_content }
     end

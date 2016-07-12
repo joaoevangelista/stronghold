@@ -239,6 +239,7 @@ en:
     create_message: "Your comment was successfully created."
     destroy_message: "Your comment was successfully removed."
     update_message: "Your comment was successfully edited."
+    empty_array: 'No comments yet made'
   event:
     create_message: "Event was successfully created."
     destroy_message: "Event was successfully destroyed."

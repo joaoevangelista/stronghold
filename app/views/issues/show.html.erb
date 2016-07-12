@@ -142,9 +142,13 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-md-8">
+      <% if @issue.comments.empty? %>
+      <p class="text-center lead"><%= t('comment.empty_array') %></p>
+    <% else %>
       <% @issue.comments.each do |comment| %>
       <%= render 'issues/comment', comment: comment %>
       <%  end %>
+      <% end %>
       <hr>
     </div>
   </div>

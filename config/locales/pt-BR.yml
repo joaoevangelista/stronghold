@@ -237,6 +237,7 @@ pt-BR:
     create_message: "Seu comentário foi com criado com sucesso."
     destroy_message: "Seu comentário foi com removido com sucesso."
     update_message: "Seu comentário foi com editado com sucesso."
+    empty_array: 'Nenhum cometário ainda feito'
   event:
     create_message: 'Evento foi criado com sucesso.'
     destroy_message: 'Evento foi removido com sucesso.'
