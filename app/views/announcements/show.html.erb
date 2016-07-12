@@ -36,8 +36,8 @@
           <% if policy(@announcement).new? %>
           <li><%= link_to t('announcement.links.new'), new_announcement_path %></li>
           <% end %>
-          <li class="divider"></li>
           <% if policy(@announcement).destroy? %>
+          <li class="divider"></li>
           <li><%= link_to t('links.delete'), @announcement, method: :delete, data: { confirm: 'Are you sure?' } %></li>
           <% end %>
         </ul>
